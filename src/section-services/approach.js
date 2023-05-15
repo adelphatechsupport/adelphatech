@@ -1,10 +1,11 @@
 /** @jsx jsx */
-import icon2 from 'assets/images/Approach/Business.svg';
-import icon1 from 'assets/images/Approach/Component.svg';
-import icon3 from 'assets/images/Approach/Transparent.svg';
-import ApproachCard from 'components/cards/card-approach';
+import { jsx, Box, Container, Heading } from 'theme-ui';
 import SectionHeading from 'components/section-heading';
-import { Box, Container, Heading, jsx } from 'theme-ui';
+import ApproachCard from 'components/cards/card-approach';
+
+import icon1 from 'assets/images/Approach/1.svg';
+import icon2 from 'assets/images/Approach/2.svg';
+import icon3 from 'assets/images/Approach/3.svg';
 
 const data = [
   {

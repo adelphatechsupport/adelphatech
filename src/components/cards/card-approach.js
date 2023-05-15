@@ -1,18 +1,12 @@
 /** @jsx jsx */
 import { jsx, Box, Image, Heading, Text } from 'theme-ui';
 import { LearnMore } from 'components/link';
-import Svg from "react-inlinesvg"
 
 const ApproachCard = ({ data, ...props }) => {
   return (
     <Box sx={styles.feature} {...props}>
       <Box as="figure">
-        <Svg
-          sx={styles.icon}
-          src={data?.icon}
-          height="auto"
-          title={data?.title}
-        />
+        <Image src={data?.icon} sx={styles.icon} alt={data?.title} />
       </Box>
       <Box>
         <Heading as="h4">{data?.title}</Heading>
@@ -44,7 +38,7 @@ const styles = {
       alignItems: 'center',
       minWidth: [70],
       mb: 10,
-
+      
     },
     h4: {
       fontSize: 9,
