@@ -2,8 +2,8 @@
 import { useState, useEffect } from "react";
 import { Image, jsx } from 'theme-ui';
 import { Link } from 'components/link';
-import LogoHeader from 'assets/images/logoheader.png';
-import LogoWhite from 'assets/images/logowhite.png'
+import LogoHeader from '../assets/images/logoheader.png';
+import LogoWhite from '../assets/images/logowhite.png'
 
 export default function Logo(props) {
   console.log(

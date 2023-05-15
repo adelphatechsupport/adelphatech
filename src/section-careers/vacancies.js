@@ -4,8 +4,8 @@ import SectionHeading from '../components/section-heading';
 import { Card, Col, Form, Row } from 'react-bootstrap';
 import Svg from "react-inlinesvg"
 import React, { useEffect, useState } from 'react';
-import LongArrow from "assets/images/LongArrow.svg"
-import Place from "assets/images/Place.svg"
+import LongArrow from "../assets/images/LongArrow.svg"
+import Place from "../assets/images/Place.svg"
 import ReactPaginate from "react-paginate"
 import { Link } from "gatsby"
 

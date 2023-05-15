@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, Container, Heading } from "theme-ui";
 import Svg from "react-inlinesvg"
 import SectionHeading from "../components/section-heading";
-import ArrowRight from "assets/images/ArrowRight.svg"
+import ArrowRight from "../assets/images/ArrowRight.svg"
 import { Link } from "gatsby"
 
 const ReasonJoin = () => {

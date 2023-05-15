@@ -3,8 +3,8 @@ import { jsx, Box, Container, Heading, Text } from 'theme-ui';
 import { useStaticQuery, graphql } from 'gatsby';
 import SupportType from 'components/cards/support-type';
 import Image from 'components/image';
-import icon1 from 'assets/images/icons/1.png';
-import icon2 from 'assets/images/icons/2.png';
+import icon1 from '../assets/images/icons/1.png';
+import icon2 from '../assets/images/icons/2.png';
 
 const data = [
   {

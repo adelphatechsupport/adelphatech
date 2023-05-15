@@ -4,7 +4,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 import { IoIosCheckmarkCircle } from 'react-icons/io';
 import SectionHeading from 'components/section-heading';
 import Image from 'components/image';
-import support from 'assets/images/support.png';
+import support from '../assets/images/support.png';
 import { LearnMore } from 'components/link';
 
 

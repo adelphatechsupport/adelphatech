@@ -5,10 +5,10 @@ import Rating from 'components/rating';
 import ButtonGroup from 'components/button-group';
 import Carousel from 'react-multi-carousel';
 
-import Avatar1 from 'assets/testimonial/avatar1.jpg';
-import Avatar2 from 'assets/testimonial/avatar2.jpg';
-import Avatar3 from 'assets/testimonial/avatar3.jpg';
-import Avatar4 from 'assets/testimonial/avatar4.jpg';
+import Avatar1 from '../assets/testimonial/avatar1.jpg';
+import Avatar2 from '../assets/testimonial/avatar2.jpg';
+import Avatar3 from '../assets/testimonial/avatar3.jpg';
+import Avatar4 from '../assets/testimonial/avatar4.jpg';
 
 const data = [
   {

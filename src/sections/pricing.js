@@ -4,7 +4,7 @@ import { jsx, Box, Container } from 'theme-ui';
 import { useMediaQuery } from 'react-responsive';
 import PriceTable from 'components/cards/price-table';
 import SectionHeading from 'components/section-heading';
-import 'assets/css/react-slick.css';
+import '../assets/css/react-slick.css';
 
 const data = [
   {

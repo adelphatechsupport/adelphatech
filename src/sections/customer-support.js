@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { IoIosCheckmarkCircle } from 'react-icons/io';
 import SectionHeading from 'components/section-heading';
 import Image from 'components/image';
-import support from 'assets/images/support.png';
+import support from '../assets/images/support.png';
 
 const list = [
   'PROACTIVE HIRING MODEL',

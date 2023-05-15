@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Box, Container, Heading, Image, Text, jsx } from 'theme-ui';
 import SectionHeading from '../components/section-heading';
-import ContactIcon from "assets/images/Contact/contact.svg"
+import ContactIcon from "../assets/images/Contact/contact.svg"
 
 const Banner = () => {
     return (

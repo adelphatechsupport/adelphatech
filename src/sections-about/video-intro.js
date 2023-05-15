@@ -13,8 +13,8 @@ import {
 import Modal, { CloseButton } from 'components/modal/modal';
 import ResponsiveIframe from 'components/responsive-iframe';
 import Image from 'components/image-about';
-import play from 'assets/images/icons/play.png';
-import paint1 from 'assets/images/paint1.svg';
+import play from '../assets/images/icons/play.png';
+import paint1 from '../assets/images/paint1.svg';
 const VideoIntro = () => {
   const [isOpen, setIsOpen] = useState(false);
   const data = useStaticQuery(graphql`

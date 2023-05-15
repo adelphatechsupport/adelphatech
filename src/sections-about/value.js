@@ -1,6 +1,6 @@
-import Flexible from 'assets/images/services/Flexible.svg';
-import Improving from 'assets/images/services/Improving.svg';
-import Partners from 'assets/images/services/Partners.svg';
+import Flexible from '../assets/images/services/Flexible.svg';
+import Improving from '../assets/images/services/Improving.svg';
+import Partners from '../assets/images/services/Partners.svg';
 import React from 'react';
 import { Box, Container, Heading, Image, Text } from 'theme-ui';
 import SectionHeading from "../components/section-heading";

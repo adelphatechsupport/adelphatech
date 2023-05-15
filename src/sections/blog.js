@@ -4,10 +4,10 @@ import Masonry from 'react-masonry-component';
 import SectionHeading from 'components/section-heading';
 import Post from 'components/cards/post';
 
-import news1 from 'assets/images/blog/1.png';
-import news2 from 'assets/images/blog/2.png';
-import news3 from 'assets/images/blog/3.png';
-import news4 from 'assets/images/blog/4.png';
+import news1 from '../assets/images/blog/1.png';
+import news2 from '../assets/images/blog/2.png';
+import news3 from '../assets/images/blog/3.png';
+import news4 from '../assets/images/blog/4.png';
 
 const data = [
   {

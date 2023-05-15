@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import CBC from "assets/images/partners/CBC.png";
-import Deloitte from "assets/images/partners/Deloitte.png";
-import Kentico from "assets/images/partners/Kentico.png";
-import Trillium from "assets/images/partners/Trillium.png";
+import CBC from "../assets/images/partners/CBC.png";
+import Deloitte from "../assets/images/partners/Deloitte.png";
+import Kentico from "../assets/images/partners/Kentico.png";
+import Trillium from "../assets/images/partners/Trillium.png";
 import { rgba } from 'polished';
 import { Box, Flex, Heading, Image, jsx } from 'theme-ui';
 

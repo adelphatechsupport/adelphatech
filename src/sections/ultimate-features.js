@@ -3,12 +3,12 @@ import { jsx, Box, Container } from 'theme-ui';
 import SectionHeading from 'components/section-heading';
 import Feature from 'components/cards/feature';
 
-import icon1 from 'assets/images/features/1.svg';
-import icon2 from 'assets/images/features/2.svg';
-import icon3 from 'assets/images/features/3.svg';
-import icon4 from 'assets/images/features/4.svg';
-import icon5 from 'assets/images/features/5.svg';
-import icon6 from 'assets/images/features/6.svg';
+import icon1 from '../assets/images/features/1.svg';
+import icon2 from '../assets/images/features/2.svg';
+import icon3 from '../assets/images/features/3.svg';
+import icon4 from '../assets/images/features/4.svg';
+import icon5 from '../assets/images/features/5.svg';
+import icon6 from '../assets/images/features/6.svg';
 
 const data = [
   {
