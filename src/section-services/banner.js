@@ -13,13 +13,11 @@ const Banner = () => {
                             slogan='OUR SERVICE'
                         />
                         <Heading sx={styles.title}>
-                            Make your business grow <br />
+                            Expand your business <br />
                             with Adelphatech
                         </Heading>
                         <Text as="h5" sx={styles.summary}>
-                            From early consultations to project handover (and beyond), our team of Adelphatech
-                            experts understands your website’s specific needs and offers technical solutions to
-                            reach them.
+                            From initial consultation to project handover, our team of experts understands your businesses specific needs and provides technical solutions to take your website or mobile app where it needs to go.
                         </Text>
                     </Box>
                 </Box>

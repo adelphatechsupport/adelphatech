@@ -16,8 +16,7 @@ const Banner = () => {
                     Problem-solvers. Technical thinkers.
                 </Heading>
                 <Text as="p" sx={styles.summary}>
-                    From early consultations to project handover (and beyond), our team of Adeplhatech<br/>
-                    experts understands your website’s specific needs and offers technical solutions to reach them.
+                From the initial consultation to project handover and beyond, our team of experts understands your business’s <br/> unique website needs and offers technical solutions to surpass expectations.
                 </Text>
             </Container>
         </Box>

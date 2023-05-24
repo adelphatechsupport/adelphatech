@@ -5,35 +5,198 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import { Box, Button, Container, Heading, Text } from "theme-ui";
-import ReCAPTCHA from "react-google-recaptcha";
+import Recaptcha from "react-google-recaptcha";
+import Swal from "sweetalert2";
 const ContactForm = () => {
-    function onChange(value) {
+    async function apiCall(props) {
+        return await fetch(props?.link, {
+            method: props?.method,
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: props?.isFormData ? props?.data : JSON.stringify(props?.data),
+        })
+            .then(async (response) => {
+                const statusCode = response.status;
+                const contentType = response.headers.get("content-type");
+                if (contentType && contentType.indexOf("application/json") !== -1) {
+                    return response.json().then((data) => [statusCode, data]);
+                } else {
+                    return response.text().then((data) => [statusCode, data]);
+                }
+            })
+            .then((data) => {
+                return data;
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
-    const recaptchaRef = React.createRef();
-    const [validated, setValidated] = useState(false);
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        const form = event.currentTarget;
-        if (form.checkValidity() === false) {
-          event.stopPropagation();
+
+    function ModelStateMessage(result) {
+        try {
+            if (
+                result[1].modelState !== null &&
+                result[1].modelState !== undefined &&
+                result[1].modelState !== ""
+            ) {
+                let modelState = result[1].modelState;
+                if (modelState)
+                    Object.keys(modelState).forEach(function (k) {
+                        modelState[k].forEach((element) => {
+                            Swal.fire("Oops?", element, "error");
+                        });
+                    });
+            } else if (typeof result[1] === "string") {
+                Swal.fire("Oops?", result[1], "error");
+            } else if (
+                result[0] === 401 &&
+                result[1].message !== null &&
+                result[1].message !== undefined &&
+                result[1].message !== ""
+            ) {
+                Swal.fire("Oops?", result[1].message, "error");
+                setTimeout(() => {
+                    localStorage.clear();
+                    window.location.href = "/auth/login";
+                }, 1000);
+            } else if (
+                result[1].message !== null &&
+                result[1].message !== undefined &&
+                result[1].message !== ""
+            ) {
+                Swal.fire("Oops?", result[1].message, "error");
+            } else if (
+                result[1].error_description !== null &&
+                result[1].error_description !== undefined &&
+                result[1].error_description !== ""
+            ) {
+                Swal.fire("Oops?", result[1].error_description, "error");
+            } else if (result[0] === 400) {
+                ModelStateMessage400(result);
+            } else if (result[0] === 402) {
+                Swal.fire("Oops?", "You have to subscribe first", "error");
+            } else {
+                Swal.fire("Oops?", "Bad request", "error");
+            }
+        } catch (err) { }
+    }
+
+    function ModelStateMessage400(result, setListFun) {
+        try {
+            /* if (!!result[1]) {
+              Swal.fire("Oops?", result[1], "error");
+              return false;
+            } */
+            if (!!result[1]?.message) {
+                Swal.fire("Oops?", result[1].message, "error");
+                return false;
+            }
+            if (!result[1]?.errors) result[1] = JSON.parse(result[1]);
+            if (!!result[1]?.errors) {
+                var p = result[1]?.errors;
+                var list = [];
+                var list2 = [];
+                for (var key in p) {
+                    if (p.hasOwnProperty(key)) {
+                        list2.push({ key: key, value: p[key] });
+
+                        var a = list.findIndex(
+                            (x) => x === `<div class="col-12">${p[key]}</div>`
+                        );
+                        if (a === -1) list.push(`<div class="col-12">${p[key]}</div>`);
+                    }
+                }
+                if (!!setListFun) setListFun(list2);
+
+                Swal.fire({
+                    title:
+                        '<i class="fas fa-exclamation-circle text-danger"></i> <strong class="text-danger h4">Required</strong>',
+                    icon: "error",
+                    html: `<div class="row p-0 m-0">${list.join(" ")}</div>`,
+                    showCloseButton: true,
+                    confirmButtonText: "OK!",
+                });
+            } else {
+                Swal.fire("Oops?", "Bad_request", "error");
+            }
+        } catch (err) {
+            Swal.fire("Oops?", "Bad_request", "error");
         }
-        setValidated(true);
-         const recaptchaValue = recaptchaRef.current.getValue();
-        const formData = new FormData(form);
-        formData.append('recaptchaToken', recaptchaValue);
-        const requestOptions = {
-          method: 'POST',
-          body: formData,
-        };
-        fetch('https://api.deliveryease.co/api/Generic/Form/AT', requestOptions)
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data);
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-          });
+    }
+    const [buttonDisabled, setButtonDisabled] = React.useState(true)
+    const [isLoading, setLoading] = React.useState(false)
+    const [validated, setValidated] = useState(false);
+    const [formState, setFormState] = useState({
+        topic: "",
+        name: "",
+        email: "",
+        message: "",
+
+    })
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+      
+        // Concatenate first name and last name
+        if (name === 'name') {
+          const [firstName, ...lastName] = value.split(' ');
+          setFormState((prevState) => ({
+            ...prevState,
+            firstName: firstName,
+            lastName: lastName.join(' ') || '',
+            name: value,
+          }));
+        } else {
+          setFormState((prevState) => ({
+            ...prevState,
+            [name]: value,
+          }));
+        }
       };
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        const form = e.currentTarget;
+        if (form.checkValidity() === false) {
+          e.stopPropagation();
+          setValidated(true);
+        } else {
+          setLoading(true);
+          setValidated(false);
+          const recaptchaValue = recaptchaRef.current.getValue();
+          apiCall({
+            method: "POST",
+            link: "https://api.deliveryease.co/api/Generic/Form/AT",
+            data: formState,
+          })
+            .then((response) => {
+              setLoading(false);
+              if (!!response && response.length > 0 && response[0] === 200) {
+                Swal.fire({
+                  position: "top-center",
+                  icon: "success",
+                  title: "Success",
+                });
+                form.reset(); // Clear the form inputs
+                setFormState({
+                  topic: "",
+                  name: "",
+                  email: "",
+                  message: "",
+                });
+              } else {
+                ModelStateMessage(response);
+                setLoading(false);
+              }
+            })
+            .catch((error) => {
+              // Handle error
+              console.log(error);
+              setLoading(false);
+            });
+        }
+      };
+    const recaptchaRef = React.createRef()
     return (
         <Box as="section" id="Contactform" sx={styles.section}>
             <Container>
@@ -45,15 +208,21 @@ const ContactForm = () => {
                 </Text>
                 <Box sx={styles.grid} >
                     <Col xl="9" lg="9" md="11" className='mx-auto py-5'>
-                        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                        <form noValidate validated={validated} onSubmit={handleSubmit} method="post"
+                            data-netlify-recaptcha="true"
+                            data-netlify="true"
+                            name="message"
+                            data-netlify-honeypot="bot-field">
+                            <input type="hidden" name="form-name" value="message" />
                             <Row className="mb-3">
                                 <Form.Group as={Col} md="6" className="mb-3">
                                     <FloatingLabel controlId="floatingSelect" label="TOPIC*">
-                                        <Form.Select aria-label="Floating label select example" required>
-                                            <option>Website Lanch / Relaunch</option>
-                                            <option value="1">Web Improvement</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+
+                                        <Form.Select aria-label="Floating label select example" name="topic" onChange={handleChange} required >
+                                            <option></option>
+                                            <option value="Website Lanch / Relaunch">Website Lanch / Relaunch</option>
+                                            <option value="Web Improvement">Web Improvement</option>
+                                            <option value="UX / UI Design">UX / UI Design</option>
                                         </Form.Select>
                                     </FloatingLabel>
                                 </Form.Group>
@@ -62,10 +231,10 @@ const ContactForm = () => {
                                 <Form.Group as={Col} md="6" controlId="NAME">
                                     <FloatingLabel
                                         controlId="floatingInput"
-                                        label="NAME*"
+                                        label="FULL NAME*"
                                         className="mb-3"
                                     >
-                                        <Form.Control type="text" placeholder="Your Name" required />
+                                        <Form.Control type="text" name="name" id="name" onChange={handleChange} placeholder="Your Name" required />
                                     </FloatingLabel>
                                     <Form.Control.Feedback type="invalid">
                                         Please provide a valid Name.
@@ -77,7 +246,7 @@ const ContactForm = () => {
                                         label="E-MAIL*"
                                         className="mb-3"
                                     >
-                                        <Form.Control type="email" placeholder="Your E-mail" required />
+                                        <Form.Control type="email" name="email" id="email" onChange={handleChange} placeholder="Your E-mail" required />
                                     </FloatingLabel>
                                     <Form.Control.Feedback type="invalid">
                                         Please provide a valid email.
@@ -90,6 +259,9 @@ const ContactForm = () => {
                                         <Form.Control
                                             as="textarea"
                                             placeholder="Your Message"
+                                            name="message"
+                                            id='message'
+                                            onChange={handleChange}
                                             style={{ height: '100px' }}
                                             required
                                         />
@@ -97,14 +269,31 @@ const ContactForm = () => {
                                 </Form.Group>
                             </Row>
                             <Row className='mb-5'>
-                                <ReCAPTCHA
+                                <Recaptcha
                                     ref={recaptchaRef}
                                     sitekey="6LdwPXYbAAAAAMgj5Nqj76lv39oKQB5Jtj48_9N9"
-                                    onChange={onChange}
+                                    size="normal"
+                                    id="recaptcha-google"
+                                    onChange={() => setButtonDisabled(false)}
                                 />
                             </Row>
-                            <Button type="submit" className='buttonform' >Send your message</Button>
-                        </Form>
+                            {!isLoading && <Button
+                                type="submit"
+                                className='buttonform'
+
+                            >
+                                Send Message
+                            </Button>
+                            }
+                            {isLoading && <Button
+                                type="submit"
+                                className="text-white border-white p-3"
+                                disabled={buttonDisabled}
+                            ><i className="fa fa-spinner fa-spin"></i>
+                                Sending...
+                            </Button>
+                            }
+                        </form>
                     </Col>
                 </Box>
             </Container>

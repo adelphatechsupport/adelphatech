@@ -25,12 +25,12 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     function handleScroll() {
       setIsSticky(window.pageYOffset > 0);
-      console.log("window.pageYOffset",window.pageYOffset)
+      console.log("window.pageYOffset", window.pageYOffset)
     }
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  const navColor = isSticky && (pathName !== "/" || pathName !== "") ? '#09386b' : (pathName === "/" || pathName === "")   ? '#fff' : '#09386b';
+  const navColor = isSticky && (pathName !== "/" || pathName !== "") ? '#09386b' : (pathName === "/" || pathName === "") ? '#fff' : '#09386b';
   return (
     <DrawerProvider>
       <Sticky
@@ -48,8 +48,8 @@ export default function Header() {
             <Logo sx={styles.logo} />
             <nav as="nav" sx={{ ...styles.navbar, color: navColor }} className={'navbar'}>
               {menuItems.map(({ path, label }, i) => (
-                <Link to={"/"+path} className="nav-item"
-                  activeClass="active">{label}</Link>
+                <Link to={"/" + path} className="nav-item"
+                  activeClassName="active">{label}</Link>
               ))}
             </nav>
             <NavbarDrawer />
@@ -80,6 +80,10 @@ const styles = {
           borderBottom: '1px solid #09386b',
           color: "#09386b",
         },
+
+      },
+      '.active': {
+        color: 'primary',
       },
     },
   },
@@ -102,7 +106,7 @@ const styles = {
       display: ['flex'],
       color: '#09386b',
       fontWeight: 700,
-      fontSize:[1,4],
+      fontSize: [1, 4],
       padding: 0,
       borderBottom: '1px solid transparent',
       transition: 'all 0.3s ease-in-out 0s',
@@ -115,7 +119,7 @@ const styles = {
         color: "#09386b",
       },
     },
-    '.not-sticky':{
+    '.not-sticky': {
       color: '#fff',
       ':hover': {
         transition: 'color 0.3s ease 0s, background 0s ease 0.3s',

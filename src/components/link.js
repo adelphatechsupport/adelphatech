@@ -23,7 +23,7 @@ export function NavLink({ path, label, children, ...rest }) {
 
 export function Link({ path, label, children, ...rest }) {
   return (
-    <A as={GatsbyLink} to={path} {...rest}>
+    <A as={GatsbyLink} to={path}  {...rest}>
       {children ? children : label}
     </A>
   );

@@ -65,10 +65,10 @@ const VideoIntro = () => {
           <Box sx={styles.content}>
             <Heading sx={styles.title}>
               <span sx={{ background: `url(${paint1})` }}>Adelphatech</span>
-              agency for high-performing websites
+              A high-performing agency
             </Heading>
             <Text as="p" sx={styles.summary}>
-              We’re a team of passionate problem-solvers and out-of-the-box technical thinkers. Our objective? To take as much complexity off of our partner’s plates as possible and make their WordPress websites perform for their business.
+              We’re a team of passionate problem-solvers and out-of-the-box technical thinkers. We want to take as much complexity off of your plate and make your website or mobile app perform for your business
             </Text>
 
           </Box>

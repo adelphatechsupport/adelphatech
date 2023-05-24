@@ -33,13 +33,13 @@ const StoryPage = () => {
       }
     }
   `);
-  console.log("support",support);
+  console.log("support", support);
   return (
     <Box as="section" sx={styles.section}>
       <Container>
         <SectionHeading
           slogan="OUR STORY"
-          title="Frequently asked question"
+          title="Frequently Asked Questions"
           className="mb-5"
         />
         <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0'>
@@ -66,7 +66,7 @@ const StoryPage = () => {
               Proactive and focused on solutions
             </Heading>
             <Text as="p" sx={styles.summary}>
-              It is important for us to understand the goals of our partners to deliver the highest quality of an end result. For this purpose, we specifically assemble a team of project manager, developer and consultant, who take care of the development, management and optimization of the website.
+              It is important for us to understand the goals of our clients to deliver the highest quality end result. We have specifically put together a team that includes a project manager, developer, and consultant who takes care of the development, management, and optimization of your website or mobile application so that we’re delivering what you want, on-time, and on-budget.
             </Text>
           </Box>
           <Box sx={styles.illustration}>
@@ -91,7 +91,7 @@ const StoryPage = () => {
               ADELPHA LABS
             </Heading>
             <Text as="p" sx={styles.summary}>
-              Rapid Prototyping, Minimum Viable Product (MVP), Lean Methodology, Market Validation & Research, Product Development & Strategy
+            Adelpha Labs is where you can get your idea to market with a minimum viable product (MVP) via rapid prototyping so you can obtain market validation without overspending on time and money.
             </Text>
           </Box>
         </Box>

@@ -13,14 +13,14 @@ const data = [
     icon: icon1,
     path: '',
     title: 'Component-Based',
-    description: `Our modular approach to development means we’re able to easily extend and adjust your website in the future.`,
+    description: `Our modular and agile approach to development means we’re able to easily extend and adjust project milestones.`,
   },
   {
     id: 2,
     icon: icon2,
     path: '',
     title: 'Business-Friendly',
-    description: `Our websites are built to perform – just like your business.`,
+    description: `As experts in web development, our websites and mobile applications are built to exceed performance goals - just like your business.`,
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const Approach = () => {
           slogan="Our Approach"
         />
         <Heading sx={styles.title}>
-          With over ten years of experience in Adelphatech development,<br/> we’ve developed the ultimate approach to help our business partners win.
+          With over 10 years of experience  in web and mobile development,<br/> we’ve developed the ultimate approach to helping our clients and partners succeed.
         </Heading>
         <Box sx={styles.grid}>
           {data?.map((item) => (

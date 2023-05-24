@@ -13,10 +13,10 @@ const data = [
   {
     id: 1,
     image: news1,
-    title: 'Internationl Schools Services',
+    title: 'International Schools Services',
     desc:
       '',
-    link: '#',
+    link: '/case-studies',
   },
   {
     id: 2,
@@ -24,21 +24,21 @@ const data = [
     title:
       'Kensington Health',
     desc: '',
-    link: '#',
+    link: '/case-studies',
   },
   {
     id: 3,
     image: news3,
     title: 'Webhelp',
     desc: '',
-    link: '#',
+    link: '/work-details',
   },
   {
     id: 4,
     image: news4,
-    title: 'Tuto Doctor',
+    title: 'Tutor Doctor',
     desc: '',
-    link: '#',
+    link: '/case-studies',
   },
 ];
 

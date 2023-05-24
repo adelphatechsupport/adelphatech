@@ -15,7 +15,7 @@ const Value = () => {
                 <div className='co-xl-12'>
                     <div className='row'>
                         <div className='col-xl-4 col-lg-4 col-md-6 px-lg-0 px--md-0 px-3'>
-                            <div className='card img-value-1 border-0'/>
+                            <div className='card img-value-1 border-0' />
                         </div>
                         <div className='col-xl-4 col-lg-4 col-md-6 px-lg-0 px--md-0 px-3'>
                             <div className='card h-100 rounded-0 border-0 text-center'>
@@ -23,7 +23,7 @@ const Value = () => {
                                     <div as="figure" className='pt-5 mt-5'>
                                         <Image width="64" height="64" src={Flexible} alt={"44"} />
                                     </div>
-                                    <Heading as="h1" className='text-dark fw-bold py-5 '>Flexible <br/>
+                                    <Heading as="h1" className='text-dark fw-bold py-5 '>Flexible <br />
                                         Work Life
                                     </Heading>
                                     <Text as="h6" className='text-dark px-4'>From remote work to flexible working hours. Create a working schedule that suits you best.</Text>
@@ -31,7 +31,7 @@ const Value = () => {
                             </div>
                         </div>
                         <div className='col-xl-4 col-lg-4 col-md-6 px-xl-0 px-lg-0 px--md-0 px-3'>
-                            <div className='card img-value-2 border-0'/>
+                            <div className='card img-value-2 border-0' />
                         </div>
                         <div className='col-xl-4 col-lg-4 col-md-6 px-lg-0 px--md-0 px-3'>
                             <div className='card h-100 rounded-0 border-0 text-center'>
@@ -41,12 +41,12 @@ const Value = () => {
                                     </div>
                                     <Heading as="h1" className='text-dark fw-bold py-5 '>Always Improving
                                     </Heading>
-                                    <Text as="h6" className='text-dark px-4'>We question things for the better and always come up with ways to help each other grow.</Text>
+                                    <Text as="h6" className='text-dark px-4'>We’re always reflecting and questioning so we can be better for our clients.</Text>
                                 </div>
                             </div>
                         </div>
                         <div className='col-xl-4 col-lg-4 col-md-6 px-lg-0 px--md-0 px-3'>
-                            <div className='card img-value-3 border-0'/>
+                            <div className='card img-value-3 border-0' />
                         </div>
                         <div className='col-xl-4 col-lg-4 col-md-6 px-lg-0 px--md-0 px-3'>
                             <div className='card h-100 rounded-0 border-0 text-center'>
@@ -56,7 +56,7 @@ const Value = () => {
                                     </div>
                                     <Heading as="h1" className='text-dark fw-bold py-5 '>Focus on our partners
                                     </Heading>
-                                    <Text as="h6" className='text-dark px-4'>In the fast-moving world of technology, we are keen to maintain long-term and close partnerships.</Text>
+                                    <Text as="h6" className='text-dark px-4'>When you employ AdelphaTech, you become part of the team. We value your long-term relationship and work to maintain your trust and connection.</Text>
                                 </div>
                             </div>
                         </div>

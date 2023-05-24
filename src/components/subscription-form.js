@@ -1,10 +1,11 @@
 /** @jsx jsx */
 import { jsx, Flex, } from 'theme-ui';
 import {Button} from "react-bootstrap"
+import { Link } from 'gatsby';
 const SubscriptionForm = ({ buttonLabel, ...props }) => {
   return (
     <Flex as="form" sx={styles.form} {...props}>
-      <a href="#" className='rounded-0 hbtn slide_right'>{buttonLabel ?? 'Get Started Now!'}</a>
+      <Link to="/contact-us" className='rounded-0 hbtn slide_right'>{buttonLabel ?? 'Get Started Now!'}</Link>
     </Flex>
   );
 };

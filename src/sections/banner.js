@@ -23,9 +23,8 @@ const Banner = () => {
         <Box sx={styles.contentWrapper}>
           <Box sx={styles.bannerContent}>
             <Heading as="h1">
-              Make your <br />business
-              grow <br />
-              with Adelphatech
+            Expand your business <br /> with
+              Adelphatech
             </Heading>
             <SubscriptionForm sx={styles.subscriptionForm} />
           </Box>

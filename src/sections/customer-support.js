@@ -7,10 +7,10 @@ import Image from 'components/image';
 import support from '../assets/images/support.png';
 
 const list = [
-  'PROACTIVE HIRING MODEL',
   'EXPERIENCED SERVICE DELIVERY',
+  'HIGH QUALITY CODE AND DESIGN',
   'DIGITAL TRANSFORMATION',
-  'HIGH QUALITY',
+  'PROACTIVE STAFFING MODEL',
 ];
 
 const CustomerSupport = () => {
@@ -37,14 +37,14 @@ const CustomerSupport = () => {
           </Box>
           <Box sx={styles.content}>
             <SectionHeading
-              slogan="Meet The Team"
+              slogan="Meet AdelphaTech"
               className="text-start"
             />
             <Heading sx={styles.title}>
-              Adelphatech agency for high-performing websites
+              A high-performing agency
             </Heading>
             <Text as="p" sx={styles.summary}>
-              We’re a team of passionate problem-solvers and out-of-the-box technical thinkers. Our objective? To take as much complexity off of our partner’s plates as possible and make their WordPress websites perform for their business.
+              We’re a team of passionate problem-solvers and out-of-the-box technical thinkers. We want to take as much complexity off of your plate and make your website or mobile app perform for your business.
             </Text>
 
             <Grid sx={styles.list} as="ul">

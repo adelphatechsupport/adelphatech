@@ -9,7 +9,7 @@ const data = {
       id: 1,
       value: 10,
       suffix: '+',
-      title: 'Year Experience',
+      title: 'Years Experience',
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ const data = {
       id: 3,
       value: 25,
       suffix: '+',
-      title: 'Working Experts',
+      title: 'Expert Developers',
     },
   ],
 };
