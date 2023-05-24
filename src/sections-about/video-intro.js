@@ -64,7 +64,7 @@ const VideoIntro = () => {
           </Box>
           <Box sx={styles.content}>
             <Heading sx={styles.title}>
-              <span sx={{ background: `url(${paint1})` }}>Adelphatech</span>
+              <span sx={{ background: `url(${paint1})` }}>AdelphaTech</span>
               A high-performing agency
             </Heading>
             <Text as="p" sx={styles.summary}>

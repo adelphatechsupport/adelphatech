@@ -128,74 +128,74 @@ const ContactForm = () => {
     const [isLoading, setLoading] = React.useState(false)
     const [validated, setValidated] = useState(false);
     const [formState, setFormState] = useState({
-        topic: "",
-        name: "",
+        firstName: "",
+        lastName: "",
         email: "",
         message: "",
 
     })
     const handleChange = (e) => {
         const { name, value } = e.target;
-      
+
         // Concatenate first name and last name
         if (name === 'name') {
-          const [firstName, ...lastName] = value.split(' ');
-          setFormState((prevState) => ({
-            ...prevState,
-            firstName: firstName,
-            lastName: lastName.join(' ') || '',
-            name: value,
-          }));
+            const [firstName, ...lastName] = value.split(' ');
+            setFormState((prevState) => ({
+                ...prevState,
+                firstName: firstName,
+                lastName: lastName.join(' ') || '',
+                name: value,
+            }));
         } else {
-          setFormState((prevState) => ({
-            ...prevState,
-            [name]: value,
-          }));
+            setFormState((prevState) => ({
+                ...prevState,
+                [name]: value,
+            }));
         }
-      };
-      const handleSubmit = (e) => {
+    };
+    const handleSubmit = (e) => {
         e.preventDefault();
-        
+
         const form = e.currentTarget;
         if (form.checkValidity() === false) {
-          e.stopPropagation();
-          setValidated(true);
+            e.stopPropagation();
+            setValidated(true);
         } else {
-          setLoading(true);
-          setValidated(false);
-          const recaptchaValue = recaptchaRef.current.getValue();
-          apiCall({
-            method: "POST",
-            link: "https://api.deliveryease.co/api/Generic/Form/AT",
-            data: formState,
-          })
-            .then((response) => {
-              setLoading(false);
-              if (!!response && response.length > 0 && response[0] === 200) {
-                Swal.fire({
-                  position: "top-center",
-                  icon: "success",
-                  title: "Success",
-                });
-                form.reset(); // Clear the form inputs
-                setFormState({
-                  topic: "",
-                  name: "",
-                  email: "",
-                  message: "",
-                });
-              } else {
-                ModelStateMessage(response);
-                setLoading(false);
-              }
+            setLoading(true);
+            setValidated(false);
+            const recaptchaValue = recaptchaRef.current.getValue();
+            apiCall({
+                method: "POST",
+                link: "https://api.deliveryease.co/api/Generic/Form/AT",
+                data: formState,
             })
-            .catch((error) => {
-              // Handle error
-              console.log(error);
-              setLoading(false);
-            });
+                .then((response) => {
+                    setLoading(false);
+                    if (!!response && response.length > 0 && response[0] === 200) {
+                        Swal.fire({
+                            position: "top-center",
+                            icon: "success",
+                            title: "Success",
+                        });
+                        form.reset(); // Clear the form inputs
+                        setFormState({
+                            firstName: "",
+                            lastName: "",
+                            email: "",
+                            message: "",
+                        });
+                    } else {
+                        ModelStateMessage(response);
+                        setLoading(false);
+                    }
+                })
+                .catch((error) => {
+                    // Handle error
+                    console.log(error);
+                    setLoading(false);
+                });
         }
-      };
+    };
     const recaptchaRef = React.createRef()
     return (
         <Box as="section" id="Contactform" sx={styles.section}>
@@ -204,7 +204,7 @@ const ContactForm = () => {
                     Send us a message!
                 </Heading>
                 <Text as="p" sx={styles.summary}>
-                    Fill out the contact form or send an email to <a href='mailto:support@adelphatech.com' className='text-decoration-none' sx={styles.email}>Support@adelphatech.com</a>
+                    Fill out the contact form or send an email to <a href='mailto:support@AdelphaTech.com' className='text-decoration-none' sx={styles.email}>Support@AdelphaTech.com</a>
                 </Text>
                 <Box sx={styles.grid} >
                     <Col xl="9" lg="9" md="11" className='mx-auto py-5'>
@@ -214,33 +214,35 @@ const ContactForm = () => {
                             name="message"
                             data-netlify-honeypot="bot-field">
                             <input type="hidden" name="form-name" value="message" />
-                            <Row className="mb-3">
-                                <Form.Group as={Col} md="6" className="mb-3">
-                                    <FloatingLabel controlId="floatingSelect" label="TOPIC*">
 
-                                        <Form.Select aria-label="Floating label select example" name="topic" onChange={handleChange} required >
-                                            <option></option>
-                                            <option value="Website Lanch / Relaunch">Website Lanch / Relaunch</option>
-                                            <option value="Web Improvement">Web Improvement</option>
-                                            <option value="UX / UI Design">UX / UI Design</option>
-                                        </Form.Select>
-                                    </FloatingLabel>
-                                </Form.Group>
-                            </Row>
                             <Row className="mb-3">
                                 <Form.Group as={Col} md="6" controlId="NAME">
                                     <FloatingLabel
                                         controlId="floatingInput"
-                                        label="FULL NAME*"
+                                        label="FIRST NAME*"
                                         className="mb-3"
                                     >
-                                        <Form.Control type="text" name="name" id="name" onChange={handleChange} placeholder="Your Name" required />
+                                        <Form.Control type="text" name="firstname" id="first_name" onChange={handleChange} placeholder="First Name" required />
                                     </FloatingLabel>
                                     <Form.Control.Feedback type="invalid">
                                         Please provide a valid Name.
                                     </Form.Control.Feedback>
                                 </Form.Group>
-                                <Form.Group as={Col} md="6" controlId="validationCustom04">
+                                <Form.Group as={Col} md="6" controlId="NAME">
+                                    <FloatingLabel
+                                        controlId="floatingInput"
+                                        label="LAST NAME*"
+                                        className="mb-3"
+                                    >
+                                        <Form.Control type="text" name="lastname" id="last_name" onChange={handleChange} placeholder="Last Name" required />
+                                    </FloatingLabel>
+                                    <Form.Control.Feedback type="invalid">
+                                        Please provide a valid Name.
+                                    </Form.Control.Feedback>
+                                </Form.Group>
+                            </Row>
+                            <Row className="mb-3">
+                                <Form.Group as={Col} md="12" controlId="validationCustom04">
                                     <FloatingLabel
                                         controlId="floatingInput"
                                         label="E-MAIL*"

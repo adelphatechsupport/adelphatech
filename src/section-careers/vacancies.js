@@ -35,7 +35,7 @@ const OurVacancies = () => {
                                         </span>
                                         {item.city}, {item.location}
                                     </p>
-                                    <Link to="" className="learn-more adelphatech-primary mb-2">
+                                    <Link to="" className="learn-more AdelphaTech-primary mb-2">
                                         Learn More
                                         <span className="ps-2">
                                             <Svg src={LongArrow} title="Menu" />

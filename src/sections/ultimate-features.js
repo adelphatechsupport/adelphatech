@@ -15,7 +15,7 @@ const data = [
     id: 1,
     icon: icon1,
     path: '#!',
-    title: 'UX/UI Design',
+    title: 'UI/UX Design & Build',
     description: ``,
   },
   {
@@ -50,7 +50,7 @@ const data = [
     id: 6,
     icon: icon6,
     path: '#!',
-    title: 'Support',
+    title: 'Support & Maintenance',
     description: ``,
   },
 ];

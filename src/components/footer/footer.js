@@ -21,7 +21,7 @@ export default function Footer() {
           <Box sx={styles.copyright}>
             <Logo sx={styles.logo} />
             <Text as="span">
-              Copyright by {new Date().getFullYear()} Adelphatech, Inc
+              Copyright by {new Date().getFullYear()} AdelphaTech, Inc
             </Text>
           </Box>
 

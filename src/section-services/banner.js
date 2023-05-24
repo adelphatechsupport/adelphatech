@@ -14,7 +14,7 @@ const Banner = () => {
                         />
                         <Heading sx={styles.title}>
                             Expand your business <br />
-                            with Adelphatech
+                            with AdelphaTech
                         </Heading>
                         <Text as="h5" sx={styles.summary}>
                             From initial consultation to project handover, our team of experts understands your businesses specific needs and provides technical solutions to take your website or mobile app where it needs to go.

@@ -2,7 +2,7 @@
 import SubscriptionForm from 'components/subscription-form';
 import { rgba } from 'polished';
 import { Box, Container, Heading, jsx } from 'theme-ui';
-import video from "../assets/images/adelphatech-vid.mp4"
+import video from "../assets/images/AdelphaTech-vid.mp4"
 
 
 const Banner = () => {
@@ -24,7 +24,7 @@ const Banner = () => {
           <Box sx={styles.bannerContent}>
             <Heading as="h1">
             Expand your business <br /> with
-              Adelphatech
+              AdelphaTech
             </Heading>
             <SubscriptionForm sx={styles.subscriptionForm} />
           </Box>
