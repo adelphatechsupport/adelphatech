@@ -2,7 +2,7 @@
 import SubscriptionForm from 'components/subscription-form';
 import { rgba } from 'polished';
 import { Box, Container, Heading, jsx } from 'theme-ui';
-import video from "../assets/images/Adelphatech-vid.mp4"
+import video from "../assets/images/adelphatech-vid.mp4"
 
 
 const Banner = () => {
