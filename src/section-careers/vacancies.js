@@ -28,7 +28,6 @@ const OurVacancies = () => {
                                         <span className="pe-1">
                                             <Svg
                                                 src={Place}
-                                                height="auto"
                                                 title="Menu"
                                                 className="mb-1"
                                             />
@@ -104,9 +103,6 @@ const OurVacancies = () => {
             name: "Canada",
         },
         {
-            name: "France",
-        },
-        {
             name: "Morocco",
         },
     ]
@@ -116,12 +112,6 @@ const OurVacancies = () => {
             subtitle: "Middle Angular+ Node.js Developer",
             location: "Canada",
             city: "Toronto",
-        },
-        {
-            departement: "Software Development",
-            subtitle: "Middle Angular+ Node.js Developer",
-            location: "France",
-            city: "Paris",
         },
         {
             departement: "Software Development",
@@ -146,12 +136,6 @@ const OurVacancies = () => {
             subtitle: "Senior Business Analyst",
             location: "Morocco",
             city: "Rabat",
-        },
-        {
-            departement: "Project Management",
-            subtitle: "Project Manager",
-            location: "France",
-            city: "Paris",
         },
         {
             departement: "QA & Testing",
@@ -175,12 +159,6 @@ const OurVacancies = () => {
         },
         {
             departement: "Software Development",
-            subtitle: "Middle Angular+ Node.js Developer",
-            location: "France",
-            city: "Paris",
-        },
-        {
-            departement: "Software Development",
             subtitle: "Middle React + Node.js Developer",
             location: "Morocco",
             city: "Rabat",
@@ -202,12 +180,6 @@ const OurVacancies = () => {
             subtitle: "Senior Business Analyst",
             location: "Morocco",
             city: "Rabat",
-        },
-        {
-            departement: "Project Management",
-            subtitle: "Project Manager",
-            location: "France",
-            city: "Paris",
         },
         {
             departement: "QA & Testing",

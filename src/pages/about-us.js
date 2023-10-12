@@ -18,7 +18,6 @@ export default function AboutPage() {
             <Banner />
             <VideoIntro />
             <Services />
-            <StoryPage />
             <Value />
             <Subscribe />
         </Layout>

@@ -7,21 +7,21 @@ const data = {
   stats: [
     {
       id: 1,
-      value: 10,
+      value: 275,
       suffix: '+',
-      title: 'Years Experience',
+      title: 'Projects achieved',
     },
     {
       id: 2,
-      value: 80,
+      value: 100,
       suffix: '+',
-      title: 'Clients Per Year',
+      title: 'Clients satisfied',
     },
     {
       id: 3,
-      value: 25,
-      suffix: '+',
-      title: 'Expert Developers',
+      value: 92,
+      suffix: '%',
+      title: 'Client satisfaction',
     },
   ],
 };

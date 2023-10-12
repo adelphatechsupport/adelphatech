@@ -9,14 +9,14 @@ const Banner = () => {
         <Box as="section" id="about" sx={styles.section}>
             <Container>
                 <SectionHeading
-                    slogan="OUR WORK"
+                    slogan="Case Studies"
                     className="text-start"
                 />
                 <Heading sx={styles.title}>
-                    Oviva Multisite – multilingual and <br /> market-specific
+                    Webhelp's Multinational < br/> Web Presence
                 </Heading>
                 <Text as="p" sx={styles.summary}>
-                    Launch of a multipage solution that automatically directs <br/> visitors to the appropriate market-specific website and<br/> language.
+                    Implementation of a versatile web platform that seamlessly guides visitors <br/> to the most relevant market-specific website and language.
                 </Text>
             </Container>
         </Box>

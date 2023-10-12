@@ -41,7 +41,7 @@ const Value = () => {
                                     </div>
                                     <Heading as="h1" className='text-dark fw-bold py-5 '>Always Improving
                                     </Heading>
-                                    <Text as="h6" className='text-dark px-4'>We’re always reflecting and questioning so we can be better for our clients.</Text>
+                                    <Text as="h6" className='text-dark px-4'>We’re always reflecting and questioning so we can be better for our clients and partners.</Text>
                                 </div>
                             </div>
                         </div>
@@ -56,7 +56,7 @@ const Value = () => {
                                     </div>
                                     <Heading as="h1" className='text-dark fw-bold py-5 '>Focus on our partners
                                     </Heading>
-                                    <Text as="h6" className='text-dark px-4'>When you employ AdelphaTech, you become part of the team. We value your long-term relationship and work to maintain your trust and connection.</Text>
+                                    <Text as="h6" className='text-dark px-4'>When you trust AdelphaTech with your project, you become part of the team. We value your long-term relationship and work to maintain your trust and connection.</Text>
                                 </div>
                             </div>
                         </div>

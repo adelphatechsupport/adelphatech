@@ -1,12 +1,8 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Grid, Heading, Text } from 'theme-ui';
-import { useStaticQuery, graphql, Link } from 'gatsby';
-import { IoIosCheckmarkCircle } from 'react-icons/io';
-import SectionHeading from 'components/section-heading';
 import Image from 'components/image';
-import support from '../assets/images/support.png';
-import { LearnMore } from 'components/link';
+import { graphql, useStaticQuery } from 'gatsby';
 import { Col } from 'react-bootstrap';
+import { Box, Container, Heading, Text, jsx } from 'theme-ui';
 
 
 const BlogDetail = () => {
@@ -24,7 +20,6 @@ const BlogDetail = () => {
       }
     }
   `);
-    console.log("support", support);
     return (
         <Box as="section" id="Blog_Details" sx={styles.section}>
             <Container>
@@ -33,66 +28,69 @@ const BlogDetail = () => {
                         src={data.ImageWebhelp.childImageSharp.gatsbyImageData}
                         loading="lazy"
                         alt="Webhelp"
-                        class="rounded"
+                        className="rounded"
                     />
                 </Col>
                 <Col xl="7" lg="7" md="10" className="mx-auto mb-5">
                     <Text as="p" sx={styles.summary}>
-                        At first glance, the Oviva website appears to be a classic corporate website. In the background, however, there is a well thought-out system that displays the appropriate website depending on where it is accessed.
+                        At first glance, the Webhelp website at webhelp.com appears to be a classic corporate website. However, behind the scenes, there is a well-thought-out system that tailors the website's content based on the user's location.
                     </Text>
                     <Heading sx={styles.title}>
-                        Market-specific <br /> requirements
+                        Webhelp: A Global BPO Leader
                     </Heading>
                     <Text as="p" sx={styles.summary} className='mb-4'>
-                        Founded in 2014, the Swiss health start-up helps people to live healthier and happier by offering app-guided therapy to change eating and lifestyle habits. The costs for the program can be covered by health insurances.
+                        Webhelp is a multi-national business process outsourcing and consultancy company headquartered in Paris. Established in 2000, Webhelp specializes in providing customer experience and business solutions that empower businesses to excel by enhancing the customer journey. Webhelp's extensive range of services caters to various industries and is customized to meet the unique needs of clients.
                     </Text>
                     <Text as="p" sx={styles.summary} className='mb-4'>
-                        Oviva’s therapy offer is available in Germany, Switzerland, France and the UK. However, as health systems differ from country to country, country-specific information is provided. The website for the Swiss market even has to cover three languages: German, French and English.
+                        Webhelp's solutions are accessible worldwide. However, given the diverse requirements of clients across different regions and sectors, Webhelp offers tailored information and solutions for each client. The global website includes content in multiple languages and covers various industries.
                     </Text>
                     <Heading sx={styles.title}>
-                        Design and architecture <br /> seamlessly integrated
+                        Crafting a Unified Web Experience
                     </Heading>
                     <Text as="p" sx={styles.summary} className='mb-4'>
-                        After intensive deliberations on the best possible site architecture, a WordPress multisite was created with a code structure and design all in one.
+                        Following careful consideration of the ideal site structure, a versatile web platform was created to ensure a seamless user experience.
                     </Text>
                     <Text as="p" sx={styles.summary} className='mb-4'>
-                        The site is built with our starter theme Flynt, which is based on a component-based approach. Components are blocks that can be inserted and moved around among each other as desired.
+                        The website is built using a modern web development approach, allowing for flexible content components and ensuring a responsive and adaptable design. Components can be easily customized and repositioned as needed.
                     </Text>
                     <Text as="p" sx={styles.summary} className='mb-4'>
-                        The components for Oviva only have to be developed once and can be used as desired on all websites. Components that are not relevant for certain markets can be excluded from use. The advantage of the multisite solution is that the backend of each website is built in the same way – this makes the work easier for content managers, as they only need to familiarise themselves with one system.
+                        The components for Webhelp's web platform are developed once and can be used as needed across various websites. Components that are irrelevant to specific clients or sectors can be excluded. This approach simplifies the backend structure of each website, making it easier for content managers to work with a consistent system.
                     </Text>
                 </Col>
+
+
                 <Col xl="9" lg="9" md="10" className='mx-auto'>
                     <Image
                         src={data.ImageWebhelpFormation.childImageSharp.gatsbyImageData}
                         loading="lazy"
                         alt="Webhelp formation"
-                        class=""
+                        className=""
                     />
                 </Col>
                 <Col xl="7" lg="7" md="10" className="mx-auto mb-5 py-5">
                     <Heading sx={styles.title}>
-                        Market-specific <br /> requirements
+                        Webhelp's Tailored Solutions
                     </Heading>
                     <Text as="p" sx={styles.summary} className='mb-4'>
-                        Founded in 2014, the Swiss health start-up helps people to live healthier and happier by offering app-guided therapy to change eating and lifestyle habits. The costs for the program can be covered by health insurances.
+                        Founded in 2000, Webhelp is a global leader in customer experience and business solutions. Webhelp specializes in enhancing the customer journey for businesses across diverse industries by providing customized services that meet the unique needs of clients.
                     </Text>
                     <Text as="p" sx={styles.summary} className='mb-4'>
-                        Oviva’s therapy offer is available in Germany, Switzerland, France and the UK. However, as health systems differ from country to country, country-specific information is provided. The website for the Swiss market even has to cover three languages: German, French and English.
+                        Webhelp's solutions are accessible globally, serving clients in various regions and industries. However, recognizing the diverse requirements of clients and the distinct demands of different markets, Webhelp provides tailored information and solutions for each client. The global website is designed to accommodate multiple languages and diverse sectors.
                     </Text>
                     <Heading sx={styles.title}>
-                        Design and architecture <br /> seamlessly integrated
+                        Building Seamless Web Experiences
                     </Heading>
                     <Text as="p" sx={styles.summary} className='mb-4'>
-                        After intensive deliberations on the best possible site architecture, a WordPress multisite was created with a code structure and design all in one.
+                        After careful considerations of the optimal site architecture, Webhelp crafted a highly adaptable web platform to ensure a seamless user experience.
                     </Text>
                     <Text as="p" sx={styles.summary} className='mb-4'>
-                        The site is built with our starter theme Flynt, which is based on a component-based approach. Components are blocks that can be inserted and moved around among each other as desired.
+                        The website is constructed using contemporary web development approaches, allowing for flexible content components that ensure a responsive and adaptive design. These components can be easily customized and rearranged based on the unique needs of each client.
                     </Text>
                     <Text as="p" sx={styles.summary} className='mb-4'>
-                        The components for Oviva only have to be developed once and can be used as desired on all websites. Components that are not relevant for certain markets can be excluded from use. The advantage of the multisite solution is that the backend of each website is built in the same way – this makes the work easier for content managers, as they only need to familiarise themselves with one system.
+                        Webhelp's approach ensures that components developed for the web platform are versatile and can be utilized across various websites and industries. Components that are not pertinent to specific clients or sectors can be excluded. This unified approach streamlines the backend of each website, simplifying the work for content managers who only need to learn and manage one consistent system.
                     </Text>
                 </Col>
+
             </Container>
         </Box >
     );

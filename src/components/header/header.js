@@ -25,7 +25,6 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     function handleScroll() {
       setIsSticky(window.pageYOffset > 0);
-      console.log("window.pageYOffset", window.pageYOffset)
     }
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -49,7 +48,7 @@ export default function Header() {
             <nav as="nav" sx={{ ...styles.navbar, color: navColor }} className={'navbar'}>
               {menuItems.map(({ path, label }, i) => (
                 <Link to={"/" + path} className="nav-item"
-                  activeClassName="active">{label}</Link>
+                  activeClassName="active" key={label}>{label}</Link>
               ))}
             </nav>
             <NavbarDrawer />

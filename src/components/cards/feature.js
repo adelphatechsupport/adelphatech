@@ -55,11 +55,10 @@ const styles = {
       fontWeight: 500,
       lineHeight: 1.28,
       color: 'heading',
-      marginBottom: 2,
+      marginBottom: 0,
     },
     p: {
-      fontSize: [1, null, null, null, 2],
-      lineHeight: 1.88,
+      fontSize: 9,
       color: 'headingSecondary',
     },
     a: {

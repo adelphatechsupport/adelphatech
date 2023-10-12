@@ -110,9 +110,21 @@ nav.navbar a {
   /* background-image: url(../images/abstract.png); */
   background-size: contain;
 }
+button#rcc-confirm-button {
+  background: #46c4f8 !important;
+}
+.CookieConsent {
+  background-color: #09386b !important;
+}
 #partners figure img {
   object-fit: contain;
   mix-blend-mode: luminosity;
+  aspect-ratio: 3/2;
+  width: 188px;
+}
+#partners figure img:hover {
+  mix-blend-mode: normal;
+  transition: 0.2s;
 }
 .hbtn {
   position: relative;

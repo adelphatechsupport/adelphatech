@@ -1,8 +1,8 @@
 /** @jsx jsx */
+import { Link } from 'gatsby';
 import { useRef, useState } from 'react';
 // import fetch from 'isomorphic-unfetch';
-import { jsx } from 'theme-ui';
-import { Container, Flex, Box, Button, Input, Text, Heading } from 'theme-ui';
+import { Box, Button, Flex, Heading, Input, Text, jsx } from 'theme-ui';
 
 export default function Subscribe() {
   // 1. Create a reference to the input so we can fetch/clear it's value.
@@ -77,46 +77,14 @@ export default function Subscribe() {
         <Box sx={styles.contentBox} className='rounded-0'>
           <Box sx={styles.contentBoxInner}>
             <Heading as="h2" sx={styles.title}>
-              STAY CONNECTED
+              READY TO GET STARTED?
             </Heading>
             <Text as="p" sx={styles.description}>
-              Subscribe to our monthly whitepapers to learn how technology is being used by businesses just like yours.
+              Provide a brief description of your project and will team will contact you with 24 hours.
             </Text>
-            <form >
-              <Flex sx={styles.subscribeForm}>
-                <label htmlFor="email" sx={{ variant: 'styles.srOnly' }}>
-                  Email Address
-                </label>
-                <Input
-                  ref={inputEl}
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Enter your email address"
-                />
-
-                <div>
-                  {status.info.error && (
-                    <div className="error">Error: {status.info.msg}</div>
-                  )}
-                  {!status.info.error && status.info.msg && (
-                    <div className="success">{status.info.msg}</div>
-                  )}
-                </div>
-                <Button
-                  type="submit"
-                  disabled={status.submitting}
-                  className="subscribe__btn"
-                  aria-label="Subscribe"
-                >
-                  {!status.submitting
-                    ? !status.submitted
-                      ? 'Subscribe'
-                      : 'Submitted'
-                    : 'Submitting...'}
-                </Button>
-              </Flex>
-            </form>
+            <Link to="/contact-us" className='btn btn-light mt-3'>
+              Contact Us
+            </Link>
           </Box>
         </Box>
       </div>
@@ -183,7 +151,7 @@ const styles = {
       borderRadius: '45px',
       ml: [0, 2],
       backgroundColor: ['text', '#14113e'],
-      color:['#14113e','text'],
+      color: ['#14113e', 'text'],
       mt: [2, 0],
       py: ['15px'],
     },

@@ -13,42 +13,42 @@ import Avatar4 from '../assets/testimonial/avatar4.jpg';
 const data = [
   {
     id: 1,
-    title: 'Modern look & trending design',
+    title: 'International Schools Services',
     description:
-      'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
+      ' Consultancies are often an unknown, and you never know what your actual experience will be. Adelphatech has exceeded our expectations by performing work at a high level of competence, within budget, ahead of schedule.',
     avatar: Avatar1,
-    name: 'Denny Hilguston',
-    designation: '@denny.hil',
+    name: 'Malcolm S.',
+    designation: 'CIO, ISS',
     review: 4,
   },
   {
     id: 2,
-    title: 'Design Quality & performance',
+    title: 'Deloitte',
     description:
-      'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
+      'AdelphaTech has been a tremendous help to my team at Deloitte. As part of our innovation agenda, we are working on developing technology that opens up new business models for Deloitte.',
     avatar: Avatar2,
-    name: 'Denny Hilguston',
-    designation: '@denny.hil',
+    name: 'Matthew S.',
+    designation: 'Team Lead, Deloitte',
     review: 5,
   },
   {
     id: 3,
-    title: 'Layout and organized layers',
+    title: 'University Health Network',
     description:
-      'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
+      'AdelphaTech provides high quality service, attention to detail, and insightful observations when working on a project. I would not hesitate to recommend AdelphaTech for any project.',
     avatar: Avatar3,
-    name: 'Denny Hilguston',
-    designation: '@denny.hil',
+    name: 'Richard .C',
+    designation: 'Director of IT, PMCF',
     review: 5,
   },
   {
     id: 4,
-    title: 'Modern look & trending design',
+    title: 'InstaSize',
     description:
-      'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
+      'Our app has millions of users and so the team working with us had to be top-of-the-line. AdelphaTech has delivered a terrific mobile app on-time and on-budget. The customer service was excellent as we went through the complicated process of porting from iOS to Android.',
     avatar: Avatar4,
-    name: 'Denny Hilguston',
-    designation: '@denny.hil',
+    name: 'Eddy H.',
+    designation: 'COO, InstaSize',
     review: 4,
   },
 ];
@@ -163,6 +163,9 @@ const styles = {
       ],
       mr: ['auto', null, null, null, null, null, null, '0px'],
       ml: 'auto',
+      '.react-multi-carousel-track ':{
+        pb: '60px',
+      },
       '.react-multi-carousel-item': {
         transition: 'all 0.25s',
       },
@@ -178,6 +181,7 @@ const styles = {
     boxShadow: '0px 0px 1px rgba(38, 78, 118, 0.35)',
     transition: 'all 0.3s',
     borderRadius: '6px',
+    height:'100%',
     p: [
       '30px 20px 35px',
       '30px 25px 35px',
@@ -205,6 +209,7 @@ const styles = {
         listStyle: 'none',
         mb: 0,
         display: 'flex',
+        pb:'10px'
       },
       svg: {
         marginRight: '2px',

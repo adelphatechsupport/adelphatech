@@ -10,7 +10,6 @@ const ApproachCard = ({ data, ...props }) => {
         <Image src={data?.icon} sx={styles.icon} alt={data?.title} />
         <Svg
           src={data?.icon} sx={styles.icon} title={data?.title}
-          height="auto"
         />
       </Box>
       <Box>

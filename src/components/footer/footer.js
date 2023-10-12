@@ -5,6 +5,7 @@ import { Link } from 'components/link';
 import FooterWidget from 'components/footer/widget';
 import { menuItems, footerNav } from './footer.data';
 import { rgba } from 'polished';
+import { IoLogoFacebook, IoLogoLinkedin, IoLogoTwitter } from 'react-icons/io';
 
 export default function Footer() {
   return (
@@ -31,6 +32,21 @@ export default function Footer() {
                 <Link path={path} key={i} label={label} variant="footer" />
               </li>
             ))}
+            <li>
+              <a href="https://www.linkedin.com/company/adelpha-tech" target="_blank">
+                <IoLogoLinkedin size="23px" color="#5c3669" />
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/AdelphaTech" target="_blank">
+                <IoLogoTwitter size="23px" color="#5c3669" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/adelphatech/" target="_blank">
+                <IoLogoFacebook size="23px" color="#5c3669" />
+              </a>
+            </li>
           </Box>
         </Box>
       </Container>

@@ -1,28 +1,37 @@
 /** @jsx jsx */
-import CBC from "../assets/images/partners/CBC.png";
-import Deloitte from "../assets/images/partners/Deloitte.png";
-import Kentico from "../assets/images/partners/Kentico.png";
-import Trillium from "../assets/images/partners/Trillium.png";
 import { rgba } from 'polished';
 import { Box, Flex, Heading, Image, jsx } from 'theme-ui';
+import CBC from "../assets/images/partners/CBC.png";
+import Deloitte from "../assets/images/partners/Deloitte.png";
+import Loblaws from "../assets/images/partners/Loblaws.png";
+import MotusBank from "../assets/images/partners/Motus.png";
+import ShoppersDrugMart from "../assets/images/partners/ShoppersDrugMart.png";
 
 const logos = [
     {
-        name: 'Kentico',
-        src: Kentico,
-    },
-   
-    {
         name: 'CBC',
         src: CBC,
+        link:'https://CBC.ca'
     },
     {
-        name: 'Trillium',
-        src: Trillium,
+        name: 'Loblaws',
+        src: Loblaws,
+        link:'https://www.loblaws.ca'
+    },
+    {
+        name: 'ShoppersDrugMart',
+        src: ShoppersDrugMart,
+        link:'https://www.shoppersdrugmart.ca/'
     },
     {
         name: 'Deloitte',
         src: Deloitte,
+        link:'https://www2.deloitte.com/us/en.html'
+    },
+    {
+        name: 'MotusBank',
+        src: MotusBank,
+        link:'https://www.motusbank.ca/'
     },
 
 ];
@@ -37,7 +46,9 @@ const Partners = () => {
                         <Flex sx={styles.sponsor}>
                             {logos?.map((logo, index) => (
                                 <Flex as="figure" key={index}>
-                                    <Image src={logo.src} alt={logo.name} />
+                                    <a href={logo.link} target="_blank">
+                                        <Image src={logo.src} alt={logo.name} />
+                                    </a>
                                 </Flex>
                             ))}
                         </Flex>
@@ -110,7 +121,7 @@ const styles = {
                 maxWidth: ['60px', null, null, null, '80px', '100%'],
                 width: '75%',
                 aspectRatio: '3/2',
-                Object:'contain'
+                Object: 'contain'
             },
         },
     },

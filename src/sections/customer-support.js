@@ -1,16 +1,14 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Grid, Heading, Text } from 'theme-ui';
-import { useStaticQuery, graphql } from 'gatsby';
-import { IoIosCheckmarkCircle } from 'react-icons/io';
-import SectionHeading from 'components/section-heading';
 import Image from 'components/image';
-import support from '../assets/images/support.png';
+import SectionHeading from 'components/section-heading';
+import { graphql, useStaticQuery } from 'gatsby';
+import { IoIosCheckmarkCircle } from 'react-icons/io';
+import { Box, Container, Grid, Heading, Text, jsx } from 'theme-ui';
 
 const list = [
-  'EXPERIENCED SERVICE DELIVERY',
-  'HIGH QUALITY CODE AND DESIGN',
-  'DIGITAL TRANSFORMATION',
-  'PROACTIVE STAFFING MODEL',
+  'Experienced Service Delivery',
+  'Uncompromising Code and Design Quality',
+  'Championing Digital Transformation',
 ];
 
 const CustomerSupport = () => {
@@ -23,7 +21,6 @@ const CustomerSupport = () => {
       }
     }
   `);
-  console.log(support);
   return (
     <Box as="section" sx={styles.section}>
       <Container>
@@ -41,10 +38,10 @@ const CustomerSupport = () => {
               className="text-start"
             />
             <Heading sx={styles.title}>
-              A high-performing agency
+              A top-performing agency
             </Heading>
             <Text as="p" sx={styles.summary}>
-              We’re a team of passionate problem-solvers and out-of-the-box technical thinkers. We want to take as much complexity off of your plate and make your website or mobile app perform for your business.
+              We're a dynamic team of passionate problem-solvers and innovative technical thinkers. Our mission is to simplify your digital transformation journey and empower your website or mobile app to drive real business results.
             </Text>
 
             <Grid sx={styles.list} as="ul">

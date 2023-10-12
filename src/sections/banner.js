@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import SubscriptionForm from 'components/subscription-form';
 import { rgba } from 'polished';
-import { Box, Container, Heading, jsx } from 'theme-ui';
+import { Box, Container, Heading, Text, jsx } from 'theme-ui';
 import video from "../assets/images/adelphatech-vid.mp4"
 
 
@@ -22,10 +22,15 @@ const Banner = () => {
         </div>
         <Box sx={styles.contentWrapper}>
           <Box sx={styles.bannerContent}>
-            <Heading as="h1">
-            Expand your business <br /> with
-              AdelphaTech
+            <Heading as="h1" className='mb-4'>
+              Bringing <br />
+              projects to <span className='display-4 fw-bolder'>Life</span>
             </Heading>
+            <Text as="h5" sx={styles.summary} className='text-white lh-lg'>
+              For over 10+ years, clients have trusted us in supporting their software development needs at super
+              competitive rates. We are experts in a variety of skillsets from ai, web, cloud, mobile and desktop
+              technologies. Take a look at some of our delivered projects, for companies small, medium and large.
+            </Text>
             <SubscriptionForm sx={styles.subscriptionForm} />
           </Box>
           <Box>
@@ -63,7 +68,7 @@ const styles = {
       fontFamily: 'headingAlt',
       fontSize: [9, null, null, 10, 12, 45, 16],
       lineHeight: [1.31, null, null, 1.5, null, 1.26],
-      letterSpacing: [0, null, null, null, '-1.5px'],
+      letterSpacing: [0, null, null, null, '9px'],
       color: '#fff',
     },
     p: {

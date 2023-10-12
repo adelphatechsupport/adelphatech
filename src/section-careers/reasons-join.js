@@ -71,7 +71,6 @@ const ReasonJoin = () => {
                                     <Link to="" className="rounded-arrow">
                                         <Svg
                                             src={ArrowRight}
-                                            height="auto"
                                             title="Menu"
                                             className=""
                                         />

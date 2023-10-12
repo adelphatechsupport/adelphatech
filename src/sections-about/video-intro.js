@@ -53,19 +53,19 @@ const VideoIntro = () => {
               height="557"
               alt="video banner"
             />
-            <Button
+            {/* <Button
               variant="text"
               sx={styles.playPause}
               onClick={() => setIsOpen(true)}
             >
               <Img width="22" height="22" src={play} alt="play" /> Watch Full
               video
-            </Button>
+            </Button> */}
           </Box>
           <Box sx={styles.content}>
             <Heading sx={styles.title}>
               <span sx={{ background: `url(${paint1})` }}>AdelphaTech</span>
-              A high-performing agency
+              A top-performing agency
             </Heading>
             <Text as="p" sx={styles.summary}>
               We’re a team of passionate problem-solvers and out-of-the-box technical thinkers. We want to take as much complexity off of your plate and make your website or mobile app perform for your business

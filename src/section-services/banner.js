@@ -10,14 +10,14 @@ const Banner = () => {
                     <Box sx={styles.content}>
                         <SectionHeading
                             sx={styles.heading}
-                            slogan='OUR SERVICE'
+                            slogan='OUR SERVICES'
                         />
                         <Heading sx={styles.title}>
-                            Expand your business <br />
-                            with AdelphaTech
+                            Bringing <br />
+                            projects to <span className='display-4 fw-bolder'>Life</span>
                         </Heading>
                         <Text as="h5" sx={styles.summary}>
-                            From initial consultation to project handover, our team of experts understands your businesses specific needs and provides technical solutions to take your website or mobile app where it needs to go.
+                            From the very first consultation to the final project handover, our team of seasoned experts meticulously assesses your business's distinct needs. We then craft customized technical solutions to guide your website or mobile app precisely where it aspires to be.
                         </Text>
                     </Box>
                 </Box>

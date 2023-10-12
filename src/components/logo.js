@@ -6,9 +6,7 @@ import LogoHeader from '../assets/images/logoheader.png';
 import LogoWhite from '../assets/images/logowhite.png'
 
 export default function Logo(props) {
-  console.log(
-    "props", props
-  )
+  
   const [isSticky, setIsSticky] = useState(false);
   const [pathName, setPathName] = useState("");
 

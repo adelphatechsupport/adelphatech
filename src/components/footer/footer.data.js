@@ -129,19 +129,15 @@ export const menuItems = [
 
 export const footerNav = [
   {
-    path: '#!',
+    path: '/',
     label: 'Home',
   },
   {
-    path: '#!',
-    label: 'Advertise',
+    path: '/careers',
+    label: 'Careers',
   },
   {
-    path: '#!',
-    label: 'Supports',
-  },
-  {
-    path: '#!',
-    label: 'FAQ',
+    path: '/contact-us',
+    label: 'Contact Us',
   },
 ];

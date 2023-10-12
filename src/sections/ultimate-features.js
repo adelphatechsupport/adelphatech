@@ -5,52 +5,52 @@ import Feature from 'components/cards/feature';
 
 import icon1 from '../assets/images/features/1.svg';
 import icon2 from '../assets/images/features/2.svg';
-import icon3 from '../assets/images/features/3.svg';
+import icon3 from '../assets/images/features/mobile-app.svg';
 import icon4 from '../assets/images/features/4.svg';
-import icon5 from '../assets/images/features/5.svg';
+import icon5 from '../assets/images/features/web-development.svg';
 import icon6 from '../assets/images/features/6.svg';
 
 const data = [
   {
-    id: 1,
-    icon: icon1,
-    path: '#!',
-    title: 'UI/UX Design & Build',
-    description: ``,
-  },
-  {
     id: 2,
     icon: icon2,
     path: '#!',
-    title: 'Website Development',
-    description: ``,
-  },
-  {
-    id: 3,
-    icon: icon3,
-    path: '#!',
-    title: 'PROJECT MANAGEMENT',
-    description: ``,
-  },
-  {
-    id: 4,
-    icon: icon4,
-    path: '#!',
-    title: 'Website Maintenance',
+    title: 'UI/UX Design & Build',
     description: ``,
   },
   {
     id: 5,
     icon: icon5,
     path: '#!',
-    title: 'Website Improvement',
+    title: 'Web',
+    description: `Development`,
+  },
+  {
+    id: 3,
+    icon: icon3,
+    path: '#!',
+    title: 'Mobile App Development',
     description: ``,
+  },
+  {
+    id: 1,
+    icon: icon1,
+    path: '#!',
+    title: 'Chatbots',
+    description: `and AI`,
+  },
+  {
+    id: 4,
+    icon: icon4,
+    path: '#!',
+    title: 'Digital',
+    description: `Strategy`,
   },
   {
     id: 6,
     icon: icon6,
     path: '#!',
-    title: 'Support & Maintenance',
+    title: 'Data Security and Privacy',
     description: ``,
   },
 ];
@@ -62,7 +62,7 @@ const UltimateFeatures = () => {
         <SectionHeading
           sx={styles.heading}
           slogan="Our Services"
-          title="We are experts in the following technologies"
+          title="We are experts in the following areas"
         />
         <Box sx={styles.grid}>
           {data?.map((item) => (

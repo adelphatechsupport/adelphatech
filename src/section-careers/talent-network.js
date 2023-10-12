@@ -3,6 +3,7 @@ import { Box, Button, Container, Heading, Text, jsx } from 'theme-ui';
 import SectionHeading from '../components/section-heading';
 import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
 import { useState } from 'react';
+import { IoMdCloudUpload } from 'react-icons/io';
 
 const TalentNetwork = () => {
     const [validated, setValidated] = useState(false);
@@ -46,7 +47,7 @@ const TalentNetwork = () => {
                                     Please provide a valid Name.
                                 </Form.Control.Feedback>
                             </Form.Group>
-                            <Form.Group as={Col} md="6" controlId="validationCustom04">
+                            <Form.Group as={Col} md="6" controlId="validationEmail">
                                 <FloatingLabel
                                     controlId="floatingInput"
                                     label="E-MAIL*"
@@ -60,7 +61,7 @@ const TalentNetwork = () => {
                             </Form.Group>
                         </Row>
                         <Row className="mb-4">
-                            <Form.Group controlId="validationCustom04">
+                            <Form.Group controlId="validationBreif">
                                 <FloatingLabel controlId="floatingTextarea2" label="Message*">
                                     <Form.Control
                                         as="textarea"
@@ -73,11 +74,11 @@ const TalentNetwork = () => {
                         </Row>
                         <Row className="mb-4 px-2">
                             <Form.Group controlId="filePicker" className="mb-3 file-upload">
-                                    <Form.Label for="filePicker"><i class="fa-solid fa-file"></i> Upload Resume</Form.Label>
-                                    <Form.Control type="file" style={{ visibility: "hidden" }} id="filePicker" size="lg" />
+                                <Form.Label><IoMdCloudUpload /> Upload Resume</Form.Label>
+                                <Form.Control type="file" style={{ visibility: "hidden" }} id="filePicker" size="lg" />
                             </Form.Group>
                         </Row>
-                        <Button type="submit" className='buttonform' >Apply</Button>
+                        <Button type="submit" className='buttonform' onClick={handleSubmit} >Apply</Button>
                     </Form>
                 </Col>
             </Container>
@@ -134,9 +135,9 @@ const styles = {
     },
     '.buttonform': {
         borderRadius: 0,
-        border:' 1px solid #09386b',
+        border: ' 1px solid #09386b',
         backgroundColor: 'transparent',
         color: '#09386b',
         minHeight: '44px',
-      },
+    },
 };

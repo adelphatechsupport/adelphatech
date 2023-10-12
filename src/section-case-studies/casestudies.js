@@ -40,7 +40,6 @@ const Work = () => {
       }
     }
   `);
-  console.log("support", support);
   return (
     <Box as="section" id="CaseStudies" sx={styles.section}>
       <Container>
@@ -56,15 +55,15 @@ const Work = () => {
             src={data.ImageWebhelp.childImageSharp.gatsbyImageData}
             loading="lazy"
             alt="Webhelp"
-            class="rounded"
+            className="rounded"
           />
         </Link>
         <div className='ps-5 ms-5 mb-5'>
           <Heading sx={styles.title}>
-            Oviva Multisite – <br /> multilingual and market-<br />specific
+            Webhelp's Multinational < br /> Web Presence
           </Heading>
           <Text as="p" sx={styles.summary}>
-            Launch of a multipage solution that automatically directs visitors to the <br /> appropriate market-specific website and language.
+            Implementation of a versatile web platform that seamlessly guides visitors <br /> to the most relevant market-specific website and language.
           </Text>
           <LearnMore
             path="/work-details"
@@ -83,11 +82,12 @@ const Work = () => {
           <Box sx={styles.content}>
 
             <Heading sx={styles.title}>
-              Hy – Relaunch of a <br /> data-driven consulting <br /> agency
+              CBC – A Beacon of Canadian Broadcasting
             </Heading>
             <Text as="p" sx={styles.summary}>
-              Learn how we helped this top consulting group <br /> relaunch their website to attract new executive <br /> clients and high-quality candidates, with a<br /> custom-made, fast and easy-to-use website.
+              Explore how the CBC, Canada's national public broadcaster, has been a cornerstone of Canadian media, delivering news, entertainment, and culture to the nation for generations.
             </Text>
+
             <LearnMore
               path="/"
               sx={{ mt: [3, null, null, 4] }}
@@ -98,11 +98,12 @@ const Work = () => {
         <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-5 my-5'>
           <Box sx={styles.content}>
             <Heading sx={styles.title}>
-              Finanzen.de – A Smooth<br /> Transition into a Brand<br /> New SEO Portal
+              International Schools Services (ISS) – Transforming Global Education
             </Heading>
             <Text as="p" sx={styles.summary}>
-              We helped Germany’s largest portal for finance-related topics migrate to a new website and reap the benefits of search engine optimization in the long term.
+              ISS has played a pivotal role in shaping global education by providing comprehensive services and support to international schools.
             </Text>
+
             <LearnMore
               path="/"
               sx={{ mt: [3, null, null, 4] }}
@@ -128,11 +129,12 @@ const Work = () => {
           <Box sx={styles.content}>
 
             <Heading sx={styles.title}>
-              Toolkit Digitalisierung – <br /> Setting Up an Activist’s <br /> Database for Success
+              Instasize – Empowering Visual Storytelling
             </Heading>
             <Text as="p" sx={styles.summary}>
-              We used our collective knowledge to help their new website perform, scale and have an uninterrupted user experience.
+              Discover how Instasize has revolutionized visual content creation, providing users with powerful tools and features for enhancing and sharing their visual stories.
             </Text>
+
             <LearnMore
               path="/"
               sx={{ mt: [3, null, null, 4] }}

@@ -12,22 +12,22 @@ const data = [
     id: 1,
     icon: icon1,
     path: '',
-    title: 'Component-Based',
-    description: `Our modular and agile approach to development means we’re able to easily extend and adjust project milestones.`,
+    title: 'Analyze & Design',
+    description: `In the initial phase of "Our Approach," we carefully assess your project needs. Drawing on over a decade of experience in web and mobile development, our experts create a blueprint aligned with your vision, setting the stage for success.`,
   },
   {
     id: 2,
     icon: icon2,
     path: '',
-    title: 'Business-Friendly',
-    description: `As experts in web development, our websites and mobile applications are built to exceed performance goals - just like your business.`,
+    title: 'Build',
+    description: `Following analysis and design, we bring your project to life with precision and expertise. Our extensive web and mobile development experience ensures that every line of code and pixel meet industry standards, delivering both functionality and aesthetics.`,
   },
   {
     id: 3,
     icon: icon3,
     path: '',
-    title: 'Transparent and Responsive',
-    description: `From detailed project breakdowns to our responsive support staff, we make sure that you are always well informed.`,
+    title: 'Test & Deploy',
+    description: `In the final phase, we rigorously test and seamlessly deploy your project, ensuring top-notch quality and performance. With over a decade of experience, we guarantee your project's success from inception to execution.`,
   },
 ];
 

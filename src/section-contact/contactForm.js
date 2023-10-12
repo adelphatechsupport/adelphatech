@@ -204,7 +204,7 @@ const ContactForm = () => {
                     Send us a message!
                 </Heading>
                 <Text as="p" sx={styles.summary}>
-                    Fill out the contact form or send an email to <a href='mailto:support@AdelphaTech.com' className='text-decoration-none' sx={styles.email}>Support@AdelphaTech.com</a>
+                    Fill out the contact form or send an email to <a href='mailto:hello@adelphatech.com' className='text-decoration-none' sx={styles.email}>hello@adelphatech.com</a>
                 </Text>
                 <Box sx={styles.grid} >
                     <Col xl="9" lg="9" md="11" className='mx-auto py-5'>
@@ -216,9 +216,9 @@ const ContactForm = () => {
                             <input type="hidden" name="form-name" value="message" />
 
                             <Row className="mb-3">
-                                <Form.Group as={Col} md="6" controlId="NAME">
+                                <Form.Group as={Col} md="6" controlId="FNAME">
                                     <FloatingLabel
-                                        controlId="floatingInput"
+                                        controlId="floatingInputFName"
                                         label="FIRST NAME*"
                                         className="mb-3"
                                     >
@@ -228,9 +228,9 @@ const ContactForm = () => {
                                         Please provide a valid Name.
                                     </Form.Control.Feedback>
                                 </Form.Group>
-                                <Form.Group as={Col} md="6" controlId="NAME">
+                                <Form.Group as={Col} md="6" controlId="LNAME">
                                     <FloatingLabel
-                                        controlId="floatingInput"
+                                        controlId="floatingInputLName"
                                         label="LAST NAME*"
                                         className="mb-3"
                                     >
@@ -244,7 +244,7 @@ const ContactForm = () => {
                             <Row className="mb-3">
                                 <Form.Group as={Col} md="12" controlId="validationCustom04">
                                     <FloatingLabel
-                                        controlId="floatingInput"
+                                        controlId="floatingInputEmail"
                                         label="E-MAIL*"
                                         className="mb-3"
                                     >
@@ -256,8 +256,8 @@ const ContactForm = () => {
                                 </Form.Group>
                             </Row>
                             <Row className="mb-4">
-                                <Form.Group controlId="validationCustom04">
-                                    <FloatingLabel controlId="floatingTextarea2" label="Message*">
+                                <Form.Group controlId="validationBreif">
+                                    <FloatingLabel controlId="floatingTextarea2" label="Project Brief*">
                                         <Form.Control
                                             as="textarea"
                                             placeholder="Your Message"

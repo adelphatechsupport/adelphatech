@@ -53,7 +53,7 @@ const Blog = () => {
         <SectionHeading
           sx={{ mb: [6, null, null, 14] }}
           slogan="Our work"
-          title="We help our partners succeed with high-quality websites."
+          title="We assist our partners in achieving success through the development of top-notch websites, web and mobile apps."
         />
         <Masonry sx={styles.masonry} options={masonryOptions}>
           {data.map((post) => (

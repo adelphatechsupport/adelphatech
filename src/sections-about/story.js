@@ -1,10 +1,8 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Grid, Heading, Text } from 'theme-ui';
-import { useStaticQuery, graphql } from 'gatsby';
-import { IoIosCheckmarkCircle } from 'react-icons/io';
-import SectionHeading from 'components/section-heading';
 import Image from 'components/image';
-import support from '../assets/images/support.png';
+import SectionHeading from 'components/section-heading';
+import { graphql, useStaticQuery } from 'gatsby';
+import { Box, Container, Heading, Text, jsx } from 'theme-ui';
 
 const list = [
   'PROACTIVE HIRING MODEL',
@@ -33,7 +31,6 @@ const StoryPage = () => {
       }
     }
   `);
-  console.log("support", support);
   return (
     <Box as="section" sx={styles.section}>
       <Container>
