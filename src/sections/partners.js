@@ -43,7 +43,7 @@ const Partners = () => {
                 <Box sx={styles.contentWrapperPartner}>
                     <Flex sx={styles.sponsoredBy}>
                         <Heading as="h1" className="me-5">Trusted by</Heading>
-                        <Flex sx={styles.sponsor}>
+                        <Flex sx={styles.sponsor} className='flex-wrap'>
                             {logos?.map((logo, index) => (
                                 <Flex as="figure" key={index}>
                                     <a href={logo.link} target="_blank">
@@ -106,6 +106,7 @@ const styles = {
     sponsoredBy: {
         alignItems: 'center',
         justifyContent: ['right', null, null, 'right'],
+
         maxWidth: [null, null, null, 470, 'none'],
         span: {
             fontSize: ['13px', null, null, null, 2],
@@ -115,6 +116,7 @@ const styles = {
     },
     sponsor: {
         alignItems: 'center',
+        display: 'flex',
         figure: {
             ml: [2, null, null, null, 4, 5],
             img: {
