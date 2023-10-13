@@ -1,22 +1,26 @@
 const menuItems = [
   {
-    path: 'services',
+    path: '/',
+    label: 'Home',
+  },
+  {
+    path: '/services',
     label: 'Services',
   },
   {
-    path: 'about-us',
+    path: '/about-us',
     label: 'About Us',
   },
   {
-    path: 'case-studies',
+    path: '/case-studies',
     label: 'Case Studies',
   },
   {
-    path: 'careers',
+    path: '/careers',
     label: 'Careers',
   },
   {
-    path: 'contact-us',
+    path: '/contact-us',
     label: 'Contact Us',
   },
 ];

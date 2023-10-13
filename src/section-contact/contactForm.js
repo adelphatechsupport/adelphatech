@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FloatingLabel } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import { Box, Button, Container, Heading, Text } from "theme-ui";
 import Recaptcha from "react-google-recaptcha";
 import Swal from "sweetalert2";
+import axios from 'axios';
 const ContactForm = () => {
     async function apiCall(props) {
         return await fetch(props?.link, {
@@ -134,6 +135,29 @@ const ContactForm = () => {
         message: "",
 
     })
+    const recaptchaRef = React.createRef();
+    useEffect(() => {
+        // Inside a useEffect, you can make asynchronous calls
+        async function fetchData() {
+            try {
+                const recaptchaToken = '6LcaS5ooAAAAAHWZ1IRAfcBVw18YoW0v4gkfC20g'; // Get the reCAPTCHA token
+
+                const response = await axios.post('/.netlify/functions/verifyRecaptcha', {
+                    token: recaptchaToken,
+                });
+
+                if (response.data.success) {
+                    // reCAPTCHA verification successful
+                    setButtonDisabled(false); // Enable the form submission button
+                }
+            } catch (error) {
+                // Handle errors
+                console.error(error);
+            }
+        }
+
+        fetchData(); // Call the asynchronous function
+    }, []);
     const handleChange = (e) => {
         const { name, value } = e.target;
 
@@ -166,7 +190,7 @@ const ContactForm = () => {
             const recaptchaValue = recaptchaRef.current.getValue();
             apiCall({
                 method: "POST",
-                link: "https://api.deliveryease.co/api/Generic/Form/AT",
+                link: "https://deliveryeaseapi.adelphalabs.com/api/Generic/Form/AT",
                 data: formState,
             })
                 .then((response) => {
@@ -196,7 +220,18 @@ const ContactForm = () => {
                 });
         }
     };
-    const recaptchaRef = React.createRef()
+    const handleRecaptchaChange = (value) => {
+        // The 'value' parameter contains the reCAPTCHA response
+        console.log("reCAPTCHA response:", value);
+
+        if (value) {
+            // reCAPTCHA verification is successful
+            setButtonDisabled(false);
+        } else {
+            // reCAPTCHA verification failed
+            setButtonDisabled(true);
+        }
+    };
     return (
         <Box as="section" id="Contactform" sx={styles.section}>
             <Container>
@@ -273,10 +308,10 @@ const ContactForm = () => {
                             <Row className='mb-5'>
                                 <Recaptcha
                                     ref={recaptchaRef}
-                                    sitekey="6LdwPXYbAAAAAMgj5Nqj76lv39oKQB5Jtj48_9N9"
+                                    sitekey="6LcaS5ooAAAAAHWZ1IRAfcBVw18YoW0v4gkfC20g"
                                     size="normal"
                                     id="recaptcha-google"
-                                    onChange={() => setButtonDisabled(false)}
+                                    onChange={handleRecaptchaChange} // Handle reCAPTCHA response
                                 />
                             </Row>
                             {!isLoading && <Button

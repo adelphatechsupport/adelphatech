@@ -203,7 +203,7 @@ button#rcc-confirm-button {
 }
 @media only screen and (max-width: 600px) {
   .hero-video {
-    top: 26.5%;
+    top: 40.5%;
     overflow: hidden;
   }
 }

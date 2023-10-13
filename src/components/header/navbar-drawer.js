@@ -7,6 +7,7 @@ import Drawer from 'components/drawer';
 import Logo from 'components/logo';
 import menuItems from './header.data';
 import close from 'assets/images/icons/close.png';
+import { Link as Href } from 'gatsby';
 
 const NavbarDrawer = () => {
   const { state, dispatch } = useContext(DrawerContext);
@@ -43,7 +44,7 @@ const NavbarDrawer = () => {
         <Box as="ul" sx={styles.navbar}>
           {menuItems.map(({ path, label }, i) => (
             <Box as="li" key={i}>
-              <Link
+              <Href
                 activeClass="active"
                 className='text-dark text-decoration-none'
                 to={path}
@@ -53,13 +54,13 @@ const NavbarDrawer = () => {
                 duration={500}
               >
                 {label}
-              </Link>
+              </Href>
             </Box>
           ))}
         </Box>
-        <Button variant="primary" sx={styles.donateNow}>
+        <Href to="/contact-us" className='btn btn-primary'  sx={styles.donateNow}>
           Get Started Now!
-        </Button>
+        </Href>
       </Box>
     </Drawer>
   );
