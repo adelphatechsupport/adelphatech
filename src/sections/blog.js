@@ -22,7 +22,7 @@ const data = [
     id: 2,
     image: news2,
     title:
-      'Kensington Health',
+      'DeliveyEase',
     desc: '',
     link: '/case-studies',
   },

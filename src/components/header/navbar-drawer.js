@@ -58,7 +58,7 @@ const NavbarDrawer = () => {
             </Box>
           ))}
         </Box>
-        <Href to="/contact-us" className='btn btn-primary'  sx={styles.donateNow}>
+        <Href to="/contact-us" className='btn btn-primary' sx={styles.donateNow}>
           Get Started Now!
         </Href>
       </Box>
@@ -77,6 +77,9 @@ const styles = {
     cursor: 'pointer',
     '@media screen and (min-width: 1024px)': {
       display: 'none',
+    },
+    'path':{
+      fill: "#46c4f8"
     },
   },
   drawer: {

@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 const SubscriptionForm = ({ buttonLabel, ...props }) => {
   return (
     <Flex as="form" sx={styles.form} {...props}>
-      <Link to="/contact-us" className='rounded-0 hbtn slide_right'>{buttonLabel ?? 'Get Started Now!'}</Link>
+      <Link to="/case-studies" className='rounded-0 hbtn slide_right'>{buttonLabel ?? 'SEE THE PROOF'}</Link>
     </Flex>
   );
 };
