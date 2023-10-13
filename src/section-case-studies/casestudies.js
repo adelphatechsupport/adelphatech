@@ -77,6 +77,7 @@ const Work = () => {
               src={data.ImageCbc.childImageSharp.gatsbyImageData}
               loading="lazy"
               alt="CBC"
+              className="rounded"
             />
           </Box>
           <Box sx={styles.content}>
@@ -167,7 +168,7 @@ const styles = {
     position: 'relative',
     mt: [2, null, null, 0, 4, 0],
     img: {
-      maxWidth: ['100%', null, null, null, null, ''],
+      maxWidth: ['100%', null, null, null, null, '100%'],
     },
   },
   content: {
