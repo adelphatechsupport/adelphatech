@@ -13,7 +13,7 @@ const ContactForm = () => {
     const [buttonDisabled, setButtonDisabled] = React.useState(true)
     const [isLoading, setLoading] = React.useState(false)
     const [validated, setValidated] = useState(false);
-    
+
     const recaptchaRef = createRef();
 
     useEffect(() => {
@@ -38,6 +38,21 @@ const ContactForm = () => {
 
         verifyRecaptcha(); // Call the asynchronous function
     }, []);
+    const handleRecaptchaVerify = async (recaptchaToken) => {
+        try {
+            const response = await axios.post('/.netlify/functions/verifyRecaptcha', {
+                token: recaptchaToken,
+            });
+
+            if (response.data.success) {
+                // reCAPTCHA verification successful
+                setButtonDisabled(false); // Enable the form submission button
+            }
+        } catch (error) {
+            // Handle errors
+            console.error(error);
+        }
+    };
     const [formData, setFormData] = useState({
         FirstName: '',
         LastName: '',
@@ -198,6 +213,7 @@ const ContactForm = () => {
                                     sitekey="6LdwPXYbAAAAAMgj5Nqj76lv39oKQB5Jtj48_9N9"
                                     size="normal"
                                     id="recaptcha-google"
+                                    onChange={(recaptchaToken) => handleRecaptchaVerify(recaptchaToken)}
                                 />
                             </Row>
                             {!isLoading && <Button
