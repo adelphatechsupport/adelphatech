@@ -16,28 +16,6 @@ const ContactForm = () => {
 
     const recaptchaRef = createRef();
 
-    useEffect(() => {
-        // Inside a useEffect, you can make asynchronous calls
-        async function verifyRecaptcha() {
-            try {
-                const recaptchaToken = await recaptchaRef.current.executeAsync();
-
-                const response = await axios.post('/.netlify/functions/verifyRecaptcha', {
-                    token: recaptchaToken,
-                });
-
-                if (response.data.success) {
-                    // reCAPTCHA verification successful
-                    setButtonDisabled(false); // Enable the form submission button
-                }
-            } catch (error) {
-                // Handle errors
-                console.error(error);
-            }
-        }
-
-        verifyRecaptcha(); // Call the asynchronous function
-    }, []);
     const handleRecaptchaVerify = async (recaptchaToken) => {
         try {
             const response = await axios.post('/.netlify/functions/verifyRecaptcha', {
