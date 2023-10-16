@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { createRef, useEffect, useState } from 'react';
 import { FloatingLabel } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
@@ -9,138 +9,18 @@ import Recaptcha from "react-google-recaptcha";
 import Swal from "sweetalert2";
 import axios from 'axios';
 const ContactForm = () => {
-    async function apiCall(props) {
-        return await fetch(props?.link, {
-            method: props?.method,
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: props?.isFormData ? props?.data : JSON.stringify(props?.data),
-        })
-            .then(async (response) => {
-                const statusCode = response.status;
-                const contentType = response.headers.get("content-type");
-                if (contentType && contentType.indexOf("application/json") !== -1) {
-                    return response.json().then((data) => [statusCode, data]);
-                } else {
-                    return response.text().then((data) => [statusCode, data]);
-                }
-            })
-            .then((data) => {
-                return data;
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }
 
-    function ModelStateMessage(result) {
-        try {
-            if (
-                result[1].modelState !== null &&
-                result[1].modelState !== undefined &&
-                result[1].modelState !== ""
-            ) {
-                let modelState = result[1].modelState;
-                if (modelState)
-                    Object.keys(modelState).forEach(function (k) {
-                        modelState[k].forEach((element) => {
-                            Swal.fire("Oops?", element, "error");
-                        });
-                    });
-            } else if (typeof result[1] === "string") {
-                Swal.fire("Oops?", result[1], "error");
-            } else if (
-                result[0] === 401 &&
-                result[1].message !== null &&
-                result[1].message !== undefined &&
-                result[1].message !== ""
-            ) {
-                Swal.fire("Oops?", result[1].message, "error");
-                setTimeout(() => {
-                    localStorage.clear();
-                    window.location.href = "/auth/login";
-                }, 1000);
-            } else if (
-                result[1].message !== null &&
-                result[1].message !== undefined &&
-                result[1].message !== ""
-            ) {
-                Swal.fire("Oops?", result[1].message, "error");
-            } else if (
-                result[1].error_description !== null &&
-                result[1].error_description !== undefined &&
-                result[1].error_description !== ""
-            ) {
-                Swal.fire("Oops?", result[1].error_description, "error");
-            } else if (result[0] === 400) {
-                ModelStateMessage400(result);
-            } else if (result[0] === 402) {
-                Swal.fire("Oops?", "You have to subscribe first", "error");
-            } else {
-                Swal.fire("Oops?", "Bad request", "error");
-            }
-        } catch (err) { }
-    }
-
-    function ModelStateMessage400(result, setListFun) {
-        try {
-            /* if (!!result[1]) {
-              Swal.fire("Oops?", result[1], "error");
-              return false;
-            } */
-            if (!!result[1]?.message) {
-                Swal.fire("Oops?", result[1].message, "error");
-                return false;
-            }
-            if (!result[1]?.errors) result[1] = JSON.parse(result[1]);
-            if (!!result[1]?.errors) {
-                var p = result[1]?.errors;
-                var list = [];
-                var list2 = [];
-                for (var key in p) {
-                    if (p.hasOwnProperty(key)) {
-                        list2.push({ key: key, value: p[key] });
-
-                        var a = list.findIndex(
-                            (x) => x === `<div class="col-12">${p[key]}</div>`
-                        );
-                        if (a === -1) list.push(`<div class="col-12">${p[key]}</div>`);
-                    }
-                }
-                if (!!setListFun) setListFun(list2);
-
-                Swal.fire({
-                    title:
-                        '<i class="fas fa-exclamation-circle text-danger"></i> <strong class="text-danger h4">Required</strong>',
-                    icon: "error",
-                    html: `<div class="row p-0 m-0">${list.join(" ")}</div>`,
-                    showCloseButton: true,
-                    confirmButtonText: "OK!",
-                });
-            } else {
-                Swal.fire("Oops?", "Bad_request", "error");
-            }
-        } catch (err) {
-            Swal.fire("Oops?", "Bad_request", "error");
-        }
-    }
     const [buttonDisabled, setButtonDisabled] = React.useState(true)
     const [isLoading, setLoading] = React.useState(false)
     const [validated, setValidated] = useState(false);
-    const [formState, setFormState] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        message: "",
+    
+    const recaptchaRef = createRef();
 
-    })
-    const recaptchaRef = React.createRef();
     useEffect(() => {
         // Inside a useEffect, you can make asynchronous calls
-        async function fetchData() {
+        async function verifyRecaptcha() {
             try {
-                const recaptchaToken = '6LcaS5ooAAAAAHWZ1IRAfcBVw18YoW0v4gkfC20g'; // Get the reCAPTCHA token
+                const recaptchaToken = await recaptchaRef.current.executeAsync();
 
                 const response = await axios.post('/.netlify/functions/verifyRecaptcha', {
                     token: recaptchaToken,
@@ -156,80 +36,68 @@ const ContactForm = () => {
             }
         }
 
-        fetchData(); // Call the asynchronous function
+        verifyRecaptcha(); // Call the asynchronous function
     }, []);
-    const handleChange = (e) => {
+    const [formData, setFormData] = useState({
+        FirstName: '',
+        LastName: '',
+        Email: '',
+        Message: '',
+    });
+
+    const handleInputChange = (e) => {
         const { name, value } = e.target;
-
-        // Concatenate first name and last name
-        if (name === 'name') {
-            const [firstName, ...lastName] = value.split(' ');
-            setFormState((prevState) => ({
-                ...prevState,
-                firstName: firstName,
-                lastName: lastName.join(' ') || '',
-                name: value,
-            }));
-        } else {
-            setFormState((prevState) => ({
-                ...prevState,
-                [name]: value,
-            }));
-        }
+        setFormData({ ...formData, [name]: value });
     };
-    const handleSubmit = (e) => {
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setButtonDisabled(true);
+        const myHeaders = new Headers();
+        myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhdGFoaXJAYWRlbHBoYXRlY2guY2EiLCJqdGkiOiJkMjhmY2E3Ny1jY2JjLTQ3MGItYWQ1MS1eYTY0NDc1NDUzYjIiLCJlbWFpbCI6ImF0YWhpckBhZGVscGhhdGVjaC5jb20iLCJ1aWQiOiJjNGZiZTcxNy1jYz12LTQwNDQtYWIxOC0wYmY5MjQxYWNiZTUiLCJyb2xlcyI6IlN1cGVyIEFkbWluIiwiZXhwIjoxNjk3MzE1Mzk0LCJpc3MiOiJTZWN1cmVBcGkiLCJhdWQiOiJTZWN1cmVBcGlVc2VyIn0.mbkPm4miavHCC00LNNiM6DnDWqMVdR8A4uxh7tJoiVM");
 
-        const form = e.currentTarget;
-        if (form.checkValidity() === false) {
-            e.stopPropagation();
-            setValidated(true);
-        } else {
-            setLoading(true);
-            setValidated(false);
-            const recaptchaValue = recaptchaRef.current.getValue();
-            apiCall({
-                method: "POST",
-                link: "https://deliveryeaseapi.adelphalabs.com/api/Generic/Form/AT",
-                data: formState,
-            })
-                .then((response) => {
-                    setLoading(false);
-                    if (!!response && response.length > 0 && response[0] === 200) {
-                        Swal.fire({
-                            position: "top-center",
-                            icon: "success",
-                            title: "Success",
-                        });
-                        form.reset(); // Clear the form inputs
-                        setFormState({
-                            firstName: "",
-                            lastName: "",
-                            email: "",
-                            message: "",
-                        });
-                    } else {
-                        ModelStateMessage(response);
-                        setLoading(false);
-                    }
-                })
-                .catch((error) => {
-                    // Handle error
-                    console.log(error);
-                    setLoading(false);
+        const formdata = new FormData();
+        formdata.append("FirstName", formData.FirstName);
+        formdata.append("LastName", formData.LastName);
+        formdata.append("Email", formData.Email);
+        formdata.append("Message", formData.Message);
+        const requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: formdata,
+            redirect: 'follow',
+        };
+        setLoading(true);
+        setValidated(true);
+        const recaptchaValue = recaptchaRef.current.getValue()
+        try {
+            const response = await fetch("https://api.deliveryease.co/api/Generic/Form/ATFile", requestOptions);
+            if (response.ok) {
+                console.log('Form submitted successfully');
+                // Handle success, e.g., show a success message to the user
+                setFormData({
+                    FirstName: '',
+                    LastName: '',
+                    Email: '',
+                    Message: '',
+                    Project: '',
+                    file: null,
                 });
-        }
-    };
-    const handleRecaptchaChange = (value) => {
-        // The 'value' parameter contains the reCAPTCHA response
-        console.log("reCAPTCHA response:", value);
-
-        if (value) {
-            // reCAPTCHA verification is successful
+                Swal.fire('Success', 'Form submitted successfully', 'success');
+                setLoading(false);
+            } else {
+                console.error('Form submission failed:', response.status);
+                // Handle the error, e.g., show an error message to the user
+                Swal.fire('Error', 'Form submission failed', 'error');
+            }
+        } catch (error) {
+            console.error('Form submission failed:', error);
+            // Handle the error, e.g., show an error message to the user
+            Swal.fire('Error', 'Form submission failed', 'error');
+            setLoading(false);
+        } finally {
+            // Re-enable the submit button after submission is complete
             setButtonDisabled(false);
-        } else {
-            // reCAPTCHA verification failed
-            setButtonDisabled(true);
         }
     };
     return (
@@ -243,7 +111,7 @@ const ContactForm = () => {
                 </Text>
                 <Box sx={styles.grid} >
                     <Col xl="9" lg="9" md="11" className='mx-auto py-5'>
-                        <form noValidate validated={validated} onSubmit={handleSubmit} method="post"
+                        <form validated={validated} onSubmit={handleSubmit} method="post"
                             data-netlify-recaptcha="true"
                             data-netlify="true"
                             name="message"
@@ -257,7 +125,14 @@ const ContactForm = () => {
                                         label="FIRST NAME*"
                                         className="mb-3"
                                     >
-                                        <Form.Control type="text" name="firstname" id="first_name" onChange={handleChange} placeholder="First Name" required />
+                                        <Form.Control
+                                            type="text"
+                                            name="FirstName"
+                                            value={formData.FirstName}
+                                            onChange={handleInputChange}
+                                            placeholder="First Name"
+                                            required
+                                        />
                                     </FloatingLabel>
                                     <Form.Control.Feedback type="invalid">
                                         Please provide a valid Name.
@@ -269,7 +144,13 @@ const ContactForm = () => {
                                         label="LAST NAME*"
                                         className="mb-3"
                                     >
-                                        <Form.Control type="text" name="lastname" id="last_name" onChange={handleChange} placeholder="Last Name" required />
+                                        <Form.Control
+                                            type="text"
+                                            name="LastName"
+                                            value={formData.LastName}
+                                            onChange={handleInputChange}
+                                            placeholder="Last Name"
+                                            required />
                                     </FloatingLabel>
                                     <Form.Control.Feedback type="invalid">
                                         Please provide a valid Name.
@@ -283,7 +164,13 @@ const ContactForm = () => {
                                         label="E-MAIL*"
                                         className="mb-3"
                                     >
-                                        <Form.Control type="email" name="email" id="email" onChange={handleChange} placeholder="Your E-mail" required />
+                                        <Form.Control
+                                            type="email"
+                                            name="Email"
+                                            value={formData.Email}
+                                            onChange={handleInputChange}
+                                            placeholder="Email"
+                                            required />
                                     </FloatingLabel>
                                     <Form.Control.Feedback type="invalid">
                                         Please provide a valid email.
@@ -295,10 +182,10 @@ const ContactForm = () => {
                                     <FloatingLabel controlId="floatingTextarea2" label="Project Brief*">
                                         <Form.Control
                                             as="textarea"
-                                            placeholder="Your Message"
-                                            name="message"
-                                            id='message'
-                                            onChange={handleChange}
+                                            name="Message"
+                                            value={formData.Message}
+                                            onChange={handleInputChange}
+                                            placeholder="Message"
                                             style={{ height: '100px' }}
                                             required
                                         />
@@ -308,10 +195,9 @@ const ContactForm = () => {
                             <Row className='mb-5'>
                                 <Recaptcha
                                     ref={recaptchaRef}
-                                    sitekey="6LcaS5ooAAAAAHWZ1IRAfcBVw18YoW0v4gkfC20g"
+                                    sitekey="6LdwPXYbAAAAAMgj5Nqj76lv39oKQB5Jtj48_9N9"
                                     size="normal"
                                     id="recaptcha-google"
-                                    onChange={handleRecaptchaChange} // Handle reCAPTCHA response
                                 />
                             </Row>
                             {!isLoading && <Button

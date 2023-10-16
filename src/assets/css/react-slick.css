@@ -277,7 +277,6 @@ label {
 .buttonform:hover{
   color: white;
   background-color: #09386b;
-  min-height: 44px;
 }
 section#approach .feature-item {
  border:0

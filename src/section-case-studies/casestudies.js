@@ -18,24 +18,29 @@ const list = [
 const Work = () => {
   const data = useStaticQuery(graphql`
     query {
-      ImageWebhelp: file(relativePath: { eq: "webhelp.png" }) {
+      ImageWebhelp: file(relativePath: { eq: "studies/webhelp.png" }) {
         childImageSharp {
           gatsbyImageData(layout: FULL_WIDTH, formats: [AUTO, PNG])
         }
       }
-      ImageCbc: file(relativePath: { eq: "cbc.png" }) {
+      ImageCbc: file(relativePath: { eq: "studies/cbc.png" }) {
         childImageSharp {
           gatsbyImageData(layout: FULL_WIDTH, formats: [AUTO, PNG])
         }
       }
-      ImageISS: file(relativePath: { eq: "iss.png" }) {
+      ImageISS: file(relativePath: { eq: "studies/iss.png" }) {
         childImageSharp {
           gatsbyImageData(layout: FULL_WIDTH, formats: [AUTO, PNG])
         }
       }
-      ImageInstaSize: file(relativePath: { eq: "instasize.png" }) {
+      ImageInstaSize: file(relativePath: { eq: "studies/instasize.png" }) {
         childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH, formats: [AUTO, PNG],quality: 70)
+          gatsbyImageData(layout: FULL_WIDTH, formats: [AUTO, PNG])
+        }
+      }
+      ImageEmpower: file(relativePath: { eq: "studies/empower.png" }) {
+        childImageSharp {
+          gatsbyImageData(layout: FULL_WIDTH, formats: [AUTO, PNG])
         }
       }
     }
@@ -99,7 +104,7 @@ const Work = () => {
         <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-5 my-5'>
           <Box sx={styles.content}>
             <Heading sx={styles.title}>
-              International Schools Services (ISS) – Transforming Global Education 
+              International Schools Services (ISS) – Transforming Global Education
             </Heading>
             <Text as="p" sx={styles.summary}>
               ISS has played a pivotal role in shaping global education by providing comprehensive services and support to international schools.
@@ -140,6 +145,30 @@ const Work = () => {
               path="/"
               sx={{ mt: [3, null, null, 4] }}
               label={'Read More'}
+            />
+          </Box>
+        </Box>
+        <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-5 my-5'>
+          <Box sx={styles.content}>
+            <Heading sx={styles.title}>
+              Empower - Data Logistics System
+            </Heading>
+            <Text as="p" sx={styles.summary}>
+              We empower our partners to thrive with high-quality platforms that drive success.
+            </Text>
+
+            <LearnMore
+              path="/empower-details"
+              sx={{ mt: [3, null, null, 4] }}
+              label={'Read More'}
+            />
+          </Box>
+          <Box sx={styles.illustration}>
+            <Image
+              src={data.ImageEmpower.childImageSharp.gatsbyImageData}
+              loading="lazy"
+              alt="Empower"
+              className="rounded"
             />
           </Box>
         </Box>

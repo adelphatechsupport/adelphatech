@@ -67,7 +67,7 @@ const BlogDetail = () => {
                         className=""
                     />
                 </Col>
-                <Col xl="7" lg="7" md="10" className="mx-auto mb-5 py-5">
+                <Col xl="7" lg="7" md="10" className="mx-auto py-5">
                     <Heading sx={styles.title}>
                         Webhelp's Tailored Solutions
                     </Heading>
