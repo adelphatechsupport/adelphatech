@@ -8,6 +8,7 @@
     "await": "^0.2.6",
     "axios": "^1.5.1",
     "bootstrap": "^5.2.3",
+    "formik": "^2.4.5",
     "framer-motion": "^4.1.3",
     "gatsby": "^3.3.0",
     "gatsby-cookie-notice": "^1.0.6",
@@ -48,7 +49,8 @@
     "react-slick": "^0.28.1",
     "react-stickynode": "^3.0.5",
     "sweetalert2": "^11.7.5",
-    "theme-ui": "^0.6.2"
+    "theme-ui": "^0.6.2",
+    "yup": "^1.3.2"
   },
   "devDependencies": {
     "prettier": "^2.1.1"

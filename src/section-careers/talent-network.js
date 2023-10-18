@@ -6,6 +6,8 @@ import { useState } from 'react';
 import { IoMdCloudUpload } from 'react-icons/io';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import * as Yup from 'yup';
+import { useFormik } from "formik";
 
 const TalentNetwork = () => {
     const [isLoading, setLoading] = useState(false)
@@ -18,7 +20,13 @@ const TalentNetwork = () => {
         Project: '',
         file: null,
     });
-
+    const Schema = Yup.object().shape({
+        FirstName: Yup.string().required('First Name is required'),
+        LastName: Yup.string().required('Last Name is required'),
+        Email: Yup.string().email('Invalid email address').required('Email is required'),
+        Message: Yup.string().required('Message is required'),
+        file: Yup.mixed().required(),
+    });
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
@@ -80,6 +88,20 @@ const TalentNetwork = () => {
             setButtonDisabled(false);
         }
     };
+    const formik = useFormik({
+        initialValues: {
+            FirstName: '',
+            LastName: '',
+            Email: '',
+            Message: '',
+            file: null,
+        },
+
+        validationSchema: Schema,
+        onSubmit: () => {
+            handleSubmit()
+        },
+    });
     return (
         <Box as="section" id="Talent" sx={styles.section}>
             <Container>
@@ -104,10 +126,18 @@ const TalentNetwork = () => {
                                         type="text"
                                         name="FirstName"
                                         value={formData.FirstName}
-                                        onChange={handleInputChange}
+                                        onChange={(e) => {
+                                            handleInputChange(e);
+                                            formik.setFieldValue('FirstName', e.target.value);
+                                        }}
                                         placeholder="First Name"
                                         required
                                     />
+                                    <div className="text-danger">
+                                        {formik.touched.FirstName && formik.errors.FirstName ? (
+                                            <div className='text-start'>{formik.errors.FirstName}</div>
+                                        ) : null}
+                                    </div>
                                 </FloatingLabel>
                                 <Form.Control.Feedback type="invalid">Please provide a valid Name.</Form.Control.Feedback>
                             </Form.Group>
@@ -117,10 +147,18 @@ const TalentNetwork = () => {
                                         type="text"
                                         name="LastName"
                                         value={formData.LastName}
-                                        onChange={handleInputChange}
+                                        onChange={(e) => {
+                                            handleInputChange(e);
+                                            formik.setFieldValue('LastName', e.target.value);
+                                        }}
                                         placeholder="Last Name"
                                         required
                                     />
+                                    <div className="text-danger">
+                                        {formik.touched.LastName && formik.errors.LastName ? (
+                                            <div className='text-start'>{formik.errors.LastName}</div>
+                                        ) : null}
+                                    </div>
                                 </FloatingLabel>
                                 <Form.Control.Feedback type="invalid">Please provide a valid Name.</Form.Control.Feedback>
                             </Form.Group>
@@ -131,16 +169,24 @@ const TalentNetwork = () => {
                                     type="email"
                                     name="Email"
                                     value={formData.Email}
-                                    onChange={handleInputChange}
+                                    onChange={(e) => {
+                                        handleInputChange(e);
+                                        formik.setFieldValue('Email', e.target.value);
+                                    }}
                                     placeholder="Email"
                                     required
                                 />
+                                <div className="text-danger">
+                                    {formik.touched.Email && formik.errors.Email ? (
+                                        <div className='text-start'>{formik.errors.Email}</div>
+                                    ) : null}
+                                </div>
                             </FloatingLabel>
                             <Form.Control.Feedback type="invalid">Please provide a valid email.</Form.Control.Feedback>
                         </Form.Group>
                         <Row className="mb-4">
                             <Form.Group controlId="validationBreif">
-                                <FloatingLabel controlId="floatingTextarea2" label="Message*">
+                                <FloatingLabel controlId="floatingTextarea2" label="Message">
                                     <Form.Control
                                         as="textarea"
                                         name="Message"
@@ -148,7 +194,7 @@ const TalentNetwork = () => {
                                         onChange={handleInputChange}
                                         placeholder="Message"
                                         style={{ height: '100px' }}
-                                        required
+                                        
                                     />
                                 </FloatingLabel>
                             </Form.Group>
@@ -156,13 +202,22 @@ const TalentNetwork = () => {
                         <Row className="mb-4 px-2">
                             <Form.Group controlId="filePicker" className="mb-3 file-upload">
                                 <Form.Label><IoMdCloudUpload /> Upload Resume</Form.Label>
-                                <Form.Control type="file"
-                                    onChange={handleFileChange} style={{ visibility: "hidden" }} id="filePicker" size="lg" />
+                                <Form.Control type="file" name="file"
+                                    onChange={(e) => {
+                                        handleInputChange(e);
+                                        formik.setFieldValue('file', e.target.value);
+                                    }} style={{ visibility: "hidden" }} id="filePicker" size="lg" />
+                                <div className="text-danger">
+                                    {formik.touched.file && formik.errors.file ? (
+                                        <div>{formik.errors.file}</div>
+                                    ) : null}
+                                </div>
                             </Form.Group>
                         </Row>
                         {!isLoading && <Button
-                            type="submit"
+                            type="button"
                             className='buttonform'
+                            onClick={formik.handleSubmit}
 
                         >
                             Apply

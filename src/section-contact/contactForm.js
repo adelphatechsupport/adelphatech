@@ -8,6 +8,9 @@ import { Box, Button, Container, Heading, Text } from "theme-ui";
 import Recaptcha from "react-google-recaptcha";
 import Swal from "sweetalert2";
 import axios from 'axios';
+import * as Yup from 'yup';
+import { useFormik } from "formik";
+
 const ContactForm = () => {
 
     const [buttonDisabled, setButtonDisabled] = useState(true)
@@ -15,13 +18,20 @@ const ContactForm = () => {
     const [validated, setValidated] = useState(false);
     const recaptchaRef = createRef();
 
+    const Schema = Yup.object().shape({
+        FirstName: Yup.string().required('First Name is required'),
+        LastName: Yup.string().required('Last Name is required'),
+        Email: Yup.string().email('Invalid email address').required('Email is required'),
+        Message: Yup.string().required('Message is required'),
+        
+    });
 
     const [formData, setFormData] = useState({
         FirstName: '',
         LastName: '',
         Email: '',
         Message: '',
-        recaptchaRef:'',
+
     });
 
     const handleInputChange = (e) => {
@@ -36,7 +46,7 @@ const ContactForm = () => {
         myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhdGFoaXJAYWRlbHBoYXRlY2guY2EiLCJqdGkiOiJkMjhmY2E3Ny1jY2JjLTQ3MGItYWQ1MS1eYTY0NDc1NDUzYjIiLCJlbWFpbCI6ImF0YWhpckBhZGVscGhhdGVjaC5jb20iLCJ1aWQiOiJjNGZiZTcxNy1jYz12LTQwNDQtYWIxOC0wYmY5MjQxYWNiZTUiLCJyb2xlcyI6IlN1cGVyIEFkbWluIiwiZXhwIjoxNjk3MzE1Mzk0LCJpc3MiOiJTZWN1cmVBcGkiLCJhdWQiOiJTZWN1cmVBcGlVc2VyIn0.mbkPm4miavHCC00LNNiM6DnDWqMVdR8A4uxh7tJoiVM");
 
         const recaptchaValue = recaptchaRef.current.getValue();
-        this.props.onSubmit(recaptchaValue);
+        this?.props?.onSubmit(recaptchaValue);
 
         const formdata = new FormData();
         formdata.append("FirstName", formData.FirstName);
@@ -80,6 +90,18 @@ const ContactForm = () => {
             setButtonDisabled(false);
         }
     };
+    const formik = useFormik({
+        initialValues: {
+            FirstName: '',
+            LastName: '',
+            Email: '',
+            Message: '',
+        },
+        validationSchema: Schema,
+        onSubmit: () => {
+            handleSubmit()
+        },
+    });
     return (
         <Box as="section" id="Contactform" sx={styles.section}>
             <Container>
@@ -109,14 +131,19 @@ const ContactForm = () => {
                                             type="text"
                                             name="FirstName"
                                             value={formData.FirstName}
-                                            onChange={handleInputChange}
+                                            onChange={(e) => {
+                                                handleInputChange(e);
+                                                formik.setFieldValue('FirstName', e.target.value);
+                                            }}
                                             placeholder="First Name"
                                             required
                                         />
+                                        <div className="text-danger">
+                                            {formik.touched.FirstName && formik.errors.FirstName ? (
+                                                <div>{formik.errors.FirstName}</div>
+                                            ) : null}
+                                        </div>
                                     </FloatingLabel>
-                                    <Form.Control.Feedback type="invalid">
-                                        Please provide a valid Name.
-                                    </Form.Control.Feedback>
                                 </Form.Group>
                                 <Form.Group as={Col} md="6" controlId="LNAME">
                                     <FloatingLabel
@@ -128,13 +155,19 @@ const ContactForm = () => {
                                             type="text"
                                             name="LastName"
                                             value={formData.LastName}
-                                            onChange={handleInputChange}
+                                            onChange={(e) => {
+                                                handleInputChange(e);
+                                                formik.setFieldValue('LastName', e.target.value);
+                                            }}
                                             placeholder="Last Name"
                                             required />
+                                        <div className="text-danger">
+                                            {formik.touched.LastName && formik.errors.LastName ? (
+                                                <div>{formik.errors.LastName}</div>
+                                            ) : null}
+                                        </div>
                                     </FloatingLabel>
-                                    <Form.Control.Feedback type="invalid">
-                                        Please provide a valid Name.
-                                    </Form.Control.Feedback>
+
                                 </Form.Group>
                             </Row>
                             <Row className="mb-3">
@@ -148,13 +181,19 @@ const ContactForm = () => {
                                             type="email"
                                             name="Email"
                                             value={formData.Email}
-                                            onChange={handleInputChange}
+                                            onChange={(e) => {
+                                                handleInputChange(e);
+                                                formik.setFieldValue('Email', e.target.value);
+                                            }}
                                             placeholder="Email"
                                             required />
+                                        <div className="text-danger">
+                                            {formik.touched.Email && formik.errors.Email ? (
+                                                <div>{formik.errors.Email}</div>
+                                            ) : null}
+                                        </div>
                                     </FloatingLabel>
-                                    <Form.Control.Feedback type="invalid">
-                                        Please provide a valid email.
-                                    </Form.Control.Feedback>
+
                                 </Form.Group>
                             </Row>
                             <Row className="mb-4">
@@ -164,7 +203,10 @@ const ContactForm = () => {
                                             as="textarea"
                                             name="Message"
                                             value={formData.Message}
-                                            onChange={handleInputChange}
+                                            onChange={(e) => {
+                                                handleInputChange(e);
+                                                formik.setFieldValue('Message', e.target.value);
+                                            }}
                                             placeholder="Message"
                                             style={{ height: '100px' }}
                                             required
@@ -177,11 +219,13 @@ const ContactForm = () => {
                                     ref={recaptchaRef}
                                     sitekey="6LcoY68oAAAAAFbV3A_HqwnREdMqy6Wx3RpGFvCe"
                                     onChange={handleInputChange}
+                                    name="reCaptcha"
                                 />
                             </Row>
                             {!isLoading && <Button
-                                type="submit"
+                                type="button"
                                 className='buttonform'
+                                onClick={formik.handleSubmit}
 
                             >
                                 Send Message
