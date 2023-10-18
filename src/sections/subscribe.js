@@ -80,7 +80,7 @@ export default function Subscribe() {
               READY TO GET STARTED?
             </Heading>
             <Text as="p" sx={styles.description}>
-              Provide a brief description of your project and will team will contact you with 24 hours.
+              Provide a brief description of your project and will team will contact you within 24 hours.
             </Text>
             <Link to="/contact-us" className='btn btn-light mt-3'>
               Contact Us

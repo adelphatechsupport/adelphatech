@@ -50,7 +50,7 @@ const data = [
     id: 6,
     icon: icon6,
     path: '#!',
-    title: 'Data Security and Privacy',
+    title: 'API / EDI Integrations',
     description: ``,
   },
 ];

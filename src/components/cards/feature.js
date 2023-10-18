@@ -11,7 +11,7 @@ const Feature = ({ data, ...props }) => {
       <Box>
         <Heading as="h4">{data?.title}</Heading>
         <Text as="p">{data?.description}</Text>
-        {data?.path && <LearnMore path={data?.path} />}
+        {/* {data?.path && <LearnMore path={data?.path} />} */}
       </Box>
     </Box>
   );

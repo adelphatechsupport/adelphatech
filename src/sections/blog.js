@@ -24,7 +24,7 @@ const data = [
     title:
       'DeliveyEase',
     desc: '',
-    link: '/case-studies',
+    link: '/delivery-details',
   },
   {
     id: 3,
