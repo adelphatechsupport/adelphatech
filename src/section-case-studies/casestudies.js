@@ -76,7 +76,7 @@ const Work = () => {
             label={'Read More'}
           />
         </div>
-        <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-5 my-5'>
+        <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-5 mt-5'>
           <Box sx={styles.illustration}>
             <Image
               src={data.ImageCbc.childImageSharp.gatsbyImageData}
@@ -101,7 +101,7 @@ const Work = () => {
             />
           </Box>
         </Box>
-        <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-5 my-5'>
+        <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-5 mt-5'>
           <Box sx={styles.content}>
             <Heading sx={styles.title}>
               International Schools Services (ISS) – Transforming Global Education
@@ -124,7 +124,7 @@ const Work = () => {
             />
           </Box>
         </Box>
-        <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-5 my-5'>
+        <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-5 mt-5'>
           <Box sx={styles.illustration}>
             <Image
               src={data.ImageInstaSize?.childImageSharp.gatsbyImageData}
@@ -148,7 +148,7 @@ const Work = () => {
             />
           </Box>
         </Box>
-        <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-5 my-5'>
+        <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-5 mt-5'>
           <Box sx={styles.content}>
             <Heading sx={styles.title}>
               Empower - Data Logistics System

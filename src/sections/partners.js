@@ -46,7 +46,7 @@ const Partners = () => {
                         <Flex sx={styles.sponsor} className='flex-wrap'>
                             {logos?.map((logo, index) => (
                                 <Flex as="figure" key={index}>
-                                    <a href={logo.link} target="_blank">
+                                    <a href={logo.link} target="_blank" rel="noreferrer">
                                         <Image src={logo.src} alt={logo.name} />
                                     </a>
                                 </Flex>

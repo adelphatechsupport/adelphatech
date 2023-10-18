@@ -1,5 +1,5 @@
 
-import React, { createRef, useEffect, useState } from 'react';
+import React, { createRef, useEffect, useRef, useState } from 'react';
 import { FloatingLabel } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
@@ -10,32 +10,18 @@ import Swal from "sweetalert2";
 import axios from 'axios';
 const ContactForm = () => {
 
-    const [buttonDisabled, setButtonDisabled] = React.useState(true)
-    const [isLoading, setLoading] = React.useState(false)
+    const [buttonDisabled, setButtonDisabled] = useState(true)
+    const [isLoading, setLoading] = useState(false)
     const [validated, setValidated] = useState(false);
-
     const recaptchaRef = createRef();
 
-    const handleRecaptchaVerify = async (recaptchaToken) => {
-        try {
-            const response = await axios.post('/.netlify/functions/verifyRecaptcha', {
-                token: recaptchaToken,
-            });
 
-            if (response.data.success) {
-                // reCAPTCHA verification successful
-                setButtonDisabled(false); // Enable the form submission button
-            }
-        } catch (error) {
-            // Handle errors
-            console.error(error);
-        }
-    };
     const [formData, setFormData] = useState({
         FirstName: '',
         LastName: '',
         Email: '',
         Message: '',
+        recaptchaRef:'',
     });
 
     const handleInputChange = (e) => {
@@ -48,6 +34,9 @@ const ContactForm = () => {
         setButtonDisabled(true);
         const myHeaders = new Headers();
         myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhdGFoaXJAYWRlbHBoYXRlY2guY2EiLCJqdGkiOiJkMjhmY2E3Ny1jY2JjLTQ3MGItYWQ1MS1eYTY0NDc1NDUzYjIiLCJlbWFpbCI6ImF0YWhpckBhZGVscGhhdGVjaC5jb20iLCJ1aWQiOiJjNGZiZTcxNy1jYz12LTQwNDQtYWIxOC0wYmY5MjQxYWNiZTUiLCJyb2xlcyI6IlN1cGVyIEFkbWluIiwiZXhwIjoxNjk3MzE1Mzk0LCJpc3MiOiJTZWN1cmVBcGkiLCJhdWQiOiJTZWN1cmVBcGlVc2VyIn0.mbkPm4miavHCC00LNNiM6DnDWqMVdR8A4uxh7tJoiVM");
+
+        const recaptchaValue = recaptchaRef.current.getValue();
+        this.props.onSubmit(recaptchaValue);
 
         const formdata = new FormData();
         formdata.append("FirstName", formData.FirstName);
@@ -62,7 +51,7 @@ const ContactForm = () => {
         };
         setLoading(true);
         setValidated(true);
-        const recaptchaValue = recaptchaRef.current.getValue()
+
         try {
             const response = await fetch("https://api.deliveryease.co/api/Generic/Form/ATFile", requestOptions);
             if (response.ok) {
@@ -73,8 +62,6 @@ const ContactForm = () => {
                     LastName: '',
                     Email: '',
                     Message: '',
-                    Project: '',
-                    file: null,
                 });
                 Swal.fire('Success', 'Form submitted successfully', 'success');
                 setLoading(false);
@@ -188,10 +175,8 @@ const ContactForm = () => {
                             <Row className='mb-5'>
                                 <Recaptcha
                                     ref={recaptchaRef}
-                                    sitekey="6LdwPXYbAAAAAMgj5Nqj76lv39oKQB5Jtj48_9N9"
-                                    size="normal"
-                                    id="recaptcha-google"
-                                    onChange={(recaptchaToken) => handleRecaptchaVerify(recaptchaToken)}
+                                    sitekey="6LcoY68oAAAAAFbV3A_HqwnREdMqy6Wx3RpGFvCe"
+                                    onChange={handleInputChange}
                                 />
                             </Row>
                             {!isLoading && <Button

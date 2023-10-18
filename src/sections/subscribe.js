@@ -2,7 +2,7 @@
 import { Link } from 'gatsby';
 import { useRef, useState } from 'react';
 // import fetch from 'isomorphic-unfetch';
-import { Box, Button, Flex, Heading, Input, Text, jsx } from 'theme-ui';
+import { Box, Heading, Text, jsx } from 'theme-ui';
 
 export default function Subscribe() {
   // 1. Create a reference to the input so we can fetch/clear it's value.
