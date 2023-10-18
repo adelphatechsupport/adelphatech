@@ -23,7 +23,7 @@ const ContactForm = () => {
         LastName: Yup.string().required('Last Name is required'),
         Email: Yup.string().email('Invalid email address').required('Email is required'),
         Message: Yup.string().required('Message is required'),
-        
+
     });
 
     const [formData, setFormData] = useState({
@@ -39,14 +39,19 @@ const ContactForm = () => {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleSubmit = async () => {
         setButtonDisabled(true);
         const myHeaders = new Headers();
         myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhdGFoaXJAYWRlbHBoYXRlY2guY2EiLCJqdGkiOiJkMjhmY2E3Ny1jY2JjLTQ3MGItYWQ1MS1eYTY0NDc1NDUzYjIiLCJlbWFpbCI6ImF0YWhpckBhZGVscGhhdGVjaC5jb20iLCJ1aWQiOiJjNGZiZTcxNy1jYz12LTQwNDQtYWIxOC0wYmY5MjQxYWNiZTUiLCJyb2xlcyI6IlN1cGVyIEFkbWluIiwiZXhwIjoxNjk3MzE1Mzk0LCJpc3MiOiJTZWN1cmVBcGkiLCJhdWQiOiJTZWN1cmVBcGlVc2VyIn0.mbkPm4miavHCC00LNNiM6DnDWqMVdR8A4uxh7tJoiVM");
 
         const recaptchaValue = recaptchaRef.current.getValue();
-        this?.props?.onSubmit(recaptchaValue);
+        if (!recaptchaValue) {
+            // Handle Recaptcha validation error, e.g., show an error message to the user
+            console.error('Recaptcha validation failed');
+            Swal.fire('Error', 'Recaptcha validation failed', 'error');
+            setButtonDisabled(false);
+            return;
+        }
 
         const formdata = new FormData();
         formdata.append("FirstName", formData.FirstName);
