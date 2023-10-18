@@ -12,12 +12,12 @@ import { useFormik } from "formik";
 const TalentNetwork = () => {
     const [isLoading, setLoading] = useState(false)
     const [buttonDisabled, setButtonDisabled] = useState(false);
+    const [validated, setValidated] = useState(false);
     const [formData, setFormData] = useState({
         FirstName: '',
         LastName: '',
         Email: '',
         Message: '',
-        Project: '',
         file: null,
     });
     const Schema = Yup.object().shape({
@@ -47,7 +47,6 @@ const TalentNetwork = () => {
         formdata.append("LastName", formData.LastName);
         formdata.append("Email", formData.Email);
         formdata.append("Message", formData.Message);
-        formdata.append("Project", formData.Project);
         formdata.append("file", formData.file);
 
         const requestOptions = {
@@ -57,6 +56,7 @@ const TalentNetwork = () => {
             redirect: 'follow',
         };
         setLoading(true);
+        setValidated(true);
         try {
             const response = await fetch("https://api.deliveryease.co/api/Generic/Form/ATFile", requestOptions);
             if (response.ok) {
@@ -67,7 +67,6 @@ const TalentNetwork = () => {
                     LastName: '',
                     Email: '',
                     Message: '',
-                    Project: '',
                     file: null,
                 });
                 Swal.fire('Success', 'Form submitted successfully', 'success');
@@ -98,6 +97,7 @@ const TalentNetwork = () => {
 
         validationSchema: Schema,
         onSubmit: () => {
+            
             handleSubmit()
         },
     });
@@ -117,7 +117,7 @@ const TalentNetwork = () => {
                     You want to join us but can’t find a job offer that suits your profile ? <br />We invite you to submit your spontaneous application.
                 </Text>
                 <Col xl="7" lg="7" md="11" className='mx-auto py-5'>
-                    <Form onSubmit={handleSubmit} className="text-center">
+                    <form validated={validated} onSubmit={handleSubmit} method="post" className="text-center">
                         <Row className="mb-3">
                             <Form.Group as={Col} md="6" controlId="FNAME">
                                 <FloatingLabel controlId="floatingInputFNAME" label="First Name*" className="mb-3">
@@ -181,7 +181,6 @@ const TalentNetwork = () => {
                                     ) : null}
                                 </div>
                             </FloatingLabel>
-                            <Form.Control.Feedback type="invalid">Please provide a valid email.</Form.Control.Feedback>
                         </Form.Group>
                         <Row className="mb-4">
                             <Form.Group controlId="validationBreif">
@@ -190,10 +189,13 @@ const TalentNetwork = () => {
                                         as="textarea"
                                         name="Message"
                                         value={formData.Message}
-                                        onChange={handleInputChange}
+                                        onChange={(e) => {
+                                            handleInputChange(e);
+                                            formik.setFieldValue('Message', e.target.value);
+                                        }}
                                         placeholder="Message"
                                         style={{ height: '100px' }}
-                                        
+
                                     />
                                 </FloatingLabel>
                             </Form.Group>
@@ -201,14 +203,19 @@ const TalentNetwork = () => {
                         <Row className="mb-4 px-2">
                             <Form.Group controlId="filePicker" className="mb-3 file-upload">
                                 <Form.Label><IoMdCloudUpload /> Upload Resume</Form.Label>
-                                <Form.Control type="file" name="file"
+                                <Form.Control
+                                    type="file" name="file"
                                     onChange={(e) => {
                                         handleInputChange(e);
                                         formik.setFieldValue('file', e.target.value);
-                                    }} style={{ visibility: "hidden" }} id="filePicker" size="lg" />
+                                    }}
+                                    style={{ visibility: "hidden" }}
+                                    id="filePicker"
+                                    size="lg"
+                                />
                                 <div className="text-danger">
                                     {formik.touched.file && formik.errors.file ? (
-                                        <div>{formik.errors.file}</div>
+                                        <div className='text-start'>{formik.errors.file}</div>
                                     ) : null}
                                 </div>
                             </Form.Group>
@@ -217,7 +224,6 @@ const TalentNetwork = () => {
                             type="button"
                             className='buttonform'
                             onClick={formik.handleSubmit}
-
                         >
                             Apply
                         </Button>
@@ -230,7 +236,7 @@ const TalentNetwork = () => {
                             Sending...
                         </Button>
                         }
-                    </Form>
+                    </form>
                 </Col>
             </Container>
         </Box>
