@@ -1,19 +1,17 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Grid, Heading, Text } from 'theme-ui';
-import { useStaticQuery, graphql, Link } from 'gatsby';
-import { IoIosCheckmarkCircle } from 'react-icons/io';
-import SectionHeading from 'components/section-heading';
 import Image from 'components/image';
-import support from '../assets/images/support.png';
 import { LearnMore } from 'components/link';
+import SectionHeading from 'components/section-heading';
+import { Link, graphql, useStaticQuery } from 'gatsby';
+import { Box, Container, Heading, Text, jsx } from 'theme-ui';
 
 
-const list = [
-  'PROACTIVE HIRING MODEL',
-  'EXPERIENCED SERVICE DELIVERY',
-  'DIGITAL TRANSFORMATION',
-  'HIGH QUALITY',
-];
+// const list = [
+//   'PROACTIVE HIRING MODEL',
+//   'EXPERIENCED SERVICE DELIVERY',
+//   'DIGITAL TRANSFORMATION',
+//   'HIGH QUALITY',
+// ];
 
 const Work = () => {
   const data = useStaticQuery(graphql`
@@ -95,7 +93,7 @@ const Work = () => {
             </Text>
 
             <LearnMore
-              path="/"
+              path="/cbc-details"
               sx={{ mt: [3, null, null, 4] }}
               label={'Read More'}
             />
@@ -111,7 +109,7 @@ const Work = () => {
             </Text>
 
             <LearnMore
-              path="/"
+              path="/iss-details"
               sx={{ mt: [3, null, null, 4] }}
               label={'Read More'}
             />
@@ -142,7 +140,7 @@ const Work = () => {
             </Text>
 
             <LearnMore
-              path="/"
+              path="/instasize-details"
               sx={{ mt: [3, null, null, 4] }}
               label={'Read More'}
             />

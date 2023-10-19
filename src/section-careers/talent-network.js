@@ -1,13 +1,12 @@
 /** @jsx jsx */
-import { Box, Button, Container, Heading, Text, jsx } from 'theme-ui';
-import SectionHeading from '../components/section-heading';
-import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
-import { useState } from 'react';
-import { IoMdCloudUpload } from 'react-icons/io';
-import axios from 'axios';
-import Swal from 'sweetalert2';
-import * as Yup from 'yup';
 import { useFormik } from "formik";
+import { useState } from 'react';
+import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
+import { IoMdCloudUpload } from 'react-icons/io';
+import Swal from 'sweetalert2';
+import { Box, Button, Container, Heading, Text, jsx } from 'theme-ui';
+import * as Yup from 'yup';
+import SectionHeading from '../components/section-heading';
 
 const TalentNetwork = () => {
     const [isLoading, setLoading] = useState(false)
@@ -206,7 +205,7 @@ const TalentNetwork = () => {
                                 <Form.Control
                                     type="file" name="file"
                                     onChange={(e) => {
-                                        handleInputChange(e);
+                                        handleFileChange(e);
                                         formik.setFieldValue('file', e.target.value);
                                     }}
                                     style={{ visibility: "hidden" }}

@@ -16,7 +16,7 @@ const data = [
     title: 'International Schools Services',
     desc:
       '',
-    link: '/case-studies',
+    link: '/iss-details',
   },
   {
     id: 2,
@@ -36,9 +36,9 @@ const data = [
   {
     id: 4,
     image: news4,
-    title: 'Tutor Doctor',
+    title: 'Compass FED',
     desc: '',
-    link: '/case-studies',
+    link: '/fed-details',
   },
 ];
 

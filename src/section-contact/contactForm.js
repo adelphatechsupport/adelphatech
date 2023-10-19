@@ -1,15 +1,14 @@
 
-import React, { createRef, useEffect, useRef, useState } from 'react';
+import { useFormik } from "formik";
+import React, { createRef, useState } from 'react';
 import { FloatingLabel } from 'react-bootstrap';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { Box, Button, Container, Heading, Text } from "theme-ui";
 import Recaptcha from "react-google-recaptcha";
 import Swal from "sweetalert2";
-import axios from 'axios';
+import { Box, Button, Container, Heading, Text } from "theme-ui";
 import * as Yup from 'yup';
-import { useFormik } from "formik";
 
 const ContactForm = () => {
 
