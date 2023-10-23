@@ -77,7 +77,7 @@ const ContactForm = () => {
                     Email: '',
                     Message: '',
                 });
-                Swal.fire('Success', 'Form submitted successfully', 'success');
+                Swal.fire('Success', 'Thank you for contacting us. Our team will contact you within 24 hours.', 'success');
                 setLoading(false);
             } else {
                 console.error('Form submission failed:', response.status);
