@@ -76,6 +76,7 @@ const ContactForm = () => {
                     LastName: '',
                     Email: '',
                     Message: '',
+                    recaptchaValue:'',
                 });
                 Swal.fire('Success', 'Thank you for contacting us. Our team will contact you within 24 hours.', 'success');
                 setLoading(false);
@@ -215,6 +216,11 @@ const ContactForm = () => {
                                             style={{ height: '100px' }}
                                             required
                                         />
+                                        <div className="text-danger">
+                                            {formik.touched.Message && formik.errors.Message ? (
+                                                <div>{formik.errors.Message}</div>
+                                            ) : null}
+                                        </div>
                                     </FloatingLabel>
                                 </Form.Group>
                             </Row>
