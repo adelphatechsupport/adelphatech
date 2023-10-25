@@ -34,7 +34,7 @@ const VideoIntro = () => {
               <CloseButton
                 onClick={() => setIsOpen(false)}
                 size="24px"
-                color="#fff"
+                color="#fff" 
               />
               <ResponsiveIframe
                 src="https://www.youtube.com/embed/OzztBkwLNe0"
