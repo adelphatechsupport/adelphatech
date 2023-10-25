@@ -19,7 +19,7 @@ const SectionHeading = ({
       )}
       <Heading as="h3" sx={styles.title}>
         {emoji ? <span>{title}</span> : title}
-        {emoji && <Image src={emoji} alt="emoji" />}
+        {emoji && <Image src={emoji} alt="emoji" loading="lazy" />}
       </Heading>
       {description && (
         <Text as="p" sx={styles.description}>

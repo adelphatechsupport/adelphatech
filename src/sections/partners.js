@@ -47,7 +47,7 @@ const Partners = () => {
                             {logos?.map((logo, index) => (
                                 <Flex as="figure" key={index}>
                                     <a href={logo.link} target="_blank" rel="noreferrer">
-                                        <Image src={logo.src} alt={logo.name} />
+                                        <Image src={logo.src} alt={logo.name} loading="lazy" />
                                     </a>
                                 </Flex>
                             ))}

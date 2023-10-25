@@ -59,6 +59,7 @@ const Support = () => {
             <Image
               src={illustration.support.childImageSharp.gatsbyImageData}
               alt="illustration"
+              loading="lazy"
             />
           </Box>
         </div>

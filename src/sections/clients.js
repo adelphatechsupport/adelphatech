@@ -27,6 +27,7 @@ const Clients = () => {
           <Image
             src={data.clients.childImageSharp.gatsbyImageData}
             alt="clients"
+            loading="lazy"
           />
         </Box>
       </Container>

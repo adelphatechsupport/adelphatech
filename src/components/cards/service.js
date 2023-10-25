@@ -6,7 +6,7 @@ const Service = ({ service }) => {
   return (
     <Box sx={styles.service}>
       <Box as="figure">
-        <Image width="64" height="64" src={service.icon} alt={service.title} />
+        <Image width="64" height="64" src={service.icon} alt={service.title} loading="lazy" />
       </Box>
       <Heading as="h4">{service.title}</Heading>
       <Text as="p">{service.desc}</Text>

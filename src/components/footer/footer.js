@@ -1,11 +1,10 @@
 /** @jsx jsx */
-import { jsx, Box, Text, Container } from 'theme-ui';
-import Logo from 'components/logo';
 import { Link } from 'components/link';
-import FooterWidget from 'components/footer/widget';
-import { menuItems, footerNav } from './footer.data';
+import Logo from 'components/logo';
 import { rgba } from 'polished';
 import { IoLogoFacebook, IoLogoLinkedin, IoLogoTwitter } from 'react-icons/io';
+import { Box, Container, Text, jsx } from 'theme-ui';
+import { footerNav } from './footer.data';
 
 export default function Footer() {
   return (
@@ -33,17 +32,17 @@ export default function Footer() {
               </li>
             ))}
             <li>
-              <a href="https://www.linkedin.com/company/adelpha-tech" target="_blank">
+              <a href="https://www.linkedin.com/company/adelpha-tech" target="_blank" aria-label='Linkedin' rel="noreferrer">
                 <IoLogoLinkedin size="23px" color="#5c3669" />
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/AdelphaTech" target="_blank">
+              <a href="https://twitter.com/AdelphaTech" target="_blank" aria-label='Twitter' rel="noreferrer">
                 <IoLogoTwitter size="23px" color="#5c3669" />
               </a>
             </li>
             <li>
-              <a href="https://www.facebook.com/adelphatech/" target="_blank">
+              <a href="https://www.facebook.com/adelphatech/" target="_blank" aria-label='Facebook' rel="noreferrer">
                 <IoLogoFacebook size="23px" color="#5c3669" />
               </a>
             </li>

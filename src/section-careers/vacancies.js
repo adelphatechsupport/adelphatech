@@ -16,8 +16,8 @@ const OurVacancies = () => {
         return (
             <>
                 {props?.currentItems &&
-                    props?.currentItems.map(item => (
-                        <Col xl="4" lg="4" md="12" className="mb-4">
+                    props?.currentItems.map((item, index) => (
+                        <Col xl="4" lg="4" md="12" className="mb-4" key={index}>
                             <Card className="border-0 shadow-none h-100">
                                 <Card.Body>
                                     <p className="fw-bold text-dark">{item.departement}</p>
@@ -34,7 +34,7 @@ const OurVacancies = () => {
                                         </span>
                                         {item.city}, {item.location}
                                     </p>
-                                    <Link to="" className="learn-more AdelphaTech-primary mb-2">
+                                    <Link to="/case-studies" className="learn-more AdelphaTech-primary mb-2">
                                         Learn More
                                         <span className="ps-2">
                                             <Svg src={LongArrow} title="Menu" />
@@ -224,8 +224,8 @@ const OurVacancies = () => {
                     <Col xl="3" lg="4" md="12" className="filter-des">
                         <Col xl="12">
                             <h5 className="mb-3 text-dark">Locations:</h5>
-                            {locations.map(location => (
-                                <div className="mb-4 d-flex flex-wrap">
+                            {locations.map((location,index) => (
+                                <div className="mb-4 d-flex flex-wrap" key={index}>
                                     <Form.Check
                                         type="checkbox"
                                         className="f-light"

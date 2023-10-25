@@ -22,7 +22,7 @@ const Banner = () => {
                         </Text>
                     </Box>
                     <Box sx={styles.svgicon}>
-                        <Image src={ContactIcon} alt="svg-icon" />
+                        <Image src={ContactIcon} alt="svg-icon"  loading="lazy" />
                     </Box>
 
                 </Box>

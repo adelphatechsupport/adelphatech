@@ -6,7 +6,7 @@ const Post = ({ post }) => {
   return (
     <article sx={styles.post}>
       <Flex as="figure">
-        <Image src={post.image} alt={post.title} />
+        <Image src={post.image} alt={post.title} loading="lazy" />
       </Flex>
       <Heading as="h4">{post.title}</Heading>
       {post.desc && <Text as="p">{post.desc}</Text>}

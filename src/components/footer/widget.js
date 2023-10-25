@@ -10,7 +10,7 @@ const Widget = ({ title, items }) => {
       <ul>
         {items.map(({ path, label, icon }, i) => (
           <li key={i}>
-            {icon && <Image src={icon} alt={label} />}
+            {icon && <Image src={icon} alt={label} loading="lazy" />}
             <Link path={path} key={i} label={label} variant="footer" />
           </li>
         ))}

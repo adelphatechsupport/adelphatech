@@ -1,19 +1,16 @@
 /** @jsx jsx */
-import { useState } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import {
-  jsx,
-  Box,
-  Container,
-  Button,
-  Heading,
-  Text,
-  Image as Img,
-} from 'theme-ui';
+import Image from 'components/image-about';
 import Modal, { CloseButton } from 'components/modal/modal';
 import ResponsiveIframe from 'components/responsive-iframe';
-import Image from 'components/image-about';
-import play from '../assets/images/icons/play.png';
+import { graphql, useStaticQuery } from 'gatsby';
+import { useState } from 'react';
+import {
+  Box,
+  Container,
+  Heading,
+  Text,
+  jsx
+} from 'theme-ui';
 import paint1 from '../assets/images/paint1.svg';
 const VideoIntro = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,6 +49,7 @@ const VideoIntro = () => {
               width="795"
               height="557"
               alt="video banner"
+              loading="lazy"
             />
             {/* <Button
               variant="text"

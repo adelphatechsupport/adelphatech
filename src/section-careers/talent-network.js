@@ -70,19 +70,24 @@ const TalentNetwork = () => {
                 });
                 Swal.fire('Success', 'Thank you for contacting us. Our team will contact you within 24 hours.', 'success');
                 setLoading(false);
+                setButtonDisabled(false);
             } else {
                 console.error('Form submission failed:', response.status);
                 // Handle the error, e.g., show an error message to the user
                 Swal.fire('Error', 'Form submission failed', 'error');
+                setButtonDisabled(false);
+                setLoading(false);
             }
         } catch (error) {
             console.error('Form submission failed:', error);
             // Handle the error, e.g., show an error message to the user
             Swal.fire('Error', 'Form submission failed', 'error');
             setLoading(false);
+            setButtonDisabled(false);
         } finally {
             // Re-enable the submit button after submission is complete
             setButtonDisabled(false);
+            setLoading(false);
         }
     };
     const formik = useFormik({
@@ -96,7 +101,7 @@ const TalentNetwork = () => {
 
         validationSchema: Schema,
         onSubmit: () => {
-            
+
             handleSubmit()
         },
     });
@@ -116,10 +121,10 @@ const TalentNetwork = () => {
                     You want to join us but can’t find a job offer that suits your profile ? <br />We invite you to submit your spontaneous application.
                 </Text>
                 <Col xl="7" lg="7" md="11" className='mx-auto py-5'>
-                    <form validated={validated} onSubmit={handleSubmit} method="post" className="text-center">
+                    <form validated={validated.toString()} onSubmit={handleSubmit} method="post" className="text-center">
                         <Row className="mb-3">
-                            <Form.Group as={Col} md="6" controlId="FNAME">
-                                <FloatingLabel controlId="floatingInputFNAME" label="First Name*" className="mb-3">
+                            <Form.Group as={Col} md="6">
+                                <FloatingLabel label="First Name*" className="mb-3">
                                     <Form.Control
                                         type="text"
                                         name="FirstName"
@@ -139,8 +144,8 @@ const TalentNetwork = () => {
                                 </FloatingLabel>
                                 <Form.Control.Feedback type="invalid">Please provide a valid Name.</Form.Control.Feedback>
                             </Form.Group>
-                            <Form.Group as={Col} md="6" controlId="LNAME">
-                                <FloatingLabel controlId="floatingInputLNAME" label="Last Name*" className="mb-3">
+                            <Form.Group as={Col} md="6" >
+                                <FloatingLabel label="Last Name*" className="mb-3">
                                     <Form.Control
                                         type="text"
                                         name="LastName"
@@ -161,8 +166,8 @@ const TalentNetwork = () => {
                                 <Form.Control.Feedback type="invalid">Please provide a valid Name.</Form.Control.Feedback>
                             </Form.Group>
                         </Row>
-                        <Form.Group controlId="validationEmail">
-                            <FloatingLabel controlId="floatingInput" label="E-MAIL*" className="mb-3">
+                        <Form.Group>
+                            <FloatingLabel label="E-MAIL*" className="mb-3">
                                 <Form.Control
                                     type="email"
                                     name="Email"
@@ -182,8 +187,8 @@ const TalentNetwork = () => {
                             </FloatingLabel>
                         </Form.Group>
                         <Row className="mb-4">
-                            <Form.Group controlId="validationBreif">
-                                <FloatingLabel controlId="floatingTextarea2" label="Message">
+                            <Form.Group>
+                                <FloatingLabel label="Message">
                                     <Form.Control
                                         as="textarea"
                                         name="Message"
@@ -200,8 +205,8 @@ const TalentNetwork = () => {
                             </Form.Group>
                         </Row>
                         <Row className="mb-4 px-2">
-                            <Form.Group controlId="filePicker" className="mb-3 file-upload">
-                                <Form.Label><IoMdCloudUpload /> Upload Resume</Form.Label>
+                            <Form.Group className="mb-3 file-upload">
+                                <Form.Label htmlFor="filePicker"><IoMdCloudUpload /> Upload Resume</Form.Label>
                                 <Form.Control
                                     type="file" name="file"
                                     onChange={(e) => {

@@ -28,6 +28,7 @@ export default function Logo(props) {
       <Image
         src={isSticky && (pathName !== "/" || pathName !== "") ? LogoHeader : (pathName === "/" || pathName === "") ? LogoWhite : LogoHeader}
         alt={isSticky ? 'Logo' : 'White Logo'}
+        loading="lazy"
       />
     </Link>
   );

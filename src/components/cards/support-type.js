@@ -7,7 +7,7 @@ const SupportType = ({ data }) => {
   return (
     <div sx={styles.card}>
       <Flex as="figure" sx={styles.icon}>
-        <Image src={data.icon} alt="" />
+        <Image src={data.icon} alt="ima"  loading="lazy"/>
       </Flex>
       <div sx={styles.content}>
         <Heading as="h3">

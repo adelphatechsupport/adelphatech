@@ -21,7 +21,7 @@ const Value = () => {
                             <div className='card h-100 rounded-0 border-0 text-center'>
                                 <div className='card-body'>
                                     <div as="figure" className='pt-5 mt-5'>
-                                        <Image width="64" height="64" src={Flexible} alt={"44"} />
+                                        <Image width="64" height="64" src={Flexible} alt={"44"} loading="lazy" />
                                     </div>
                                     <Heading as="h1" className='text-dark fw-bold py-5 '>Flexible <br />
                                         Work Life
@@ -37,7 +37,7 @@ const Value = () => {
                             <div className='card h-100 rounded-0 border-0 text-center'>
                                 <div className='card-body'>
                                     <div as="figure" className='pt-5 mt-5'>
-                                        <Image width="64" height="64" src={Improving} alt={"44"} />
+                                        <Image width="64" height="64" src={Improving} alt={"44"} loading="lazy" />
                                     </div>
                                     <Heading as="h1" className='text-dark fw-bold py-5 '>Always Improving
                                     </Heading>
@@ -52,7 +52,7 @@ const Value = () => {
                             <div className='card h-100 rounded-0 border-0 text-center'>
                                 <div className='card-body'>
                                     <div as="figure" className='pt-5 mt-5'>
-                                        <Image width="64" height="64" src={Partners} alt={"44"} />
+                                        <Image width="64" height="64" src={Partners} alt={"44"} loading="lazy" />
                                     </div>
                                     <Heading as="h1" className='text-dark fw-bold py-5 '>Focus on our partners
                                     </Heading>

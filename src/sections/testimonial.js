@@ -118,7 +118,7 @@ export default function TestimonialCard() {
                 <Text sx={styles.description}>{item.description}</Text>
                 <div className="card-footer">
                   <div className="image">
-                    <Image src={item.avatar} alt="Client Image" />
+                    <Image src={item.avatar} alt="Client Image"  loading="lazy" />
                   </div>
                   <div className="reviewer-info">
                     <Heading as="h4" sx={styles.heading}>

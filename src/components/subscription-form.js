@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { jsx, Flex, } from 'theme-ui';
-import {Button} from "react-bootstrap"
 import { Link } from 'gatsby';
+import { Flex, jsx, } from 'theme-ui';
 const SubscriptionForm = ({ buttonLabel, ...props }) => {
   return (
     <Flex as="form" sx={styles.form} {...props}>

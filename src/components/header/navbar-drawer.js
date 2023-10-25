@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { jsx, Box, Image, Button, MenuButton } from 'theme-ui';
+import { jsx, Box, Image, MenuButton } from 'theme-ui';
 import React, { useContext } from 'react';
-import { Link } from 'react-scroll';
 import { DrawerContext } from 'contexts/drawer/drawer-context';
 import Drawer from 'components/drawer';
 import Logo from 'components/logo';
@@ -32,7 +31,7 @@ const NavbarDrawer = () => {
       toggleHandler={toggleHandler}
       closeButton={
         <button sx={styles.closeButton}>
-          <Image src={close} alt="close" />
+          <Image src={close} alt="close"  loading="lazy"/>
         </button>
       }
       maskStyle={styles.mask}

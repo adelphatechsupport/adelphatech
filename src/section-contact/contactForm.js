@@ -49,6 +49,7 @@ const ContactForm = () => {
             console.error('Recaptcha validation failed');
             Swal.fire('Error', 'Recaptcha validation failed', 'error');
             setButtonDisabled(false);
+            setLoading(false);
             return;
         }
 
@@ -74,11 +75,12 @@ const ContactForm = () => {
                 setFormData({
                     FirstName: '',
                     LastName: '',
-                    Email: '',
-                    Message: '',
+                    Email:'',
+                    Message:'',
                     recaptchaValue:'',
                 });
                 Swal.fire('Success', 'Thank you for contacting us. Our team will contact you within 24 hours.', 'success');
+                setButtonDisabled(false);
                 setLoading(false);
             } else {
                 console.error('Form submission failed:', response.status);
@@ -89,10 +91,12 @@ const ContactForm = () => {
             console.error('Form submission failed:', error);
             // Handle the error, e.g., show an error message to the user
             Swal.fire('Error', 'Form submission failed', 'error');
+            setButtonDisabled(false);
             setLoading(false);
         } finally {
             // Re-enable the submit button after submission is complete
             setButtonDisabled(false);
+            setLoading(false);
         }
     };
     const formik = useFormik({
@@ -118,7 +122,7 @@ const ContactForm = () => {
                 </Text>
                 <Box sx={styles.grid} >
                     <Col xl="9" lg="9" md="11" className='mx-auto py-5'>
-                        <form validated={validated} onSubmit={handleSubmit} method="post"
+                        <form validated={validated.toString()} onSubmit={handleSubmit} method="post"
                             data-netlify-recaptcha="true"
                             data-netlify="true"
                             name="message"
@@ -126,9 +130,8 @@ const ContactForm = () => {
                             <input type="hidden" name="form-name" value="message" />
 
                             <Row className="mb-3">
-                                <Form.Group as={Col} md="6" controlId="FNAME">
+                                <Form.Group as={Col} md="6">
                                     <FloatingLabel
-                                        controlId="floatingInputFName"
                                         label="FIRST NAME*"
                                         className="mb-3"
                                     >
@@ -150,9 +153,8 @@ const ContactForm = () => {
                                         </div>
                                     </FloatingLabel>
                                 </Form.Group>
-                                <Form.Group as={Col} md="6" controlId="LNAME">
+                                <Form.Group as={Col} md="6">
                                     <FloatingLabel
-                                        controlId="floatingInputLName"
                                         label="LAST NAME*"
                                         className="mb-3"
                                     >
@@ -176,9 +178,8 @@ const ContactForm = () => {
                                 </Form.Group>
                             </Row>
                             <Row className="mb-3">
-                                <Form.Group as={Col} md="12" controlId="validationCustom04">
+                                <Form.Group as={Col} md="12">
                                     <FloatingLabel
-                                        controlId="floatingInputEmail"
                                         label="E-MAIL*"
                                         className="mb-3"
                                     >
@@ -202,8 +203,8 @@ const ContactForm = () => {
                                 </Form.Group>
                             </Row>
                             <Row className="mb-4">
-                                <Form.Group controlId="validationBreif">
-                                    <FloatingLabel controlId="floatingTextarea2" label="Project Brief*">
+                                <Form.Group>
+                                    <FloatingLabel label="Project Brief*">
                                         <Form.Control
                                             as="textarea"
                                             name="Message"

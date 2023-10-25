@@ -48,7 +48,7 @@ const ReasonJoin = () => {
                 <div className="template-3-tabs tabs">
                     <div className="tabs-caption">
                         {expertise.map((item, i) => (
-                            <>
+                            <div key={i}>
                                 <div
                                     className={
                                         toggleexpertise === i
@@ -56,6 +56,7 @@ const ReasonJoin = () => {
                                             : "tabs-caption-item"
                                     }
                                     onClick={() => settoggleexpertise(i)}
+                                   
                                 >
 
                                     {item.title}
@@ -68,7 +69,7 @@ const ReasonJoin = () => {
                                     <p>
                                         {item.description}
                                     </p>
-                                    <Link to="" className="rounded-arrow">
+                                    <Link to="/case-studies" className="rounded-arrow">
                                         <Svg
                                             src={ArrowRight}
                                             title="Menu"
@@ -76,7 +77,7 @@ const ReasonJoin = () => {
                                         />
                                     </Link>
                                 </div>
-                            </>
+                            </div>
                         ))}
                     </div>
                     {expertise.map((item, i) => (
@@ -86,6 +87,7 @@ const ReasonJoin = () => {
                                     ? "tabs-content tab-content active"
                                     : "tabs-content tab-content"
                             }
+                            key={i}
                         >
                             <div className="tab-content-title">{item.title}</div>
                             <div className="tab-content-text ps">
