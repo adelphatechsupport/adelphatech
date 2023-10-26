@@ -116,7 +116,7 @@ const styles = {
     },
     p: {
       color: 'textSecondary',
-      fontSize: ['13px', null, null, 2, '15px', 2],
+      fontSize: ['15px', null, null, 2, '15px', 2],
       lineHeight: [1.86, null, null, null, 1.86, 2.25],
       maxWidth: 470,
       m: [null, null, null, '20px auto 0', '15px 0 0', null, 'unset'],

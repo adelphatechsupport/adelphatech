@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `SEO, SEM and Custom Web and Mobile App Development Services`,
     description: `AdelphaTech is a leading web & mobile application development firm based in Toronto, Canada that offers custom web, and mobile app development services.`,
-    author: `@gatsbyjs`,
+    author: `Adelphatech`,
   },
   plugins: [
     `gatsby-plugin-theme-ui`,

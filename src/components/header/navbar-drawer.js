@@ -31,7 +31,7 @@ const NavbarDrawer = () => {
       toggleHandler={toggleHandler}
       closeButton={
         <button sx={styles.closeButton}>
-          <Image src={close} alt="close"  loading="lazy"/>
+          <Image src={close} alt="close" loading="lazy" />
         </button>
       }
       maskStyle={styles.mask}
@@ -72,12 +72,20 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     flexShrink: '0',
-    width: '26px',
+    width: '60px',
     cursor: 'pointer',
     '@media screen and (min-width: 1024px)': {
       display: 'none',
     },
-    'path':{
+    button: {
+      width: 50,
+      height: 50
+    },
+    svg: {
+      width: "50px",
+      height: '50px',
+    },
+    'path': {
       fill: "#46c4f8"
     },
   },

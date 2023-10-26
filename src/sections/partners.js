@@ -113,6 +113,9 @@ const styles = {
             lineHeight: 2.62,
             color: rgba('#566272', 0.6),
         },
+        '@media only screen and (max-width: 768px)':{ 
+            display:'contents'
+        }
     },
     sponsor: {
         alignItems: 'center',
@@ -125,6 +128,13 @@ const styles = {
                 aspectRatio: '3/2',
                 Object: 'contain'
             },
+            '@media only screen and (max-width: 768px)':{
+
+                img:{
+                    width:"100% !important",
+                    maxWidth: '110px',
+                }
+            }
         },
     },
 };

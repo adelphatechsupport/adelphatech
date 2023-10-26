@@ -24,7 +24,7 @@ const styles = {
   },
   value: {
     color: 'primary',
-    fontSize: [4, null, null, 10, null, 18],
+    fontSize: [7, null, null, 10, null, 18],
     display: 'flex',
     fontFamily: 'headingAlt',
     justifyContent: 'center',
@@ -32,7 +32,7 @@ const styles = {
     letterSpacing: ['-0.5px', null, null, '-1px'],
   },
   title: {
-    fontSize: [1, null, null, '15px', 5],
+    fontSize: [2, null, null, '15px', 5],
     lineHeight: 1.77,
     fontFamily: 'headingAlt',
     color: 'primary',

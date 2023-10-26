@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import SubscriptionForm from 'components/subscription-form';
 import { rgba } from 'polished';
-import { Box, Container, Heading, Text, jsx } from 'theme-ui';
+import { Box, Container, Heading, Image, Text, jsx } from 'theme-ui';
 import video from "../assets/images/adelphatech-vid.mp4"
-
+import banner from "../assets/images/banner.jpg"
 
 const Banner = () => {
   return (
@@ -16,9 +16,14 @@ const Banner = () => {
           data-wf-ignore="true"
           data-video-urls={video}
         >
-          <video autoPlay muted loop>
-            <source src={video} type="video/mp4" />
-          </video>
+          <div className="d-none d-md-block">
+            <video autoPlay muted loop>
+              <source src={video} type="video/mp4" />
+            </video>
+          </div>
+          <div className="d-block d-md-none" sx={styles.bannerIm}>
+            <Image src={banner} alt="ima" loading="lazy" />
+          </div>
         </div>
         <Box sx={styles.contentWrapper}>
           <Box sx={styles.bannerContent}>
@@ -48,6 +53,11 @@ const styles = {
     backgroundColor: `transparent`,
     pt: [18, null, null, 17, null, null, 0],
     pb: [12, null, null, 12, 7, 11, 0],
+  },
+  bannerIm: {
+    img: {
+      maxWidth: 'fit-content',
+    }
   },
   contentWrapper: {
     gap: [null, null, null, null, 8, 15],
