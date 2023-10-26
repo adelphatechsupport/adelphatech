@@ -46,7 +46,7 @@ const styles = {
     summary: {
         color: 'textSecondary',
         fontFamily: 'headingAlt',
-        fontSize: ['13px', null, null, 2, '15px', 4],
+        fontSize: ['15px', null, null, 2, '15px', 4],
         lineHeight: [1.86, null, null, null, 1.86, 2.25],
         m: [null, null, null, '20px auto 0', '15px 0 0', null, 'unset'],
     },

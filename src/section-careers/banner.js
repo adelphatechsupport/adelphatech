@@ -27,7 +27,7 @@ export default Banner;
 const styles = {
     section: {
         backgroundColor: "#fff",
-        pt: [7, null, null, 6, null, null, 20],
+        pt: [15, null, null, 6, null, null, 20],
         pb: [0, null, null, 8, null, null, 5],
     },
     grid: {
@@ -78,7 +78,7 @@ const styles = {
     summary: {
         color: 'textSecondary',
         fontFamily: 'headingAlt',
-        fontSize: [1, null, null, 2, '15px', 4],
+        fontSize: ["15px", null, null, 2, '15px', 4],
         lineHeight: [1.86, null, null, null, 1.86, 1.86],
         mt: [4, null, null, 5, 3, 5],
         maxWidth: 'none',

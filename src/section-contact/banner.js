@@ -36,7 +36,7 @@ export default Banner;
 const styles = {
     section: {
         backgroundColor: "#fff",
-        pt: [7, null, null, 6, null, null, 13],
+        pt: [13, null, null, 6, null, null, 13],
         pb: [0, null, null, 8, null, null, 11],
     },
     grid: {
@@ -86,7 +86,7 @@ const styles = {
     },
     summary: {
         color: 'textSecondary',
-        fontSize: [1, null, null, 2, '15px', 4],
+        fontSize: ["15px", null, null, 2, '15px', 4],
         lineHeight: [1.86, null, null, null, 1.86, 1.86],
         mt: [4, null, null, 5, 3, 5],
         maxWidth: 470,
@@ -94,5 +94,6 @@ const styles = {
     },
     svgicon:{
         pt: [7, null, null, 6, null, null, 13],
+        width:["50%", "100%",]
     }
 };
