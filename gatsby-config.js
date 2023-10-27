@@ -105,7 +105,7 @@ module.exports = {
         https: true,
         www: true,
         SymLinksIfOwnerMatch: true,
-        host: 'https://adelphatechmaster.gatsbyjs.io', // if 'www' is set to 'false', be sure to also remove it here!
+        host: 'adelphatechmaster.gatsbyjs.io', // if 'www' is set to 'false', be sure to also remove it here!
         ErrorDocument: `
           ErrorDocument 401 /401.html
           ErrorDocument 404 /404.html
@@ -114,32 +114,32 @@ module.exports = {
         redirect: [
           'RewriteRule ^not-existing-url/?$ /existing-url [R=301,L,NE]',
           {
-            from: 'https://adelphatechmaster.gatsbyjs.io/Home',
-            to: 'https://adelphatechmaster.gatsbyjs.io',
+            from: '/Home',
+            to: '/',
           },
           {
-            from: 'https://adelphatechmaster.gatsbyjs.io/About',
-            to: 'https://adelphatechmaster.gatsbyjs.io/about-us',
+            from: '/About',
+            to: '/about-us',
           },
           {
-            from: 'https://adelphatechmaster.gatsbyjs.io/Team',
-            to: 'https://adelphatechmaster.gatsbyjs.io/about-us',
+            from: '/Team',
+            to: '/about-us',
           },
           {
-            from: 'https://adelphatechmaster.gatsbyjs.io/Portfolio',
-            to: 'https://adelphatechmaster.gatsbyjs.io/case-studies',
+            from: '/Portfolio',
+            to: '/case-studies',
           },
           {
-            from: 'https://adelphatechmaster.gatsbyjs.io/Blog',
-            to: 'https://adelphatechmaster.gatsbyjs.io/case-studies',
+            from: '/Blog',
+            to: '/case-studies',
           },
           {
-            from: 'https://adelphatechmaster.gatsbyjs.io/Carrer',
-            to: 'https://adelphatechmaster.gatsbyjs.io/careers',
+            from: '/Carrer',
+            to: '/careers',
           },
           {
-            from: 'https://adelphatechmaster.gatsbyjs.io/Contact',
-            to: 'https://adelphatechmaster.gatsbyjs.io/contact-us',
+            from: '/Contact',
+            to: '/contact-us',
           },
         ],
         custom: `
