@@ -105,7 +105,7 @@ module.exports = {
         https: true,
         www: true,
         SymLinksIfOwnerMatch: true,
-        host: 'www.adelphatechmaster.gatsbyjs.io', // if 'www' is set to 'false', be sure to also remove it here!
+        host: 'https://adelphatechmaster.gatsbyjs.io', // if 'www' is set to 'false', be sure to also remove it here!
         ErrorDocument: `
           ErrorDocument 401 /401.html
           ErrorDocument 404 /404.html
@@ -114,32 +114,32 @@ module.exports = {
         redirect: [
           'RewriteRule ^not-existing-url/?$ /existing-url [R=301,L,NE]',
           {
-            from: 'www.adelphatechmaster.gatsbyjs.io/Home',
-            to: 'www.adelphatechmaster.gatsbyjs.io',
+            from: 'https://adelphatechmaster.gatsbyjs.io/Home',
+            to: 'https://adelphatechmaster.gatsbyjs.io',
           },
           {
-            from: 'www.adelphatechmaster.gatsbyjs.io/About',
-            to: 'www.adelphatechmaster.gatsbyjs.io/about-us',
+            from: 'https://adelphatechmaster.gatsbyjs.io/About',
+            to: 'https://adelphatechmaster.gatsbyjs.io/about-us',
           },
           {
-            from: 'www.adelphatechmaster.gatsbyjs.io/Team',
-            to: 'www.adelphatechmaster.gatsbyjs.io/about-us',
+            from: 'https://adelphatechmaster.gatsbyjs.io/Team',
+            to: 'https://adelphatechmaster.gatsbyjs.io/about-us',
           },
           {
-            from: 'www.adelphatechmaster.gatsbyjs.io/Portfolio',
-            to: 'www.adelphatechmaster.gatsbyjs.io/case-studies',
+            from: 'https://adelphatechmaster.gatsbyjs.io/Portfolio',
+            to: 'https://adelphatechmaster.gatsbyjs.io/case-studies',
           },
           {
-            from: 'www.adelphatechmaster.gatsbyjs.io/Blog',
-            to: 'www.adelphatechmaster.gatsbyjs.io/case-studies',
+            from: 'https://adelphatechmaster.gatsbyjs.io/Blog',
+            to: 'https://adelphatechmaster.gatsbyjs.io/case-studies',
           },
           {
-            from: 'www.adelphatechmaster.gatsbyjs.io/Carrer',
-            to: 'www.adelphatechmaster.gatsbyjs.io/careers',
+            from: 'https://adelphatechmaster.gatsbyjs.io/Carrer',
+            to: 'https://adelphatechmaster.gatsbyjs.io/careers',
           },
           {
-            from: 'www.adelphatechmaster.gatsbyjs.io/Contact',
-            to: 'www.adelphatechmaster.gatsbyjs.io/contact-us',
+            from: 'https://adelphatechmaster.gatsbyjs.io/Contact',
+            to: 'https://adelphatechmaster.gatsbyjs.io/contact-us',
           },
         ],
         custom: `
