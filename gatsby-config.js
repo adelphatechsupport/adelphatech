@@ -101,11 +101,11 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-htaccess',
       options: {
-        RewriteBase: '/custom/',
+        RewriteBase: true,
         https: true,
         www: true,
         SymLinksIfOwnerMatch: true,
-        host: 'www.adephatechmaster.gatsbyjs.io', // if 'www' is set to 'false', be sure to also remove it here!
+        host: 'www.adelphatechmaster.gatsbyjs.io', // if 'www' is set to 'false', be sure to also remove it here!
         ErrorDocument: `
           ErrorDocument 401 /401.html
           ErrorDocument 404 /404.html
@@ -114,32 +114,32 @@ module.exports = {
         redirect: [
           'RewriteRule ^not-existing-url/?$ /existing-url [R=301,L,NE]',
           {
-            from: 'www.adephatechmaster.gatsbyjs.io/Home',
-            to: 'www.adephatechmaster.gatsbyjs.io',
+            from: 'www.adelphatechmaster.gatsbyjs.io/Home',
+            to: 'www.adelphatechmaster.gatsbyjs.io',
           },
           {
-            from: 'www.adephatechmaster.gatsbyjs.io/About',
-            to: 'www.adephatechmaster.gatsbyjs.io/About',
+            from: 'www.adelphatechmaster.gatsbyjs.io/About',
+            to: 'www.adelphatechmaster.gatsbyjs.io/about-us',
           },
           {
-            from: 'www.adephatechmaster.gatsbyjs.io/Team',
-            to: 'www.adephatechmaster.gatsbyjs.io/About',
+            from: 'www.adelphatechmaster.gatsbyjs.io/Team',
+            to: 'www.adelphatechmaster.gatsbyjs.io/about-us',
           },
           {
-            from: 'www.adephatechmaster.gatsbyjs.io/Portfolio',
-            to: 'www.adephatechmaster.gatsbyjs.io/case-studies',
+            from: 'www.adelphatechmaster.gatsbyjs.io/Portfolio',
+            to: 'www.adelphatechmaster.gatsbyjs.io/case-studies',
           },
           {
-            from: 'www.adephatechmaster.gatsbyjs.io/Blog',
-            to: 'www.adephatechmaster.gatsbyjs.io/case-studies',
+            from: 'www.adelphatechmaster.gatsbyjs.io/Blog',
+            to: 'www.adelphatechmaster.gatsbyjs.io/case-studies',
           },
           {
-            from: 'www.adephatechmaster.gatsbyjs.io/Carrer',
-            to: 'www.adephatechmaster.gatsbyjs.io/careers',
+            from: 'www.adelphatechmaster.gatsbyjs.io/Carrer',
+            to: 'www.adelphatechmaster.gatsbyjs.io/careers',
           },
           {
-            from: 'www.adephatechmaster.gatsbyjs.io/Contact',
-            to: 'www.adephatechmaster.gatsbyjs.io/contact-us',
+            from: 'www.adelphatechmaster.gatsbyjs.io/Contact',
+            to: 'www.adelphatechmaster.gatsbyjs.io/contact-us',
           },
         ],
         custom: `
