@@ -11,3 +11,14 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
     },
   });
 };
+exports.createPages = ({ actions }) => {
+  const { createRedirect } = actions
+
+  createRedirect({ fromPath: "/Home", toPath: "/", isPermanent: true })
+  createRedirect({ fromPath: "/About", toPath: "/about-us", isPermanent: true })
+  createRedirect({ fromPath: "/Team", toPath: "/about-us", isPermanent: true })
+  createRedirect({ fromPath: "/Blog", toPath: "/case-studies", isPermanent: true })
+  createRedirect({ fromPath: "/Portfolio", toPath: "/case-studies", isPermanent: true })
+  createRedirect({ fromPath: "/Carrer", toPath: "/careers", isPermanent: true })
+  createRedirect({ fromPath: "/Contact", toPath: "/contact-us", isPermanent: true })
+}
