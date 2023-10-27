@@ -103,7 +103,7 @@ module.exports = {
       options: {
         RewriteBase: true,
         https: true,
-        www: true,
+        www: false,
         SymLinksIfOwnerMatch: true,
         host: 'adelphatechmaster.gatsbyjs.io', // if 'www' is set to 'false', be sure to also remove it here!
         ErrorDocument: `
@@ -116,6 +116,7 @@ module.exports = {
           {
             from: '/Home',
             to: '/',
+            isPermanent:true
           },
           {
             from: '/About',
