@@ -6,11 +6,12 @@ module.exports = {
     siteUrl: 'https://adelphatechmaster.gatsbyjs.io',
   },
   plugins: [
-    'gatsby-plugin-sitemap'
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-htaccess`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -36,7 +37,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Titillium Web','Helvetica','Arial','sans-serif'],
+          families: ['Titillium Web', 'Helvetica', 'Arial', 'sans-serif'],
         },
       },
     },
@@ -95,6 +96,56 @@ module.exports = {
         host: 'https://www.example.com',
         sitemap: 'https://www.example.com/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-htaccess',
+      options: {
+        RewriteBase: '/custom/',
+        https: true,
+        www: true,
+        SymLinksIfOwnerMatch: true,
+        host: 'www.adephatechmaster.gatsbyjs.io', // if 'www' is set to 'false', be sure to also remove it here!
+        ErrorDocument: `
+          ErrorDocument 401 /401.html
+          ErrorDocument 404 /404.html
+          ErrorDocument 500 /500.html
+        `,
+        redirect: [
+          'RewriteRule ^not-existing-url/?$ /existing-url [R=301,L,NE]',
+          {
+            from: 'www.adephatechmaster.gatsbyjs.io/Home',
+            to: 'www.adephatechmaster.gatsbyjs.io',
+          },
+          {
+            from: 'www.adephatechmaster.gatsbyjs.io/About',
+            to: 'www.adephatechmaster.gatsbyjs.io/About',
+          },
+          {
+            from: 'www.adephatechmaster.gatsbyjs.io/Team',
+            to: 'www.adephatechmaster.gatsbyjs.io/About',
+          },
+          {
+            from: 'www.adephatechmaster.gatsbyjs.io/Portfolio',
+            to: 'www.adephatechmaster.gatsbyjs.io/case-studies',
+          },
+          {
+            from: 'www.adephatechmaster.gatsbyjs.io/Blog',
+            to: 'www.adephatechmaster.gatsbyjs.io/case-studies',
+          },
+          {
+            from: 'www.adephatechmaster.gatsbyjs.io/Carrer',
+            to: 'www.adephatechmaster.gatsbyjs.io/careers',
+          },
+          {
+            from: 'www.adephatechmaster.gatsbyjs.io/Contact',
+            to: 'www.adephatechmaster.gatsbyjs.io/contact-us',
+          },
+        ],
+        custom: `
+            # This is a custom rule!
+            # This is a another custom rule!
+        `,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
