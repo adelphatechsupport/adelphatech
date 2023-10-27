@@ -112,7 +112,7 @@ module.exports = {
           ErrorDocument 500 /500.html
         `,
         redirect: [
-          'RewriteRule ^not-existing-url/?$ /existing-url [R=301,L,NE]',
+          'RewriteRule ^from-path/?$ /to-path/ [R=301,L]',
           {
             from: '/Home',
             to: '/',
