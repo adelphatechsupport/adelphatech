@@ -16,7 +16,7 @@ const data = [
     title: 'International Schools Services',
     desc:
       '',
-    link: '/iss-details',
+    link: '/international-school-service-web-portal',
   },
   {
     id: 2,
@@ -24,21 +24,21 @@ const data = [
     title:
       'DeliveyEase',
     desc: '',
-    link: '/delivery-details',
+    link: '/deliveryease-platform',
   },
   {
     id: 3,
     image: news3,
     title: 'Webhelp',
     desc: '',
-    link: '/work-details',
+    link: '/webhelp-multilingual-hiring-portal',
   },
   {
     id: 4,
     image: news4,
     title: 'Compass FED',
     desc: '',
-    link: '/fed-details',
+    link: '/compass-group-fed-app',
   },
 ];
 

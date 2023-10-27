@@ -52,7 +52,7 @@ const Work = () => {
           className="mb-5"
         />
         <Link
-          to="/work-details"
+          to="/webhelp-multilingual-hiring-portal"
         >
           <Image
             src={data.ImageWebhelp.childImageSharp.gatsbyImageData}
@@ -69,7 +69,7 @@ const Work = () => {
             Implementation of a versatile web platform that seamlessly guides visitors <br /> to the most relevant market-specific website and language.
           </Text>
           <LearnMore
-            path="/work-details"
+            path="/webhelp-multilingual-hiring-portal"
             sx={{ mt: [3, null, null, 4] }}
             label={'Read More'}
           />
@@ -109,7 +109,7 @@ const Work = () => {
             </Text>
 
             <LearnMore
-              path="/iss-details"
+              path="/international-school-service-web-portal"
               sx={{ mt: [3, null, null, 4] }}
               label={'Read More'}
             />

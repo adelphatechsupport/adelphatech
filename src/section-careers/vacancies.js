@@ -34,12 +34,12 @@ const OurVacancies = () => {
                                         </span>
                                         {item.city}, {item.location}
                                     </p>
-                                    <Link to="/case-studies" className="learn-more AdelphaTech-primary mb-2">
+                                    {/* <Link to="/case-studies" className="learn-more AdelphaTech-primary mb-2">
                                         Learn More
                                         <span className="ps-2">
                                             <Svg src={LongArrow} title="Menu" />
                                         </span>
-                                    </Link>
+                                    </Link> */}
                                 </Card.Footer>
                             </Card>
                         </Col>

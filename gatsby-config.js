@@ -3,8 +3,10 @@ module.exports = {
     title: `SEO, SEM and Custom Web and Mobile App Development Services`,
     description: `AdelphaTech is a leading web & mobile application development firm based in Toronto, Canada that offers custom web, and mobile app development services.`,
     author: `Adelphatech`,
+    siteUrl: 'https://adelphatechmaster.gatsbyjs.io',
   },
   plugins: [
+    'gatsby-plugin-sitemap'
     `gatsby-plugin-theme-ui`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
@@ -42,11 +44,11 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
-        trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
+        trackingId: 'G-D41ZK2KEDD',
         // Defines where to place the tracking script - `true` in the head and `false` in the body
         head: false,
         // Setting this parameter is optional
-        anonymize: true,
+        anonymize: false,
         // Setting this parameter is also optional
         respectDNT: true,
         // Avoids sending pageview hits from custom paths
@@ -69,9 +71,10 @@ module.exports = {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
         googleAnalytics: {
-          trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
+          trackingId: 'G-D41ZK2KEDD',
           // Setting this parameter is optional
-          anonymize: true
+          anonymize: false,
+          head: false,
         },
         facebookPixel: {
           pixelId: 'YOUR_FACEBOOK_PIXEL_ID'
