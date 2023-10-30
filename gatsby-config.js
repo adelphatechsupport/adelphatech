@@ -93,8 +93,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://www.example.com',
-        sitemap: 'https://www.example.com/sitemap.xml',
+        host: 'https://adelphatechmaster.gatsbyjs.io',
+        sitemap: 'https://adelphatechmaster.gatsbyjs.io/goolglesitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
@@ -116,7 +116,6 @@ module.exports = {
           {
             from: '/Home',
             to: '/',
-            isPermanent:true
           },
           {
             from: '/About',
@@ -149,6 +148,7 @@ module.exports = {
         `,
       },
     },
+   
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -21,4 +21,5 @@ exports.createPages = ({ actions }) => {
   createRedirect({ fromPath: "/Portfolio", toPath: "/case-studies", isPermanent: true })
   createRedirect({ fromPath: "/Carrer", toPath: "/careers", isPermanent: true })
   createRedirect({ fromPath: "/Contact", toPath: "/contact-us", isPermanent: true })
+  createRedirect({ fromPath: "/Service", toPath: "/services", isPermanent: true })
 }
