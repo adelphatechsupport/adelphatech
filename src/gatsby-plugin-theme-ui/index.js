@@ -33,7 +33,7 @@ const theme = {
     //   'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: `'Titillium Web','Helvetica','Arial','sans-serif'`,
     headingAlt: `'Titillium Web','Helvetica','Arial','sans-serif'`,
-    monospace: 'Menlo, monospace',
+    monospace: `'Titillium Web','Helvetica','Arial','sans-serif'`,
   },
   fontSizes: [
     12, // 0
