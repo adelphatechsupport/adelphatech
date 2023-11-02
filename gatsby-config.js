@@ -3,7 +3,7 @@ module.exports = {
     title: `SEO, SEM and Custom Web and Mobile App Development Services`,
     description: `AdelphaTech is a leading web & mobile application development firm based in Toronto, Canada that offers custom web, and mobile app development services.`,
     author: `Adelphatech`,
-    siteUrl: 'https://adelphatech.com',
+    siteUrl: 'https://www.adelphatech.com',
   },
   plugins: [
     `gatsby-plugin-sitemap`,
@@ -101,8 +101,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://adelphatech.com',
-        sitemap: 'https://adelphatech.com/goolglesitemap.xml',
+        host: 'https://www.adelphatech.com',
+        sitemap: 'https://www.adelphatech.com/goolglesitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
