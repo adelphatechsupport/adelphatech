@@ -38,7 +38,7 @@ const logos = [
 
 const Partners = () => {
     return (
-        <Box as="section" className="py-xl-15 py-lg-15 py-md-10 py-10" id="partners" sx={styles.section}>
+        <Box as="section" className="py-xl-15 py-lg-15 py-md-10 py-1" id="partners" sx={styles.section}>
             <div className='container'>
                 <Box sx={styles.contentWrapperPartner}>
                     <Flex sx={styles.sponsoredBy}>
@@ -78,8 +78,8 @@ const styles = {
         alignItems: 'center',
         gridTemplateColumns: [null, null, null, null, '1fr 1fr', '598px 1fr'],
         minHeight: ['auto', null, null, null, '10vh', '10vh', '10vh'],
-        pt: '70px',
-        pb: '70px',
+        pt: [7, null, null, 6, null, null, 5],
+        pb: [7, null, null, 6, null, null, 5],
         '@media only screen and (min-width:1501px) and (max-width:1600px)': {
             pt: 14,
         },

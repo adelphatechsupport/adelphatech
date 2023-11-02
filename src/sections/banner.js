@@ -10,7 +10,7 @@ const Banner = () => {
     <Box as="section" id="home" className='bg-home' sx={styles.section}>
       <Container>
         <div
-          className="hero-video"
+          className="hero-video d-none d-md-block"
           data-autoplay="true"
           data-loop="True"
           data-wf-ignore="true"
@@ -21,6 +21,10 @@ const Banner = () => {
               <source src={video} type="video/mp4" className="d-none d-md-block video-bg" />
             </video>
           </div>
+        </div>
+        <div
+          className="hero-video d-block d-md-none"
+        >
           <div className="d-block d-md-none" sx={styles.bannerIm}>
             <Image src={banner} alt="ima" loading="lazy" />
           </div>
