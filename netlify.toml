@@ -15,7 +15,7 @@
   status = 200
 
 [[redirects]]
-  from = "/About"
+  from = "/About/Team"
   to = "/about-us"
   status = 200
 
@@ -25,12 +25,132 @@
   status = 200
 
 [[redirects]]
+  from = "/Labs/Products"
+  to = "/services"
+  status = 200
+
+[[redirects]]
+  from = "/Services/Digital-Transformation"
+  to = "/services"
+  status = 200
+
+[[redirects]]
+  from = "/Services/Kentico-CMS-Development"
+  to = "/services"
+  status = 200
+
+[[redirects]]
+  from = "/Services/Search-Engine-Marketing"
+  to = "/services"
+  status = 200
+
+[[redirects]]
+  from = "/Services/Adelpha-Labs"
+  to = "/services"
+  status = 200
+
+[[redirects]]
+  from = "/Insights/March-2017"
+  to = "/case-studies"
+  status = 200
+
+[[redirects]]
+  from = "/Insights/October-2017/SteelVaultapp"
+  to = "/case-studies"
+  status = 200
+
+[[redirects]]
+  from = "/Services/Adelpha-Labs?lang=fr-fr"
+  to = "/services"
+  status = 200
+
+[[redirects]]
+  from = "/Services/Android-Development?lang=fr-fr"
+  to = "/services"
+  status = 200
+
+[[redirects]]
+  from = "/about?lang=fr-fr"
+  to = "/about-us"
+  status = 200
+
+[[redirects]]
+  from = "/AdelphaTech-celebrating-Canada-s-150th"
+  to = "/about-us"
+  status = 200
+
+[[redirects]]
+  from = "/Labs/Products?lang=fr-fr"
+  to = "/about-us"
+  status = 200
+
+[[redirects]]
+  from = "/Labs"
+  to = "/about-us"
+  status = 200
+  
+[[redirects]]
+  from = "/Annot8?lang=fr-fr"
+  to = "/about-us"
+  status = 200
+
+[[redirects]]
   from = "/Blog"
   to = "/case-studies"
   status = 200
 
 [[redirects]]
+  from = "/Services/Digital-Transformation?lang=fr-fr"
+  to = "/services"
+  status = 200
+
+[[redirects]]
+  from = "/Insights/October-2017/SteelVaultapp"
+  to = "/services"
+  status = 200
+
+[[redirects]]
+  from = "/Insights/October-2017/What-is-GAFA"
+  to = "/case-studies"
+  status = 200
+
+[[redirects]]
+  from = "/Services/Search-Engine-Optimization?lang=fr-fr"
+  to = "/services"
+  status = 200
+
+[[redirects]]
+  from = "/Insights/April-2017/Moroccan-Canadian-Entrepreneur-Summit"
+  to = "/case-studies"
+  status = 200
+  
+[[redirects]]
+  from = "/Insights/March-2017/How-to-Choose-the-Right-CMS"
+  to = "/case-studies"
+  status = 200
+
+[[redirects]]
+  from = "/Insights/April-2017/Moroccan-Canadian-Entrepreneur-Summit?lang=fr-fr"
+  to = "/case-studies"
+  status = 200
+
+[[redirects]]
+  from = "/Insights/May-2017/Annot8-1-3-is-out!?lang=fr-fr"
+  to = "/case-studies"
+  status = 200
+
+[[redirects]]
+  from = "/Insights/March-2017/How-to-Choose-the-Right-CMS?lang=fr-fr"
+  to = "/case-studies"
+  status = 200
+
+[[redirects]]
   from = "/Portfolio"
+  to = "/case-studies"
+  status = 200
+
+[[redirects]]
+  from = "/portfolio?lang=fr-fr"
   to = "/case-studies"
   status = 200
 
@@ -41,6 +161,11 @@
 
 [[redirects]]
   from = "/Contact"
+  to = "/contact-us"
+  status = 200
+
+[[redirects]]
+  from = "/contact?lang=fr-fr"
   to = "/contact-us"
   status = 200
 

@@ -4,27 +4,50 @@ import { rgba } from 'polished';
 import { Box, Container, Heading, Image, Text, jsx } from 'theme-ui';
 import video from "../assets/images/adelphatech-vid.mp4"
 import banner from "../assets/images/banner.jpg"
+import { useEffect, useState } from 'react';
 
 const Banner = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth <= 768) { // You can adjust this value as needed for your mobile breakpoint
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    }
+
+    // Initial check on component mount
+    handleResize();
+
+    // Listen for window resize events
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
     <Box as="section" id="home" className='bg-home' sx={styles.section}>
       <Container>
-        <div
-          className="hero-video d-none d-md-block video-bg"
-        >
-          <div className="d-none d-md-block video-bg">
-            <video autoPlay muted loop className="d-none d-md-block video-bg">
-              <source src={video} type="video/mp4" className="d-none d-md-block video-bg" />
-            </video>
+        {isMobile ? (
+          // Render the mobile content
+          <div className="hero-video d-block d-md-none">
+            <div className="d-block d-md-none" sx={styles.bannerIm}>
+              <Image src={banner} alt="ima" loading="lazy" />
+            </div>
           </div>
-        </div>
-        <div
-          className="hero-video d-block d-md-none"
-        >
-          <div className="d-block d-md-none" sx={styles.bannerIm}>
-            <Image src={banner} alt="ima" loading="lazy" />
+        ) : (
+          // Render the non-mobile content
+          <div className="hero-video d-none d-md-block video-bg" id="BgVideoContainer">
+            <div className="d-none d-md-block video-bg">
+              <video autoPlay muted loop className="d-none d-md-block video-bg">
+                <source src={video} type="video/mp4" className="d-none d-md-block video-bg" />
+              </video>
+            </div>
           </div>
-        </div>
+        )}
         <Box sx={styles.contentWrapper}>
           <Box sx={styles.bannerContent}>
             <Heading as="h1" className='mb-4'>
