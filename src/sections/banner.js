@@ -11,9 +11,6 @@ const Banner = () => {
       <Container>
         <div
           className="hero-video d-none d-md-block video-bg"
-          data-autoplay="true"
-          data-loop="True"
-          data-wf-ignore="true"
         >
           <div className="d-none d-md-block video-bg">
             <video autoPlay muted loop className="d-none d-md-block video-bg">
