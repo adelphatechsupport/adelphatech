@@ -3,6 +3,11 @@
   publish = "public"
 
 [[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
+
+[[redirects]]
   from = "/Home"
   to = "/"
   status = 200
@@ -10,4 +15,44 @@
 [[redirects]]
   from = "/About"
   to = "/about-us"
+  status = 200
+
+[[redirects]]
+  from = "/About"
+  to = "/about-us"
+  status = 200
+
+[[redirects]]
+  from = "/Team"
+  to = "/about-us"
+  status = 200
+
+[[redirects]]
+  from = "/Blog"
+  to = "/case-studies"
+  status = 200
+
+[[redirects]]
+  from = "/Portfolio"
+  to = "/case-studies"
+  status = 200
+
+[[redirects]]
+  from = "/Service"
+  to = "/services"
+  status = 200
+
+[[redirects]]
+  from = "/Contact"
+  to = "/contact-us"
+  status = 200
+
+[[redirects]]
+  from = "/Carrer"
+  to = "/careers"
+  status = 200
+
+[[redirects]]
+  from = "/Career"
+  to = "/careers"
   status = 200
