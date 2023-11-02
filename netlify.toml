@@ -70,6 +70,11 @@
   status = 200
 
 [[redirects]]
+  from = "/Services/Android-Development"
+  to = "/services"
+  status = 200
+
+[[redirects]]
   from = "/about?lang=fr-fr"
   to = "/about-us"
   status = 200
@@ -90,6 +95,11 @@
   status = 200
 
 [[redirects]]
+  from = "/Labs/Products"
+  to = "/about-us"
+  status = 200
+
+[[redirects]]
   from = "/Labs"
   to = "/about-us"
   status = 200
@@ -100,12 +110,22 @@
   status = 200
 
 [[redirects]]
+  from = "/Annot8"
+  to = "/about-us"
+  status = 200
+
+[[redirects]]
   from = "/Blog"
   to = "/case-studies"
   status = 200
 
 [[redirects]]
   from = "/Services/Digital-Transformation?lang=fr-fr"
+  to = "/services"
+  status = 200
+
+[[redirects]]
+  from = "/Services/Digital-Transformation"
   to = "/services"
   status = 200
 
@@ -121,6 +141,11 @@
 
 [[redirects]]
   from = "/Services/Search-Engine-Optimization?lang=fr-fr"
+  to = "/services"
+  status = 200
+
+[[redirects]]
+  from = "/Services/Search-Engine-Optimization"
   to = "/services"
   status = 200
 
@@ -145,6 +170,11 @@
   status = 200
 
 [[redirects]]
+  from = "/Insights/May-2017/Annot8-1-3-is-out!"
+  to = "/case-studies"
+  status = 200
+
+[[redirects]]
   from = "/Insights/March-2017/How-to-Choose-the-Right-CMS?lang=fr-fr"
   to = "/case-studies"
   status = 200
@@ -160,6 +190,11 @@
   status = 200
 
 [[redirects]]
+  from = "/portfolio"
+  to = "/case-studies"
+  status = 200
+
+[[redirects]]
   from = "/Service"
   to = "/services"
   status = 200
@@ -171,6 +206,11 @@
 
 [[redirects]]
   from = "/contact?lang=fr-fr"
+  to = "/contact-us"
+  status = 200
+
+[[redirects]]
+  from = "/contact"
   to = "/contact-us"
   status = 200
 
