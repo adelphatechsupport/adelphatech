@@ -139,13 +139,11 @@ button#rcc-confirm-button {
   color: white;
   white-space: nowrap;
   z-index: 0;
-} 
-
+}
 
 .hbtn i {
   padding-right: 8px;
-} 
-
+}
 
 .slide_right::before {
   position: absolute;
@@ -157,23 +155,24 @@ button#rcc-confirm-button {
   width: 0px;
   height: 100%;
   opacity: 1;
-} 
-
+}
 
 .slide_right:hover::before {
   width: 100%;
   height: 100%;
   opacity: 1;
-} 
-
+}
 
 .slide_right:hover {
   color: white;
   background: #0096dd;
   transition: color 0.3s ease 0s, background 0s ease 0.3s;
-} 
+}
 
 @media only screen and (max-width: 600px) {
+  .video-bg {
+    display: none;
+  }
   .template-3 .tabs-caption-item.active:after {
     display: none;
   }
@@ -186,7 +185,7 @@ button#rcc-confirm-button {
 }
 .hero-video {
   position: absolute;
-  z-index:-1;
+  z-index: -1;
   width: 100%;
   margin: auto;
   left: 50%;
@@ -218,17 +217,17 @@ button#rcc-confirm-button {
     width: 100%;
   }
 }
-.img-value-1{
+.img-value-1 {
   background-image: url(../images//value/imgvalue1.png);
   height: 513px;
   border-radius: 0;
 }
-.img-value-2{
+.img-value-2 {
   background-image: url(../images//value/imgvalue2.png);
   height: 513px;
   border-radius: 0;
 }
-.img-value-3{
+.img-value-3 {
   background-image: url(../images//value/imgvalue3.jpg);
   height: 513px;
   border-radius: 0;
@@ -237,7 +236,7 @@ button#rcc-confirm-button {
   background-color: #f3f6fe;
 }
 label {
-  color:#09386b;
+  color: #09386b;
 }
 #Talent .form-control {
   background-color: #dce5fd;
@@ -277,12 +276,12 @@ label {
   color: #09386b;
   min-height: 44px;
 }
-.buttonform:hover{
+.buttonform:hover {
   color: white;
   background-color: #09386b;
 }
 section#approach .feature-item {
- border:0
+  border: 0;
 }
 section#approach .feature-item:first-child {
   background-color: #f3f6fe;
@@ -290,28 +289,28 @@ section#approach .feature-item:first-child {
 section#approach .feature-item:last-child {
   background-color: #f3f6fe;
 }
-section#approach .feature-item:nth-child(2)  {
-  background-color: #065C91;
+section#approach .feature-item:nth-child(2) {
+  background-color: #065c91;
 }
-section#approach .feature-item:nth-child(2) h4  {
+section#approach .feature-item:nth-child(2) h4 {
   color: white;
 }
-section#approach .feature-item:nth-child(2)  p  {
+section#approach .feature-item:nth-child(2) p {
   color: white;
 }
 
 .file-upload {
   border: 1px dashed #869bd3;
-    text-align: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .file-upload #filePicker {
   display: none;
 }
 
 .rounded {
-  border-radius: 0.25rem!important;
+  border-radius: 0.25rem !important;
 }
 #Blog_Details .gatsby-image-wrapper.rounded {
   bottom: 88px;

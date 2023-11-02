@@ -16,9 +16,9 @@ const Banner = () => {
           data-wf-ignore="true"
           data-video-urls={video}
         >
-          <div className="d-none d-md-block">
-            <video autoPlay muted loop className="d-none d-md-block">
-              <source src={video} type="video/mp4" className="d-none d-md-block" />
+          <div className="d-none d-md-block video-bg">
+            <video autoPlay muted loop className="d-none d-md-block video-bg">
+              <source src={video} type="video/mp4" className="d-none d-md-block video-bg" />
             </video>
           </div>
           <div className="d-block d-md-none" sx={styles.bannerIm}>
