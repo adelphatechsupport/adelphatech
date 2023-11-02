@@ -7,7 +7,7 @@ const ApproachCard = ({ data, ...props }) => {
   return (
     <Box sx={styles.feature} {...props}>
       <Box as="figure">
-        <Image src={data?.icon} sx={styles.icon} alt={data?.title} loading="lazy" />
+      
         <Svg
           src={data?.icon} sx={styles.icon} title={data?.title}
         />

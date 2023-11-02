@@ -61,7 +61,7 @@ const Work = () => {
             className="rounded"
           />
         </Link>
-        <div className='ps-5 ms-5 mb-5'>
+        <div className='ps-xl-5 ps-lg-5 ps-md-3 ps-md-1 ms-xl-5 ms-lg-5 ms-md-3 ms-md-1 mb-5'>
           <Heading sx={styles.title}>
             Webhelp's Multinational < br /> Web Presence
           </Heading>
@@ -74,7 +74,7 @@ const Work = () => {
             label={'Read More'}
           />
         </div>
-        <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-5 mt-5'>
+        <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-xl-5 py-lg-5 py-md-3 py-1 mt-xl-5 mt-lg-5 mt-md-3 mt-1'>
           <Box sx={styles.illustration}>
             <Image
               src={data.ImageCbc.childImageSharp.gatsbyImageData}
@@ -99,7 +99,7 @@ const Work = () => {
             />
           </Box>
         </Box>
-        <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-5 mt-5'>
+        <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-xl-5 py-lg-5 py-md-3 py-1 mt-xl-5 mt-lg-5 mt-md-3 mt-1'>
           <Box sx={styles.content}>
             <Heading sx={styles.title}>
               International Schools Services (ISS) – Transforming Global Education
@@ -122,7 +122,7 @@ const Work = () => {
             />
           </Box>
         </Box>
-        <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-5 mt-5'>
+        <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-xl-5 py-lg-5 py-md-3 py-1 mt-xl-5 mt-lg-5 mt-md-3 mt-1'>
           <Box sx={styles.illustration}>
             <Image
               src={data.ImageInstaSize?.childImageSharp.gatsbyImageData}
@@ -146,7 +146,7 @@ const Work = () => {
             />
           </Box>
         </Box>
-        <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-5 mt-5'>
+        <Box sx={styles.grid} className='px-xl-5 px-lg-5 px-md-0 px-0 mx-lg-5 mx-xl-5 mx-md-0 mx-0 py-xl-5 py-lg-5 py-md-3 py-1 mt-xl-5 mt-lg-5 mt-md-3 mt-1'>
           <Box sx={styles.content}>
             <Heading sx={styles.title}>
               Empower - Data Logistics System

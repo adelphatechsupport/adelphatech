@@ -35,7 +35,7 @@ const CustomerSupport = () => {
           <Box sx={styles.content}>
             <SectionHeading
               slogan="Meet AdelphaTech"
-              className="text-start"
+              className="text-xl-start text-lg-start"
             />
             <Heading sx={styles.title}>
               A top-performing agency

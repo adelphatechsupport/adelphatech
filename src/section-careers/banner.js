@@ -28,7 +28,7 @@ const styles = {
     section: {
         backgroundColor: "#fff",
         pt: [15, null, null, 6, null, null, 20],
-        pb: [0, null, null, 8, null, null, 5],
+        pb: [0, null, null, 8, null, null, 1],
     },
     grid: {
         display: ['flex', null, null, 'grid'],

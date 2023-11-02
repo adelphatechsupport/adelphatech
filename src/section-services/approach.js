@@ -57,8 +57,8 @@ export default Approach;
 const styles = {
   section: {
     backgroundColor: '#fff',
-    pt: [8, null, null, 12, null, 10],
-    pb: [9, null, null, 12, 16, 18],
+    pt: [3, null, null, 12, null, 3],
+    pb: [9, null, null, 12, 16, 10],
   },
   heading: {
     marginBottom: [7, null, null, 0, 0],

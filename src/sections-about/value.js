@@ -20,7 +20,7 @@ const Value = () => {
                         <div className='col-xl-4 col-lg-4 col-md-6 px-lg-0 px--md-0 px-3'>
                             <div className='card h-100 rounded-0 border-0 text-center'>
                                 <div className='card-body'>
-                                    <div as="figure" className='pt-5 mt-5'>
+                                    <div as="figure" className='pt-xl-5 pt-lg-5 pt-md-3 pt-1 mt-lg-5 mt-lg-5 mt-md-3 mt-1'>
                                         <Image width="64" height="64" src={Flexible} alt={"44"} loading="lazy" />
                                     </div>
                                     <Heading as="h1" className='text-dark fw-bold py-5 '>Flexible <br />
@@ -36,7 +36,7 @@ const Value = () => {
                         <div className='col-xl-4 col-lg-4 col-md-6 px-lg-0 px--md-0 px-3'>
                             <div className='card h-100 rounded-0 border-0 text-center'>
                                 <div className='card-body'>
-                                    <div as="figure" className='pt-5 mt-5'>
+                                    <div as="figure" className='pt-xl-5 pt-lg-5 pt-md-3 pt-1 mt-lg-5 mt-lg-5 mt-md-3 mt-1'>
                                         <Image width="64" height="64" src={Improving} alt={"44"} loading="lazy" />
                                     </div>
                                     <Heading as="h1" className='text-dark fw-bold py-5 '>Always Improving
@@ -51,7 +51,7 @@ const Value = () => {
                         <div className='col-xl-4 col-lg-4 col-md-6 px-lg-0 px--md-0 px-3'>
                             <div className='card h-100 rounded-0 border-0 text-center'>
                                 <div className='card-body'>
-                                    <div as="figure" className='pt-5 mt-5'>
+                                    <div as="figure" className='pt-xl-5 pt-lg-5 pt-md-3 pt-1 mt-lg-5 mt-lg-5 mt-md-3 mt-1'>
                                         <Image width="64" height="64" src={Partners} alt={"44"} loading="lazy" />
                                     </div>
                                     <Heading as="h1" className='text-dark fw-bold py-5 '>Focus on our partners

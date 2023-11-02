@@ -69,13 +69,6 @@ const ReasonJoin = () => {
                                     <p>
                                         {item.description}
                                     </p>
-                                    <Link to="/case-studies" className="rounded-arrow">
-                                        <Svg
-                                            src={ArrowRight}
-                                            title="Menu"
-                                            className=""
-                                        />
-                                    </Link>
                                 </div>
                             </div>
                         ))}

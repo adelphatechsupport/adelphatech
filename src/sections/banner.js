@@ -17,8 +17,8 @@ const Banner = () => {
           data-video-urls={video}
         >
           <div className="d-none d-md-block">
-            <video autoPlay muted loop>
-              <source src={video} type="video/mp4" />
+            <video autoPlay muted loop className="d-none d-md-block">
+              <source src={video} type="video/mp4" className="d-none d-md-block" />
             </video>
           </div>
           <div className="d-block d-md-none" sx={styles.bannerIm}>

@@ -32,7 +32,7 @@ const styles = {
     section: {
         backgroundColor: `#fff`,
         pt: [18, null, null, 17, null, null, 130],
-        pb: [12, null, null, 12, 7, 11, 0],
+        pb: [10, null, null, 12, 7, 9, 0],
     },
     title: {
         color: '#09386b',
