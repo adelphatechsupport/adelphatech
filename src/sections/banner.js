@@ -10,11 +10,10 @@ const Banner = () => {
     <Box as="section" id="home" className='bg-home' sx={styles.section}>
       <Container>
         <div
-          className="hero-video d-none d-md-block"
+          className="hero-video d-none d-md-block video-bg"
           data-autoplay="true"
           data-loop="True"
           data-wf-ignore="true"
-          data-video-urls={video}
         >
           <div className="d-none d-md-block video-bg">
             <video autoPlay muted loop className="d-none d-md-block video-bg">
