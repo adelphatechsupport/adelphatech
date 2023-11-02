@@ -66,6 +66,10 @@ function Seo({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: "keywords",
+          content: site.siteMetadata.author,
+        },
       ].concat(meta)}
     />
   );

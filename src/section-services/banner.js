@@ -68,11 +68,13 @@ const styles = {
         },
     },
     title: {
+
         color: 'heading',
+        fontFamily: 'headingAlt',
+        fontSize: [9, null, null, 10, 12, 45, 16],
+        lineHeight: [1.31, null, null, 1.5, null, 1.26],
+        letterSpacing: [0, null, null, null, '9px'],
         fontWeight: 500,
-        fontSize: [5, null, null, 10, null, 17],
-        lineHeight: 1,
-        letterSpacing: ['-0.5px', null, null, '-1px'],
         textAlign: ['center', null, null, 'left'],
         span: {
             backgroundSize: 'cover',

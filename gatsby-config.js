@@ -3,7 +3,7 @@ module.exports = {
     title: `SEO, SEM and Custom Web and Mobile App Development Services`,
     description: `AdelphaTech is a leading web & mobile application development firm based in Toronto, Canada that offers custom web, and mobile app development services.`,
     author: `Adelphatech`,
-    siteUrl: 'https://adelphatechmaster.gatsbyjs.io',
+    siteUrl: 'https://adelphatech.com',
   },
   plugins: [
     `gatsby-plugin-sitemap`,
@@ -29,8 +29,16 @@ module.exports = {
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/assets/images/favicon.png`, // This path is relative to the root of the site.
+        include_favicon: true, 
+        icons: [
+          {
+            src: `src/assets/images/logo.png`,
+            sizes: `146x34`,
+            type: `image/png`,
+          },
+        ], 
       },
     },
     {
@@ -93,8 +101,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://adelphatechmaster.gatsbyjs.io',
-        sitemap: 'https://adelphatechmaster.gatsbyjs.io/goolglesitemap.xml',
+        host: 'https://adelphatech.com',
+        sitemap: 'https://adelphatech.com/goolglesitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
@@ -105,7 +113,7 @@ module.exports = {
         https: true,
         www: false,
         SymLinksIfOwnerMatch: true,
-        host: 'adelphatechmaster.gatsbyjs.io', // if 'www' is set to 'false', be sure to also remove it here!
+        host: 'adelphatech.com', // if 'www' is set to 'false', be sure to also remove it here!
         ErrorDocument: `
           ErrorDocument 401 /401.html
           ErrorDocument 404 /404.html
