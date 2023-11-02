@@ -75,6 +75,11 @@
   status = 200
 
 [[redirects]]
+  from = "/about"
+  to = "/about-us"
+  status = 200
+
+[[redirects]]
   from = "/AdelphaTech-celebrating-Canada-s-150th"
   to = "/about-us"
   status = 200
