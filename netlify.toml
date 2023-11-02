@@ -2,10 +2,7 @@
   command = "yarn build"
   publish = "public"
 
-[[redirects]]
-  from = "/*"
-  to = "/"
-  status = 200
+
 
 [[redirects]]
   from = "/Home"
