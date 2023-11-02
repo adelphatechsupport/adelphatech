@@ -14,13 +14,13 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
 exports.createPages = ({ actions }) => {
   const { createRedirect } = actions
 
-  createRedirect({ fromPath: "/Home", toPath: "/", })
-  createRedirect({ fromPath: "/About", toPath: "/about-us", })
-  createRedirect({ fromPath: "/Team", toPath: "/about-us", })
-  createRedirect({ fromPath: "/Blog", toPath: "/case-studies", })
-  createRedirect({ fromPath: "/Portfolio", toPath: "/case-studies", })
-  createRedirect({ fromPath: "/Carrer", toPath: "/careers", })
-  createRedirect({ fromPath: "/Contact", toPath: "/contact-us", })
-  createRedirect({ fromPath: "/Service", toPath: "/services", })
+  createRedirect({ fromPath: "/Home", toPath: "/", statusCode: 200, })
+  createRedirect({ fromPath: "/About", toPath: "/about-us", statusCode: 200, })
+  createRedirect({ fromPath: "/Team", toPath: "/about-us", statusCode: 200, })
+  createRedirect({ fromPath: "/Blog", toPath: "/case-studies", statusCode: 200, })
+  createRedirect({ fromPath: "/Portfolio", toPath: "/case-studies", statusCode: 200, })
+  createRedirect({ fromPath: "/Carrer", toPath: "/careers", statusCode: 200, })
+  createRedirect({ fromPath: "/Contact", toPath: "/contact-us", statusCode: 200, })
+  createRedirect({ fromPath: "/Service", toPath: "/services", statusCode: 200, })
 
 }
