@@ -17,14 +17,14 @@ const TalentNetwork = () => {
         LastName: '',
         Email: '',
         Message: '',
-        file: null,
+        files: null,
     });
     const Schema = Yup.object().shape({
         FirstName: Yup.string().required('First Name is required'),
         LastName: Yup.string().required('Last Name is required'),
         Email: Yup.string().email('Invalid email address').required('Email is required'),
         Message: Yup.string().required('Message is required'),
-        file: Yup.mixed().required(),
+        files: Yup.mixed().required(),
     });
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -32,8 +32,8 @@ const TalentNetwork = () => {
     };
 
     const handleFileChange = (e) => {
-        const file = e.target.files[0];
-        setFormData({ ...formData, file });
+        const files = e.target.files[0];
+        setFormData({ ...formData, files });
     };
 
     const handleSubmit = async () => {
@@ -46,7 +46,7 @@ const TalentNetwork = () => {
         formdata.append("LastName", formData.LastName);
         formdata.append("Email", formData.Email);
         formdata.append("Message", formData.Message);
-        formdata.append("file", formData.file);
+        formdata.append("files", formData.files);
 
         const requestOptions = {
             method: 'POST',
@@ -57,7 +57,7 @@ const TalentNetwork = () => {
         setLoading(true);
         setValidated(true);
         try {
-            const response = await fetch("https://api.deliveryease.co/api/Generic/Form/ATFile", requestOptions);
+            const response = await fetch("https://api-academy.adelphalabs.com/api/Generic/Form/ATFile", requestOptions);
             if (response.ok) {
                 console.log('Form submitted successfully');
                 // Handle success, e.g., show a success message to the user
@@ -66,7 +66,7 @@ const TalentNetwork = () => {
                     LastName: '',
                     Email: '',
                     Message: '',
-                    file: null,
+                    files: null,
                 });
                 Swal.fire('Success', 'Thank you for contacting us. Our team will contact you within 24 hours.', 'success');
                 setLoading(false);
@@ -96,7 +96,7 @@ const TalentNetwork = () => {
             LastName: '',
             Email: '',
             Message: '',
-            file: null,
+            files: null,
         },
 
         validationSchema: Schema,
@@ -208,18 +208,18 @@ const TalentNetwork = () => {
                             <Form.Group className="mb-3 file-upload">
                                 <Form.Label htmlFor="filePicker"><IoMdCloudUpload /> Upload Resume</Form.Label>
                                 <Form.Control
-                                    type="file" name="file"
+                                    type="file" name="files"
                                     onChange={(e) => {
                                         handleFileChange(e);
-                                        formik.setFieldValue('file', e.target.value);
+                                        formik.setFieldValue('files', e.target.value);
                                     }}
                                     style={{ visibility: "hidden" }}
                                     id="filePicker"
                                     size="lg"
                                 />
                                 <div className="text-danger">
-                                    {formik.touched.file && formik.errors.file ? (
-                                        <div className='text-start'>{formik.errors.file}</div>
+                                    {formik.touched.files && formik.errors.files ? (
+                                        <div className='text-start'>{formik.errors.files}</div>
                                     ) : null}
                                 </div>
                             </Form.Group>

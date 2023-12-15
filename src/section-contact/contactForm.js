@@ -68,7 +68,7 @@ const ContactForm = () => {
         setValidated(true);
 
         try {
-            const response = await fetch("https://api.deliveryease.co/api/Generic/Form/ATFile", requestOptions);
+            const response = await fetch("https://api-academy.adelphalabs.com/api/Generic/Form/ATFile", requestOptions);
             if (response.ok) {
                 console.log('Form submitted successfully');
                 // Handle success, e.g., show a success message to the user
